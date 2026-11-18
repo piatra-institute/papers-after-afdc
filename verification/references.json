@@ -1,0 +1,3122 @@
+{
+  "schema": 1,
+  "references_sha256": "e61096172a3d30ecf077bccca28031bca97879c6a0afd0e169444cd52ea944f4",
+  "bibliography_inputs": {
+    "references.yaml": "e61096172a3d30ecf077bccca28031bca97879c6a0afd0e169444cd52ea944f4"
+  },
+  "entries": [
+    {
+      "id": "autor2013",
+      "doi": "10.1257/aer.103.6.2121",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "The China Syndrome: Local Labor Market Effects of Import Competition in the United States",
+          "registry": [
+            "The China Syndrome: Local Labor Market Effects of Import Competition in the United States"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "autor",
+          "registry": "autor",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2013
+          ],
+          "registry": [
+            2013,
+            2013,
+            2013
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "American Economic Review",
+          "registry": [
+            "American Economic Review"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 103,
+          "registry": "103",
+          "match": true
+        },
+        "issue": {
+          "reference": 6,
+          "registry": "6",
+          "match": true
+        },
+        "page": {
+          "reference": "2121-2168",
+          "registry": "2121-2168",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:02.370008+00:00",
+      "record_sha256": "6a4a26ec13b3197ab4e4029e2825ea386d7a93e43c27410acaa2dd4ab960a20b",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "autordorn2013",
+      "doi": "10.1257/aer.103.5.1553",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "The Growth of Low-Skill Service Jobs and the Polarization of the US Labor Market",
+          "registry": [
+            "The Growth of Low-Skill Service Jobs and the Polarization of the US Labor Market"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "autor",
+          "registry": "autor",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2013
+          ],
+          "registry": [
+            2013,
+            2013,
+            2013
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "American Economic Review",
+          "registry": [
+            "American Economic Review"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 103,
+          "registry": "103",
+          "match": true
+        },
+        "issue": {
+          "reference": 5,
+          "registry": "5",
+          "match": true
+        },
+        "page": {
+          "reference": "1553-1597",
+          "registry": "1553-1597",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:02.938044+00:00",
+      "record_sha256": "8f599d4e801d4ee9292f2fac79660f300b60f1b0220bed5d7935ac57c01d583f",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "autor2020",
+      "doi": "10.1257/aer.20170011",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Importing Political Polarization? The Electoral Consequences of Rising Trade Exposure",
+          "registry": [
+            "Importing Political Polarization? The Electoral Consequences of Rising Trade Exposure"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "autor",
+          "registry": "autor",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2020
+          ],
+          "registry": [
+            2020,
+            2020,
+            2020
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "American Economic Review",
+          "registry": [
+            "American Economic Review"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 110,
+          "registry": "110",
+          "match": true
+        },
+        "issue": {
+          "reference": 10,
+          "registry": "10",
+          "match": true
+        },
+        "page": {
+          "reference": "3139-3183",
+          "registry": "3139-3183",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:03.578606+00:00",
+      "record_sha256": "16d1129a35b9b06cc3ac35e09fa8dbfb9bb5bb5ec50103da49be1013b51dc254",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "adhmdata2020",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:04.066536+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.3386/w22637",
+          "title": [
+            "Importing Political Polarization? The Electoral Consequences of Rising Trade Exposure"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.2139/ssrn.3730459",
+          "title": [
+            "Importing Political Polarization? The Electoral Consequences of Rising Trade Exposure"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1257/aer.20170011",
+          "title": [
+            "Importing Political Polarization? The Electoral Consequences of Rising Trade Exposure"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "margalit2011",
+      "doi": "10.1017/S000305541000050X",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Costly Jobs: Trade-Related Layoffs, Government Compensation, and Voting in U.S. Elections",
+          "registry": [
+            "Costly Jobs: Trade-related Layoffs, Government Compensation, and Voting in U.S. Elections"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "margalit",
+          "registry": "margalit",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2011
+          ],
+          "registry": [
+            2011,
+            2011,
+            2011,
+            2011
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "American Political Science Review",
+          "registry": [
+            "American Political Science Review"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 105,
+          "registry": "105",
+          "match": true
+        },
+        "issue": {
+          "reference": 1,
+          "registry": "1",
+          "match": true
+        },
+        "page": {
+          "reference": "166-188",
+          "registry": "166-188",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:04.679765+00:00",
+      "record_sha256": "784d888cbc3a85a68d1d16390992a97740eea4184835a27b2cb4ba2e284de99c",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "margalit2019",
+      "doi": "10.1257/jep.33.4.152",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Economic Insecurity and the Causes of Populism, Reconsidered",
+          "registry": [
+            "Economic Insecurity and the Causes of Populism, Reconsidered"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "margalit",
+          "registry": "margalit",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2019
+          ],
+          "registry": [
+            2019,
+            2019,
+            2019
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of Economic Perspectives",
+          "registry": [
+            "Journal of Economic Perspectives"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 33,
+          "registry": "33",
+          "match": true
+        },
+        "issue": {
+          "reference": 4,
+          "registry": "4",
+          "match": true
+        },
+        "page": {
+          "reference": "152-170",
+          "registry": "152-170",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:05.348379+00:00",
+      "record_sha256": "b51bea9dbc825003ebe2f1b77c67922b0a9d1a28d89493a7ac60f32427680a2f",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "colantone2018apsr",
+      "doi": "10.1017/S0003055417000685",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Global Competition and Brexit",
+          "registry": [
+            "Global Competition and Brexit"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "colantone",
+          "registry": "colantone",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2018
+          ],
+          "registry": [
+            2018,
+            2018,
+            2018,
+            2018
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "American Political Science Review",
+          "registry": [
+            "American Political Science Review"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 112,
+          "registry": "112",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "201-218",
+          "registry": "201-218",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:06.094461+00:00",
+      "record_sha256": "3006285ba97219abf833cf52c73afb5cb064edf1ac9d3ce67bc513638d3eb0d1",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "colantone2018ajps",
+      "doi": "10.1111/ajps.12358",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "The Trade Origins of Economic Nationalism: Import Competition and Voting Behavior in Western Europe",
+          "registry": [
+            "The Trade Origins of Economic Nationalism: Import Competition and Voting Behavior in Western Europe"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "colantone",
+          "registry": "colantone",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2018
+          ],
+          "registry": [
+            2018,
+            2018,
+            2018,
+            2018
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "American Journal of Political Science",
+          "registry": [
+            "American Journal of Political Science"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 62,
+          "registry": "62",
+          "match": true
+        },
+        "issue": {
+          "reference": 4,
+          "registry": "4",
+          "match": true
+        },
+        "page": {
+          "reference": "936-953",
+          "registry": "936-953",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:06.652970+00:00",
+      "record_sha256": "50aaccc90c271eb6da9e4e228031821340b1f409740ef6230f0070d6dfc359c1",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "che2022",
+      "doi": "10.1016/j.jinteco.2022.103652",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Did Trade Liberalization with China Influence US Elections?",
+          "registry": [
+            "Did trade liberalization with China influence US elections?"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "che",
+          "registry": "che",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2022
+          ],
+          "registry": [
+            2022,
+            2022,
+            2022
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of International Economics",
+          "registry": [
+            "Journal of International Economics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 139,
+          "registry": "139",
+          "match": true
+        },
+        "issue": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "page": {
+          "reference": "103652",
+          "registry": "103652",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:07.442540+00:00",
+      "record_sha256": "535fce189f414924ae869e27907d1e70ac6b45cb67f7a5543ccd1895b70d81de",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "choi2024",
+      "doi": "10.1257/aer.20220425",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Local Economic and Political Effects of Trade Deals: Evidence from NAFTA",
+          "registry": [
+            "Local Economic and Political Effects of Trade Deals: Evidence from NAFTA"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "choi",
+          "registry": "choi",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2024
+          ],
+          "registry": [
+            2024,
+            2024,
+            2024
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "American Economic Review",
+          "registry": [
+            "American Economic Review"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 114,
+          "registry": "114",
+          "match": true
+        },
+        "issue": {
+          "reference": 6,
+          "registry": "6",
+          "match": true
+        },
+        "page": {
+          "reference": "1540-1575",
+          "registry": "1540-1575",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:08.145939+00:00",
+      "record_sha256": "0a54c664810dda753856e56d35add2bde2518c50dda4b7885bb31fd592da7249",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "jensen2017",
+      "doi": "10.1017/S0020818317000194",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Winners and Losers in International Trade: The Effects on US Presidential Voting",
+          "registry": [
+            "Winners and Losers in International Trade: The Effects on US Presidential Voting"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "jensen",
+          "registry": "jensen",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2017
+          ],
+          "registry": [
+            2017,
+            2017,
+            2017,
+            2017
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "International Organization",
+          "registry": [
+            "International Organization"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 71,
+          "registry": "71",
+          "match": true
+        },
+        "issue": {
+          "reference": 3,
+          "registry": "3",
+          "match": true
+        },
+        "page": {
+          "reference": "423-457",
+          "registry": "423-457",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:08.880399+00:00",
+      "record_sha256": "0b74413dcf3c3149666bf6f47b9647c4d34be5f854e392b45f311fc5ce2f4130",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "baccini2021",
+      "doi": "10.1017/S0003055421000022",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Gone For Good: Deindustrialization, White Voter Backlash, and US Presidential Voting",
+          "registry": [
+            "Gone For Good: Deindustrialization, White Voter Backlash, and US Presidential Voting"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "baccini",
+          "registry": "baccini",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2021
+          ],
+          "registry": [
+            2021,
+            2021,
+            2021,
+            2021
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "American Political Science Review",
+          "registry": [
+            "American Political Science Review"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 115,
+          "registry": "115",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "550-567",
+          "registry": "550-567",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:09.587622+00:00",
+      "record_sha256": "6e1f3a606c385a78e05c661c68f5a80292d170b233b1edb06c3d069c481004f8",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "mutz2018",
+      "doi": "10.1073/pnas.1718155115",
+      "outcome": "advisory",
+      "compared_fields": {
+        "title": {
+          "reference": "Status Threat, Not Economic Hardship, Explains the 2016 Presidential Vote",
+          "registry": [
+            "Status threat, not economic hardship, explains the 2016 presidential vote"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "mutz",
+          "registry": "mutz",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2018
+          ],
+          "registry": [
+            2018,
+            2018,
+            2018,
+            2018
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Proceedings of the National Academy of Sciences",
+          "registry": [
+            "Proceedings of the National Academy of Sciences"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 115,
+          "registry": "115",
+          "match": true
+        },
+        "issue": {
+          "reference": 19,
+          "registry": "19",
+          "match": true
+        },
+        "page": {
+          "reference": "E4330-E4339",
+          "registry": null,
+          "match": false
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:10.328402+00:00",
+      "record_sha256": "95714f4d40a0fe432299e27766b3c042f1a2780dfeea0f23b4856738fc5e1bb3",
+      "suggestions": [],
+      "message": "different fields: page"
+    },
+    {
+      "id": "morgan2018",
+      "doi": "10.1177/2378023118788217",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Status Threat, Material Interests, and the 2016 Presidential Vote",
+          "registry": [
+            "Status Threat, Material Interests, and the 2016 Presidential Vote"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "morgan",
+          "registry": "morgan",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2018
+          ],
+          "registry": [
+            2018,
+            2018,
+            2018,
+            2018
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Socius: Sociological Research for a Dynamic World",
+          "registry": [
+            "Socius: Sociological Research for a Dynamic World"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 4,
+          "registry": "4",
+          "match": true
+        },
+        "issue": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "page": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:10.972237+00:00",
+      "record_sha256": "fc2f21f4c2d27d557ffcfb9a4684979443f36ef649b04a6a6ac28cdd5cae29b3",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "ruggie1982",
+      "doi": "10.1017/S0020818300018993",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "International Regimes, Transactions, and Change: Embedded Liberalism in the Postwar Economic Order",
+          "registry": [
+            "International regimes, transactions, and change: embedded liberalism in the postwar economic order"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "ruggie",
+          "registry": "ruggie",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1982
+          ],
+          "registry": [
+            1982,
+            1982,
+            1982,
+            2009
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "International Organization",
+          "registry": [
+            "International Organization"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 36,
+          "registry": "36",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "379-415",
+          "registry": "379-415",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:11.652925+00:00",
+      "record_sha256": "8330d97b11da48a19bf4b63935872ae02f17c72758b315d1abd78b7fe66bdb88",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "rodrik1998",
+      "doi": "10.1086/250038",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Why Do More Open Economies Have Bigger Governments?",
+          "registry": [
+            "Why do More Open Economies Have Bigger Governments?"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "rodrik",
+          "registry": "rodrik",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1998
+          ],
+          "registry": [
+            1998,
+            1998,
+            1998
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of Political Economy",
+          "registry": [
+            "Journal of Political Economy"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 106,
+          "registry": "106",
+          "match": true
+        },
+        "issue": {
+          "reference": 5,
+          "registry": "5",
+          "match": true
+        },
+        "page": {
+          "reference": "997-1032",
+          "registry": "997-1032",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:12.308979+00:00",
+      "record_sha256": "ed620f2654e0e4c854f166480c52341f816676aabe2cbd7877fcd9040f378778",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "swank2003",
+      "doi": "10.1093/soceco/1.2.215",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Globalization, the Welfare State and Right-Wing Populism in Western Europe",
+          "registry": [
+            "Globalization, the welfare state and right-wing populism in Western Europe"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "swank",
+          "registry": "swank",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2003
+          ],
+          "registry": [
+            2003,
+            2003,
+            2003
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Socio-Economic Review",
+          "registry": [
+            "Socio-Economic Review"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 1,
+          "registry": "1",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "215-245",
+          "registry": "215-245",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:12.921062+00:00",
+      "record_sha256": "029fc750140cd9b6425e3a64dc3cb8dfe578726144125ae78c7170ca3d31ec49",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "halikiopoulou2016",
+      "doi": "10.1111/jcms.12310",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Risks, Costs and Labour Markets: Explaining Cross-National Patterns of Far Right Party Success in European Parliament Elections",
+          "registry": [
+            "Risks, Costs and Labour Markets: Explaining Cross‐National Patterns of Far Right Party Success in European Parliament Elections"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "halikiopoulou",
+          "registry": "halikiopoulou",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2016
+          ],
+          "registry": [
+            2015,
+            2015,
+            2016,
+            2015
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "JCMS: Journal of Common Market Studies",
+          "registry": [
+            "JCMS: Journal of Common Market Studies"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 54,
+          "registry": "54",
+          "match": true
+        },
+        "issue": {
+          "reference": 3,
+          "registry": "3",
+          "match": true
+        },
+        "page": {
+          "reference": "636-655",
+          "registry": "636-655",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:13.681122+00:00",
+      "record_sha256": "ade2804d7bf1832201bc94588ba5559fe5771fe826cb82e8fd2330d6d19d0b43",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "vlandas2022",
+      "doi": "10.1080/01402382.2021.1886498",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Welfare State Policies and Far Right Party Support: Moderating ‘Insecurity Effects’ among Different Social Groups",
+          "registry": [
+            "Welfare state policies and far right party support: moderating ‘insecurity effects' among different social groups"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "vlandas",
+          "registry": "vlandas",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2022
+          ],
+          "registry": [
+            2021,
+            2021,
+            2022,
+            2021
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "West European Politics",
+          "registry": [
+            "West European Politics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 45,
+          "registry": "45",
+          "match": true
+        },
+        "issue": {
+          "reference": 1,
+          "registry": "1",
+          "match": true
+        },
+        "page": {
+          "reference": "24-49",
+          "registry": "24-49",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:14.238103+00:00",
+      "record_sha256": "644ed0e6622192e3763cc1f3321285d8776283957044d57e3d9eac5e74ee86a4",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "gingrich2019",
+      "doi": "10.1177/2053168019832745",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Did State Responses to Automation Matter for Voters?",
+          "registry": [
+            "Did State Responses to Automation Matter for Voters?"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "gingrich",
+          "registry": "gingrich",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2019
+          ],
+          "registry": [
+            2019,
+            2019,
+            2019,
+            2019
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Research & Politics",
+          "registry": [
+            "Research &amp; Politics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 6,
+          "registry": "6",
+          "match": true
+        },
+        "issue": {
+          "reference": 1,
+          "registry": "1",
+          "match": true
+        },
+        "page": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:14.809242+00:00",
+      "record_sha256": "9469b83a6e86f2beb4a5aa06cd21574e90272179cc473d7542387a9bbbf83c0e",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "milner2021",
+      "doi": "10.1177/0010414021997175",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Voting for Populism in Europe: Globalization, Technological Change, and the Extreme Right",
+          "registry": [
+            "Voting for Populism in Europe: Globalization, Technological Change, and the Extreme Right"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "milner",
+          "registry": "milner",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2021
+          ],
+          "registry": [
+            2021,
+            2021,
+            2021,
+            2021
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Comparative Political Studies",
+          "registry": [
+            "Comparative Political Studies"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 54,
+          "registry": "54",
+          "match": true
+        },
+        "issue": {
+          "reference": 13,
+          "registry": "13",
+          "match": true
+        },
+        "page": {
+          "reference": "2286-2320",
+          "registry": "2286-2320",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:15.495084+00:00",
+      "record_sha256": "723fe6985fed75d8e6e5534e01e08b68eab24c83a59c4315da6b4afb286e28f2",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "bisbee2020",
+      "doi": "10.1080/13501763.2019.1678662",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Decompensating Domestically: The Political Economy of Anti-Globalism",
+          "registry": [
+            "Decompensating domestically: the political economy of anti-globalism"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "bisbee",
+          "registry": "bisbee",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2020
+          ],
+          "registry": [
+            2019,
+            2019,
+            2020,
+            2019
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of European Public Policy",
+          "registry": [
+            "Journal of European Public Policy"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 27,
+          "registry": "27",
+          "match": true
+        },
+        "issue": {
+          "reference": 7,
+          "registry": "7",
+          "match": true
+        },
+        "page": {
+          "reference": "1090-1102",
+          "registry": "1090-1102",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:16.053156+00:00",
+      "record_sha256": "65491104c49d769fd7cc58b052c2ef6a0520f227afca45a64c1d35168cf6a0f3",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "fetzer2019",
+      "doi": "10.1257/aer.20181164",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Did Austerity Cause Brexit?",
+          "registry": [
+            "Did Austerity Cause Brexit?"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "fetzer",
+          "registry": "fetzer",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2019
+          ],
+          "registry": [
+            2019,
+            2019,
+            2019
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "American Economic Review",
+          "registry": [
+            "American Economic Review"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 109,
+          "registry": "109",
+          "match": true
+        },
+        "issue": {
+          "reference": 11,
+          "registry": "11",
+          "match": true
+        },
+        "page": {
+          "reference": "3849-3886",
+          "registry": "3849-3886",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:16.617056+00:00",
+      "record_sha256": "b5860b7e3a977f5f972f3e51fea37567765108242c636c4a16b1f626bb1c2d03",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "kim2021psrm",
+      "doi": "10.1017/psrm.2020.38",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "How Responsive Is Trade Adjustment Assistance?",
+          "registry": [
+            "How responsive is Trade Adjustment Assistance?"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "kim",
+          "registry": "kim",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2021
+          ],
+          "registry": [
+            2020,
+            2020,
+            2021,
+            2020
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Political Science Research and Methods",
+          "registry": [
+            "Political Science Research and Methods"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 9,
+          "registry": "9",
+          "match": true
+        },
+        "issue": {
+          "reference": 4,
+          "registry": "4",
+          "match": true
+        },
+        "page": {
+          "reference": "889-898",
+          "registry": "889-898",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:17.156235+00:00",
+      "record_sha256": "864350ffc9d0c58916d60c75979e2b6a801e3698a636dd9e3bf0e2f9251faebf",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "kim2021cps",
+      "doi": "10.1177/0010414020957687",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "The Politics of Trade Adjustment Versus Trade Protection",
+          "registry": [
+            "The Politics of Trade Adjustment Versus Trade Protection"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "kim",
+          "registry": "kim",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2021
+          ],
+          "registry": [
+            2020,
+            2020,
+            2021,
+            2020
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Comparative Political Studies",
+          "registry": [
+            "Comparative Political Studies"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 54,
+          "registry": "54",
+          "match": true
+        },
+        "issue": {
+          "reference": 13,
+          "registry": "13",
+          "match": true
+        },
+        "page": {
+          "reference": "2354-2381",
+          "registry": "2354-2381",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:17.787332+00:00",
+      "record_sha256": "5abc63ee8e184c168abdfe6daeecd9f766f4ee74379aaa4ae971d5070ed18c0b",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "balcazar2026",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:18.419179+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.2139/ssrn.5389077",
+          "title": [
+            "Bureaucratic Performance and Support for International Integration: Evidence from Trade Adjustment Assistance"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.2139/ssrn.3155386",
+          "title": [
+            "Can Displaced Labor Be Retrained? Evidence from Quasi-Random Assignment to Trade Adjustment Assistance"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.3386/w3845",
+          "title": [
+            "Trade Adjustment Assistance and Pareto Gains From Trade"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "pierson1993",
+      "doi": "10.2307/2950710",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "When Effect Becomes Cause: Policy Feedback and Political Change",
+          "registry": [
+            "When Effect Becomes Cause: Policy Feedback and Political Change"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "pierson",
+          "registry": "pierson",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1993
+          ],
+          "registry": [
+            1993,
+            1993,
+            1993,
+            2011
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "World Politics",
+          "registry": [
+            "World Politics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 45,
+          "registry": "45",
+          "match": true
+        },
+        "issue": {
+          "reference": 4,
+          "registry": "4",
+          "match": true
+        },
+        "page": {
+          "reference": "595-628",
+          "registry": "595-628",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:19.175473+00:00",
+      "record_sha256": "13abea808e9ef1d25d6ce37deb55db416161f5f090ffb2db70e265eae7edc4ed",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "soss1999",
+      "doi": "10.2307/2585401",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Lessons of Welfare: Policy Design, Political Learning, and Political Action",
+          "registry": [
+            "Lessons of Welfare: Policy Design, Political Learning, and Political Action"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "soss",
+          "registry": "soss",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1999
+          ],
+          "registry": [
+            1999,
+            1999,
+            1999,
+            2014
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "American Political Science Review",
+          "registry": [
+            "American Political Science Review"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 93,
+          "registry": "93",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "363-380",
+          "registry": "363-380",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:19.740691+00:00",
+      "record_sha256": "a881a554f202993f688eb91341325cf5b75ed07ed48adf833ad87849bf1b5dae",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "mettler2004",
+      "doi": "10.1017/S1537592704000623",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "The Consequences of Public Policy for Democratic Citizenship: Bridging Policy Studies and Mass Politics",
+          "registry": [
+            "The Consequences of Public Policy for Democratic Citizenship: Bridging Policy Studies and Mass Politics"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "mettler",
+          "registry": "mettler",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2004
+          ],
+          "registry": [
+            2004,
+            2004,
+            2004,
+            2004
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Perspectives on Politics",
+          "registry": [
+            "Perspectives on Politics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "issue": {
+          "reference": 1,
+          "registry": "1",
+          "match": true
+        },
+        "page": {
+          "reference": "55-73",
+          "registry": "55-73",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:20.709979+00:00",
+      "record_sha256": "52118c7e984bd9c0741f22b96076ebc79360d036ef75cec48f1f3aeb7d5c3505",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "campbell2012",
+      "doi": "10.1146/annurev-polisci-012610-135202",
+      "outcome": "advisory",
+      "compared_fields": {
+        "title": {
+          "reference": "Policy Makes Mass Politics",
+          "registry": [
+            "Policy Makes Mass Politics"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "campbell",
+          "registry": "campbell",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2012
+          ],
+          "registry": [
+            2012,
+            2012,
+            2012
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Annual Review of Political Science",
+          "registry": [
+            "Annual Review of Political Science"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 15,
+          "registry": "15",
+          "match": true
+        },
+        "issue": {
+          "reference": null,
+          "registry": "1",
+          "match": false
+        },
+        "page": {
+          "reference": "333-351",
+          "registry": "333-351",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:21.396751+00:00",
+      "record_sha256": "34247aa69e9bd5953c145dddf525e0687b286e5b277885d9e2d76729a53f6f56",
+      "suggestions": [],
+      "message": "different fields: issue"
+    },
+    {
+      "id": "soss2001",
+      "doi": "10.2307/2669347",
+      "outcome": "advisory",
+      "compared_fields": {
+        "title": {
+          "reference": "Setting the Terms of Relief: Explaining State Policy Choices in the Devolution Revolution",
+          "registry": [
+            "Setting the Terms of Relief: Explaining State Policy Choices in the Devolution Revolution"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "soss",
+          "registry": "soss",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2001
+          ],
+          "registry": [
+            2001,
+            2001,
+            2001
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "American Journal of Political Science",
+          "registry": [
+            "American Journal of Political Science"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 45,
+          "registry": "45",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "378-395",
+          "registry": "378",
+          "match": false
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:21.959776+00:00",
+      "record_sha256": "fd0520a865ca24b012d443686ad1d07f7d0d3a2037ab10b8b06050cf34498c6d",
+      "suggestions": [],
+      "message": "different fields: page"
+    },
+    {
+      "id": "corman2017",
+      "doi": "10.1111/ecin.12433",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Effects of Welfare Reform on Women's Voting Participation",
+          "registry": [
+            "EFFECTS OF WELFARE REFORM ON WOMEN'S VOTING PARTICIPATION"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "corman",
+          "registry": "corman",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2017
+          ],
+          "registry": [
+            2017,
+            2017,
+            2017,
+            2017
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Economic Inquiry",
+          "registry": [
+            "Economic Inquiry"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 55,
+          "registry": "55",
+          "match": true
+        },
+        "issue": {
+          "reference": 3,
+          "registry": "3",
+          "match": true
+        },
+        "page": {
+          "reference": "1430-1451",
+          "registry": "1430-1451",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:22.537851+00:00",
+      "record_sha256": "65056da23099b55331aa21a1cf56805fb4f280deacbd50bb91a3a35e9de4bd07",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "blank2002",
+      "doi": "10.1257/002205102762203576",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Evaluating Welfare Reform in the United States",
+          "registry": [
+            "Evaluating Welfare Reform in the United States"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "blank",
+          "registry": "blank",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2002
+          ],
+          "registry": [
+            2002,
+            2002,
+            2002
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of Economic Literature",
+          "registry": [
+            "Journal of Economic Literature"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 40,
+          "registry": "40",
+          "match": true
+        },
+        "issue": {
+          "reference": 4,
+          "registry": "4",
+          "match": true
+        },
+        "page": {
+          "reference": "1105-1166",
+          "registry": "1105-1166",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:23.520821+00:00",
+      "record_sha256": "d05086e992a6ae1949764396b100b2679595cc34ab1dfe1d1cb9928e74496294",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "moffitt2015",
+      "doi": "10.1007/s13524-015-0395-0",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "The Deserving Poor, the Family, and the U.S. Welfare System",
+          "registry": [
+            "The Deserving Poor, the Family, and the U.S. Welfare System"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "moffitt",
+          "registry": "moffitt",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2015
+          ],
+          "registry": [
+            2015,
+            2015,
+            2015,
+            2015
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Demography",
+          "registry": [
+            "Demography"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 52,
+          "registry": "52",
+          "match": true
+        },
+        "issue": {
+          "reference": 3,
+          "registry": "3",
+          "match": true
+        },
+        "page": {
+          "reference": "729-749",
+          "registry": "729-749",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:24.081744+00:00",
+      "record_sha256": "495ddf607429681a2efdf57eca29f708763cc38484bc4ef788e6fcb3f1f1aa60",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "parolin2021",
+      "doi": "10.1215/00703370-9157471",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Decomposing the Decline of Cash Assistance in the United States, 1993 to 2016",
+          "registry": [
+            "Decomposing the Decline of Cash Assistance in the United States, 1993 to 2016"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "parolin",
+          "registry": "parolin",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2021
+          ],
+          "registry": [
+            2021,
+            2021,
+            2021,
+            2021
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Demography",
+          "registry": [
+            "Demography"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 58,
+          "registry": "58",
+          "match": true
+        },
+        "issue": {
+          "reference": 3,
+          "registry": "3",
+          "match": true
+        },
+        "page": {
+          "reference": "1119-1141",
+          "registry": "1119-1141",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:24.843272+00:00",
+      "record_sha256": "2d48403901aa7937274482554c5ae20b58103e350db9924f6aaffb591476a03d",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "bitler2016",
+      "doi": "10.1086/683096",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "The More Things Change, the More They Stay the Same? The Safety Net and Poverty in the Great Recession",
+          "registry": [
+            "The More Things Change, the More They Stay the Same? The Safety Net and Poverty in the Great Recession"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "bitler",
+          "registry": "bitler",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2016
+          ],
+          "registry": [
+            2016,
+            2016,
+            2016
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of Labor Economics",
+          "registry": [
+            "Journal of Labor Economics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 34,
+          "registry": "34",
+          "match": true
+        },
+        "issue": {
+          "reference": "S1",
+          "registry": "S1",
+          "match": true
+        },
+        "page": {
+          "reference": "S403-S444",
+          "registry": "S403-S444",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:25.406153+00:00",
+      "record_sha256": "bb2e0c2c54566f6d8a55917369ae4d48ca66b8d78615ff9c28176aa504f207b8",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "crs2019",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:25.894931+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.1007/springerreference_308236",
+          "title": [
+            "Temporary Assistance for Needy Families (TANF)"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1093/oxfordhb/9780199838509.013.018",
+          "title": [
+            "Temporary Assistance for Needy Families"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.5040/9798216026259.0036",
+          "title": [
+            "TANF—Temporary Assistance for Needy Families"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "wrd2017",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:26.544860+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.1526/003601108786471549",
+          "title": [
+            "State Welfare Rules, TANF Exits, and Geographic Context: Does Place Matter?*"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1093/oso/9780195183122.003.0010",
+          "title": [
+            "TANF Reauthorization"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1086/650532",
+          "title": [
+            "State TANF Policies and Employment Outcomes among Welfare Leavers"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "cbpp2025",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:27.085625+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.4135/9781483345727.n103",
+          "title": [
+            "Center on Budget and Policy Priorities"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1111/j.1467-8462.1978.tb00762.x",
+          "title": [
+            "The Budget and the Economy 1978–79"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1515/9780773563872-002",
+          "title": [
+            "Canadian Poverty Policy and State Theory"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "prwora1996",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:28.881515+00:00",
+      "record_sha256": null,
+      "suggestions": [],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "hr4605",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:29.374698+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.5962/bhl.title.16919",
+          "title": [
+            "North American Wetlands Conservation Act reauthorization : hearing before the Subcommittee on Environment and Natural Resources of the Committee on Merchant Marine and Fisheries, House of Representatives, One Hundred Third Congress, first session, on H.R. 4308 ... June 8, 1994"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.5962/bhl.title.16802",
+          "title": [
+            "Long-term trade strategy and export policies : hearing before the Subcommittee on Foreign Agriculture and Hunger of the Committee on Agriculture, House of Representatives, One Hundred Third Congress, second session, June 23, 1994"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.5962/bhl.title.16827",
+          "title": [
+            "Plant Variety Protection Act Amendments of 1993 : hearing before the Subcommittee on Department Operations and Nutrition of the Committee on Agriculture, House of Representatives, One Hundred Third Congress, second session, on H.R. 2927, May 24, 1994"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "s1117",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:29.886179+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.1016/s0737-0806(07)80552-1",
+          "title": [
+            "Farm and ranch protection act introduced in senate"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1097/00006416-199511000-00014",
+          "title": [
+            "Highway safety and the 104th Congress"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1097/00006247-199505000-00020",
+          "title": [
+            "Early Actions of the 104th Congress*"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "clinton1995veto",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:30.378797+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.1377/forefront.20250514.168676",
+          "title": [
+            "The House Republican Budget Reconciliation Legislation: Unpacking The Coverage Provisions"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1377/forefront.20250522.286850",
+          "title": [
+            "House Republicans Pass Budget Reconciliation Legislation: What's New In The Coverage Provisions?"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1377/forefront.20250522.933917",
+          "title": [
+            "The House Republican Budget Reconciliation Legislation: Unpacking The ICHRA And HSA Changes"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "clinton1996veto",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:30.900419+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.1057/9781137268600.0009",
+          "title": [
+            "1996"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1021/cen-v074n015.p008a",
+          "title": [
+            "Clinton plan to speed cancer drug approval"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1037/e410402005-004",
+          "title": [
+            "Council Representatives Message"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "clinton1996signing",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:32.290200+00:00",
+      "record_sha256": null,
+      "suggestions": [],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "houserc383",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:32.789211+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.1093/ww/9780199540884.013.u212144",
+          "title": [
+            "Kane, Edward William, (2 Aug. 1858–18 July 1934), JP; Clerk of Parliaments and of Legislative Council, New Zealand, since 1929; previously Clerk, House of Representatives"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1093/ww/9780199540884.013.u174681",
+          "title": [
+            "Parkes, Norman James, (29 July 1912–29 Jan. 1991), Clerk of the Australian House of Representatives, 1971–76, retired"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.31390/gradschool_disstheses.6801",
+          "title": [
+            "A Roll Call Analysis of Family Policy Legislation in the United States House of Representatives: 1979-1994."
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "senatevote262",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:33.302053+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.1080/07343469609507831",
+          "title": [
+            "Vote Visibility, Roll Call Participation, and Strategic Absenteeism in the U.S. House"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1038/384504c0",
+          "title": [
+            "Australian universities brace for higher fees after Senate vote"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.2139/ssrn.5700523",
+          "title": [
+            "Roll Call Vote: Partisan Loyalty or Economic Interest?"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "medsl2018",
+      "doi": "10.7910/DVN/VOQCHQ",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "County Presidential Election Returns 2000–2016",
+          "registry": [
+            "County Presidential Election Returns 2000-2024"
+          ],
+          "registry_subtitle": [],
+          "similarity": 0.9565217391304348,
+          "match": true
+        },
+        "author": {
+          "reference": "mit election data and science lab",
+          "registry": "mit election data and science lab",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2018
+          ],
+          "registry": [
+            2018
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "volume": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "issue": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "page": {
+          "reference": null,
+          "registry": "",
+          "match": true
+        }
+      },
+      "registry": "DataCite",
+      "fetched_at": "2026-11-18T19:48:33.821636+00:00",
+      "record_sha256": "3b736aed6040c689c6ca14e6dd9489770f0468cec6082b529fa687951b704c84",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "algara2021data",
+      "doi": "10.7910/DVN/DGUMFI",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Replication Data for: Partisanship & Nationalization in American Elections: Evidence from Presidential, Senatorial, & Gubernatorial Elections in the U.S. Counties, 1872–2020",
+          "registry": [
+            "Replication Data for: Partisanship &amp; Nationalization in American Elections: Evidence from Presidential, Senatorial, &amp; Gubernatorial Elections in the U.S. Counties, 1872-2020"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "algara",
+          "registry": "algara",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2021
+          ],
+          "registry": [
+            2021
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "volume": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "issue": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "page": {
+          "reference": null,
+          "registry": "",
+          "match": true
+        }
+      },
+      "registry": "DataCite",
+      "fetched_at": "2026-11-18T19:48:34.316932+00:00",
+      "record_sha256": "782b5fb9ab121a9eafb8119e8dee1ba12ea274a0b9b633199ee8ce31a4e3b154",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "amlani2021",
+      "doi": "10.1016/j.electstud.2021.102387",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Partisanship & Nationalization in American Elections: Evidence from Presidential, Senatorial, & Gubernatorial Elections in the U.S. Counties, 1872–2020",
+          "registry": [
+            "Partisanship &amp; nationalization in American elections: Evidence from presidential, senatorial, &amp; gubernatorial elections in the U.S. counties, 1872–2020"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "amlani",
+          "registry": "amlani",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2021
+          ],
+          "registry": [
+            2021,
+            2021,
+            2021
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Electoral Studies",
+          "registry": [
+            "Electoral Studies"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 73,
+          "registry": "73",
+          "match": true
+        },
+        "issue": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "page": {
+          "reference": "102387",
+          "registry": "102387",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:35.064382+00:00",
+      "record_sha256": "ec148bbefe53c126213335402738c0268bbcf954042c86b4b8f866e20f7d9cdd",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "fec2017",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:35.627194+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.22459/dd.04.2018.07",
+          "title": [
+            "The House of Representatives Results"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.64628/aa.dqd9cjwf3",
+          "title": [
+            "US Election Day predictions: President, Governors, Senate and House of Representatives"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.22459/l.2026.17",
+          "title": [
+            "The House of Representatives results"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "cbp2000",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:36.180977+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.3886/icpsr03936",
+          "title": [
+            "County Business Patterns, 2000 [United States]: U.S. Summary, State, and County Data"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.3886/icpsr03936.v1",
+          "title": [
+            "County Business Patterns, 2000 [United States]: U.S. Summary, State, and County Data"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.3886/icpsr04407.v1",
+          "title": [
+            "County Business Patterns, 2002 [United States]: U.S. Summary, State, and County Data"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "blscpi",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T19:48:36.656701+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.1515/9781846159169-014",
+          "title": [
+            "Consumer price index (all items) for urban families 1973–2007"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.3886/icpsr08166",
+          "title": [
+            "Consumer Price Index, 1913-1992"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.3886/icpsr08166.v3",
+          "title": [
+            "Consumer Price Index, 1913-1992"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "cameron2008",
+      "doi": "10.1162/rest.90.3.414",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Bootstrap-Based Improvements for Inference with Clustered Errors",
+          "registry": [
+            "Bootstrap-Based Improvements for Inference with Clustered Errors"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "cameron",
+          "registry": "cameron",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2008
+          ],
+          "registry": [
+            2008,
+            2008,
+            2008
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Review of Economics and Statistics",
+          "registry": [
+            "Review of Economics and Statistics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 90,
+          "registry": "90",
+          "match": true
+        },
+        "issue": {
+          "reference": 3,
+          "registry": "3",
+          "match": true
+        },
+        "page": {
+          "reference": "414-427",
+          "registry": "414-427",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:37.225995+00:00",
+      "record_sha256": "a42becd8e8b1fadcc1fa1ab54718abfb58ddd732c4c2bd7f5786c2c85ab7322e",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "cameron2011",
+      "doi": "10.1198/jbes.2010.07136",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Robust Inference With Multiway Clustering",
+          "registry": [
+            "Robust Inference With Multiway Clustering"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "cameron",
+          "registry": "cameron",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2011
+          ],
+          "registry": [
+            2011,
+            2011,
+            2011
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of Business & Economic Statistics",
+          "registry": [
+            "Journal of Business &amp; Economic Statistics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 29,
+          "registry": "29",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "238-249",
+          "registry": "238-249",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:37.851379+00:00",
+      "record_sha256": "7b131fd89bcbc604280ec1515c5872b20c7b26b0d7e5961a57b8b252383def44",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "sanderson2016",
+      "doi": "10.1016/j.jeconom.2015.06.004",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "A Weak Instrument F-Test in Linear IV Models with Multiple Endogenous Variables",
+          "registry": [
+            "A weak instrument\n                    <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" altimg=\"si3.gif\" display=\"inline\" overflow=\"scroll\">\n                      <mml:mi>F</mml:mi>\n                    </mml:math>\n                    -test in linear IV models with multiple endogenous variables"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "sanderson",
+          "registry": "sanderson",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2016
+          ],
+          "registry": [
+            2016,
+            2016,
+            2016
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of Econometrics",
+          "registry": [
+            "Journal of Econometrics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 190,
+          "registry": "190",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "212-221",
+          "registry": "212-221",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:38.408476+00:00",
+      "record_sha256": "cbb777db48f03cfebb1daed2909fc443b023436ae8b7724054c403eacdf8f58a",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "adao2019",
+      "doi": "10.1093/qje/qjz025",
+      "outcome": "advisory",
+      "compared_fields": {
+        "title": {
+          "reference": "Shift-Share Designs: Theory and Inference",
+          "registry": [
+            "Shift-Share Designs: Theory and Inference*"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "adao",
+          "registry": "adao",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2019
+          ],
+          "registry": [
+            2019,
+            2019,
+            2019,
+            2019
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Quarterly Journal of Economics",
+          "registry": [
+            "The Quarterly Journal of Economics"
+          ],
+          "match": false
+        },
+        "volume": {
+          "reference": 134,
+          "registry": "134",
+          "match": true
+        },
+        "issue": {
+          "reference": 4,
+          "registry": "4",
+          "match": true
+        },
+        "page": {
+          "reference": "1949-2010",
+          "registry": "1949-2010",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:39.086393+00:00",
+      "record_sha256": "ea1e0c104e00f0819182c3923b6d876ce23dea37761f7ffd9ada53288188847c",
+      "suggestions": [],
+      "message": "different fields: container-title"
+    },
+    {
+      "id": "borusyak2022",
+      "doi": "10.1093/restud/rdab030",
+      "outcome": "advisory",
+      "compared_fields": {
+        "title": {
+          "reference": "Quasi-Experimental Shift-Share Research Designs",
+          "registry": [
+            "Quasi-Experimental Shift-Share Research Designs"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "borusyak",
+          "registry": "borusyak",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2022
+          ],
+          "registry": [
+            2021,
+            2021,
+            2022,
+            2021
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Review of Economic Studies",
+          "registry": [
+            "The Review of Economic Studies"
+          ],
+          "match": false
+        },
+        "volume": {
+          "reference": 89,
+          "registry": "89",
+          "match": true
+        },
+        "issue": {
+          "reference": 1,
+          "registry": "1",
+          "match": true
+        },
+        "page": {
+          "reference": "181-213",
+          "registry": "181-213",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:40.024189+00:00",
+      "record_sha256": "176b348251c945142c836502133e5d452e11d199000785bf85c372de81ded3f6",
+      "suggestions": [],
+      "message": "different fields: container-title"
+    },
+    {
+      "id": "nizalova2016",
+      "doi": "10.1515/jem-2013-0012",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Exogenous Treatment and Endogenous Factors: Vanishing of Omitted Variable Bias on the Interaction Term",
+          "registry": [
+            "Exogenous Treatment and Endogenous Factors: Vanishing of Omitted Variable Bias on the Interaction Term"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "nizalova",
+          "registry": "nizalova",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2016
+          ],
+          "registry": [
+            2014,
+            2014,
+            2016,
+            2014
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of Econometric Methods",
+          "registry": [
+            "Journal of Econometric Methods"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 5,
+          "registry": "5",
+          "match": true
+        },
+        "issue": {
+          "reference": 1,
+          "registry": "1",
+          "match": true
+        },
+        "page": {
+          "reference": "71-77",
+          "registry": "71-77",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:40.593186+00:00",
+      "record_sha256": "ec56aca59d2da0887429f55b8f7f281d584e08998c8717c00e21df62be1b22f5",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "bun2019",
+      "doi": "10.1080/07474938.2018.1427486",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "OLS and IV Estimation of Regression Models Including Endogenous Interaction Terms",
+          "registry": [
+            "OLS and IV estimation of regression models including endogenous interaction terms"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "bun",
+          "registry": "bun",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2019
+          ],
+          "registry": [
+            2018,
+            2018,
+            2019,
+            2018
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Econometric Reviews",
+          "registry": [
+            "Econometric Reviews"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 38,
+          "registry": "38",
+          "match": true
+        },
+        "issue": {
+          "reference": 7,
+          "registry": "7",
+          "match": true
+        },
+        "page": {
+          "reference": "814-827",
+          "registry": "814-827",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T19:48:41.160247+00:00",
+      "record_sha256": "13cc7ca7154fc28b0839ce5adf519534ee29fe57fddb6a0ed571b88c4bbc9106",
+      "suggestions": [],
+      "message": "identity matches"
+    }
+  ]
+}

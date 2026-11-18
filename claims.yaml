@@ -1,0 +1,2836 @@
+schema: 1
+coverage: pending
+reviewed_manuscript_sha256: null
+claims:
+- id: abstract-tpr-1996
+  kind: computation
+  passage: After the 1996 welfare law, families receiving cash assistance per 100 poor families with children fell in every contiguous state, from an average of 68 in 1995–96 to 20 in 2015–16, unevenly.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/tpr_1996_state_mean
+    reported: '68'
+    scale: 1
+    decimals: 0
+    units: families aided per 100 poor families with children, unweighted mean of 48 states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: abstract-tpr-2016
+  kind: computation
+  passage: After the 1996 welfare law, families receiving cash assistance per 100 poor families with children fell in every contiguous state, from an average of 68 in 1995–96 to 20 in 2015–16, unevenly.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/tpr_2016_state_mean
+    reported: '20'
+    scale: 1
+    decimals: 0
+    units: families aided per 100 poor families with children, unweighted mean of 48 states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: abstract-ratio-definition
+  kind: definition
+  passage: After the 1996 welfare law, families receiving cash assistance per 100 poor families with children fell in every contiguous state, from an average of 68 in 1995–96 to 20 in 2015–16, unevenly.
+  rationale: The AFDC/TANF-to-poverty ratio is defined per 100 poor families with children (CBPP spreadsheet, sheet '50-State Ratios 1979-2023'); 'every contiguous state' refers to the 48 states in the sample (/descriptives/states_with_erosion_positive = 48).
+- id: abstract-n
+  kind: computation
+  passage: 'Across 3,106 counties the interaction is $-0.61$ points per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33: the sign opposes the hypothesis and the interval includes zero.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /sample/sample_counties
+    reported: 3,106
+    scale: 1
+    decimals: 0
+    units: counties
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: abstract-gamma-sd
+  kind: computation
+  passage: 'Across 3,106 counties the interaction is $-0.61$ points per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33: the sign opposes the hypothesis and the interval includes zero.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma_per_state_sd
+    reported: −0.61
+    scale: 1
+    decimals: 2
+    units: points of Republican two-party share per point of import penetration per state SD of erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: abstract-gamma-sd-lo
+  kind: computation
+  passage: 'Across 3,106 counties the interaction is $-0.61$ points per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33: the sign opposes the hypothesis and the interval includes zero.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma_per_sd_ci95/0
+    reported: −1.56
+    scale: 1
+    decimals: 2
+    units: same units, lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: abstract-gamma-sd-hi
+  kind: computation
+  passage: 'Across 3,106 counties the interaction is $-0.61$ points per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33: the sign opposes the hypothesis and the interval includes zero.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma_per_sd_ci95/1
+    reported: '0.33'
+    scale: 1
+    decimals: 2
+    units: same units, upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: abstract-interval-level
+  kind: definition
+  passage: 'Across 3,106 counties the interaction is $-0.61$ points per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33: the sign opposes the hypothesis and the interval includes zero.'
+  rationale: 'All reported intervals are 95% confidence intervals (pre-registered: ''the two-sided 95% interval for gamma'').'
+- id: abstract-quarter
+  kind: interpretation
+  passage: The interval excludes amplification larger than about a quarter of the average shock effect per standard deviation.
+  rationale: Upper bound of the primary interaction per SD, 0.328 (/primary/gamma_per_sd_ci95/1), divided by the shock effect at mean erosion, 1.298 (/primary/beta_at_mean/coef), is 0.25.
+- id: abstract-bridge
+  kind: interpretation
+  passage: Translated into 2016 votes, it includes Democratic gains larger than the Republican margin in Michigan, Wisconsin and Pennsylvania and much larger losses, so county data cannot settle whether cash-assistance erosion changed those states.
+  rationale: For all three states and both counterfactuals, the upper end of the margin-change interval exceeds the FEC margin and the lower end is a loss several times larger (/bridge/counterfactuals/*/states/*/ci_includes_flip = true).
+- id: abstract-limit
+  kind: interpretation
+  passage: 'The main limit is the moderator: erosion mostly records how many families states aided in 1996, and the program reached few of the workers the shock displaced.'
+  rationale: Erosion correlates 0.81 with the 1995-96 ratio (/descriptives/corr_erosion_tpr1996_states); TANF serves families with children (PRWORA sec. 408(a)(1)); ADH (2013, pp. 2148-2149) find small income-assistance responses to the shock.
+- id: intro-tpr-1996
+  kind: computation
+  passage: In 1995–96 the average contiguous state aided about 68 families with Aid to Families with Dependent Children (AFDC) for every 100 poor families with children.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/tpr_1996_state_mean
+    reported: '68'
+    scale: 1
+    decimals: 0
+    units: families aided per 100 poor families with children, unweighted mean of 48 states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: intro-ratio-definition
+  kind: definition
+  passage: In 1995–96 the average contiguous state aided about 68 families with Aid to Families with Dependent Children (AFDC) for every 100 poor families with children.
+  rationale: The CBPP ratio is expressed per 100 poor families with children; the 1995-96 value is the two-year average labelled 95-96 in the CBPP spreadsheet.
+- id: intro-tpr-2016
+  kind: computation
+  passage: In 2015–16, under Temporary Assistance for Needy Families (TANF), the average was 20, and the ratio had fallen in all 48 states.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/tpr_2016_state_mean
+    reported: '20'
+    scale: 1
+    decimals: 0
+    units: families aided per 100 poor families with children, unweighted mean of 48 states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: intro-all-states-fell
+  kind: computation
+  passage: In 2015–16, under Temporary Assistance for Needy Families (TANF), the average was 20, and the ratio had fallen in all 48 states.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/states_with_erosion_positive
+    reported: '48'
+    scale: 1
+    decimals: 0
+    units: states with positive erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: crs-participation
+  kind: source
+  passage: The Congressional Research Service estimates that 81.6% of AFDC-eligible individuals received benefits in 1995 and 26.6% of TANF-eligible individuals in 2016, and that cash assistance closed 27.3% of the aggregate poverty gap of families with children in 1995 against 5.7% in 2016 [@crs2019].
+  evidence:
+    citation_id: crs2019
+    locator: Section 'The TANF Caseload Decline and Child Poverty', text preceding Figure 7
+    depth: fulltext
+    verified: false
+    verification_note: Read the full report text (everycrsreport.com HTML mirror, retrieved 2026-11-18). The participation figures are TRIM3 microsimulation estimates.
+    quote: In 1995, 81.6% of estimated AFDC-eligible individuals received benefits. In 2016, 26.6% of people estimated to be eligible for TANF cash assistance received benefits.
+- id: crs-poverty-gap
+  kind: source
+  passage: The Congressional Research Service estimates that 81.6% of AFDC-eligible individuals received benefits in 1995 and 26.6% of TANF-eligible individuals in 2016, and that cash assistance closed 27.3% of the aggregate poverty gap of families with children in 1995 against 5.7% in 2016 [@crs2019].
+  evidence:
+    citation_id: crs2019
+    locator: Table 4 and the paragraph preceding it
+    depth: fulltext
+    verified: false
+    verification_note: 'Read Table 4 (pre- and post-assistance poverty gaps for families with children, constant 2016 dollars): percentage reduction 27.3% in 1995 and 5.7% in 2016. Static accounting from TRIM3, not a causal estimate.'
+    quote: In 1995, AFDC reduced the poverty gap by over $24 billion (more than 27% of the pre-assistance poverty gap of approximately $90 billion). ... In 2016, TANF cash assistance reduced the poverty gap by approximately $4 billion, or 5.7%.
+- id: adh-transfers
+  kind: source
+  passage: Over the same decades, commuting zones exposed to Chinese import competition lost manufacturing employment and drew more heavily on government transfers [@autor2013], and their counties shifted toward Republican presidential candidates [@autor2020].
+  evidence:
+    citation_id: autor2013
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Read the abstract and the full text (author-hosted PDF). The abstract states that rising imports cause higher unemployment and lower participation and that transfer payments rise in more trade-exposed labor markets.
+    quote: Transfer benefits payments for unemployment, disability, retirement, and healthcare also rise sharply in more trade-exposed labor markets.
+- id: adhm-rightward
+  kind: source
+  passage: Over the same decades, commuting zones exposed to Chinese import competition lost manufacturing employment and drew more heavily on government transfers [@autor2013], and their counties shifted toward Republican presidential candidates [@autor2020].
+  evidence:
+    citation_id: autor2020
+    locator: Abstract; Section V
+    depth: fulltext
+    verified: false
+    verification_note: Read the full article (author-hosted version of record). Section V reports the presidential county results.
+    quote: In presidential elections, counties with greater trade exposure shifted toward the Republican candidate (a rightward shift).
+- id: rodrik-insurance
+  kind: source
+  passage: Ruggie's account of embedded liberalism describes a postwar settlement in which liberal trade was made politically durable by domestic social protection [@ruggie1982], and Rodrik reads the association between openness and government size as a demand for insurance against external risk [@rodrik1998].
+  evidence:
+    citation_id: rodrik1998
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read via Semantic Scholar record of the JPE article. Ruggie's embedded liberalism is cited for its well-known content only (title read; full text not inspected), so it carries no source claim.
+    quote: One explanation is that government spending plays a risk-reducing role in economies exposed to a significant amount of external risk.
+- id: margalit-taa
+  kind: source
+  passage: Margalit finds that between 2000 and 2004 the anti-incumbent effect of trade-related layoffs was smaller in counties where more workers were certified for Trade Adjustment Assistance [@margalit2011].
+  evidence:
+    citation_id: margalit2011
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: between 2000 and 2004, the anti-incumbent effect of trade-related job losses was smaller in areas where the government certified more of the harmed workers to receive special job training and income assistance.
+- id: kimpelc-trump
+  kind: source
+  passage: Kim and Pelc find that areas where that program responded least to import shocks shifted more toward the Republican candidate in 2016 [@kim2021psrm], and that successful petitions carried an electoral benefit for Democratic candidates [@kim2021cps].
+  evidence:
+    citation_id: kim2021psrm
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: areas where TAA has been least responsive were also more likely to shift toward voting for Trump in the 2016 Presidential election.
+- id: kimpelc-democrats
+  kind: source
+  passage: Kim and Pelc find that areas where that program responded least to import shocks shifted more toward the Republican candidate in 2016 [@kim2021psrm], and that successful petitions carried an electoral benefit for Democratic candidates [@kim2021cps].
+  evidence:
+    citation_id: kim2021cps
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: successful TAA petitions carry a significant electoral benefit for Democratic candidates.
+- id: balcazar-delays
+  kind: source
+  passage: A recent working paper by Balcazar and Lee uses the quasi-random assignment of petitions to officials to link processing delays to votes and attitudes against international integration [@balcazar2026].
+  evidence:
+    citation_id: balcazar2026
+    locator: Abstract (title page)
+    depth: fulltext
+    verified: false
+    verification_note: Read the title page and introduction of the working paper PDF (author website, created 2026-03-02). Working paper, not peer reviewed.
+    quote: Leveraging quasi-random assignment of TAA petitions to individual bureaucrats, we find that bureaucrat-driven delays in processing petitions shift voting behavior and public attitudes in the affected communities against international integration and the government.
+- id: swank-betz
+  kind: source
+  passage: In Western Europe, Swank and Betz report that universal welfare states weaken the link between openness and far-right support [@swank2003].
+  evidence:
+    citation_id: swank2003
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the OpenAlex record.
+    quote: we find that the universal welfare state directly depresses the vote for radical right-wing populist parties and conditions the linkages between capital mobility, trade openness and foreign immigration on the one hand and electoral support for the new far right on the other.
+- id: halikiopoulou-benefits
+  kind: source
+  passage: Halikiopoulou and Vlandas find that unemployment raises far-right support only where unemployment benefits or dismissal protection are low [@halikiopoulou2016], and their later individual-level work finds that several welfare policies reduce far-right voting among groups exposed to high risks [@vlandas2022].
+  evidence:
+    citation_id: halikiopoulou2016
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: where unemployment benefits and dismissal regulations are high, unemployment has no effect, but where either one of them is low, unemployment leads to higher far-right party support.
+- id: vlandas-moderation
+  kind: source
+  passage: Halikiopoulou and Vlandas find that unemployment raises far-right support only where unemployment benefits or dismissal protection are low [@halikiopoulou2016], and their later individual-level work finds that several welfare policies reduce far-right voting among groups exposed to high risks [@vlandas2022].
+  evidence:
+    citation_id: vlandas2022
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Semantic Scholar record.
+    quote: several welfare state policies reduce the likelihood of supporting the far right among individuals exposed to high risks
+- id: gingrich-limited
+  kind: source
+  passage: Gingrich and Milner, in contrast, find that compensation does little to dampen the political response to automation and trade [@gingrich2019; @milner2021].
+  evidence:
+    citation_id: gingrich2019
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record; the study concerns automation and technological change.
+    quote: Differences in compensation have a limited direct or indirect effect.
+- id: milner-unable
+  kind: source
+  passage: Gingrich and Milner, in contrast, find that compensation does little to dampen the political response to automation and trade [@gingrich2019; @milner2021].
+  evidence:
+    citation_id: milner2021
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: And the use of social welfare compensation seems unable to dampen these political trends.
+- id: fetzer-austerity
+  kind: source
+  passage: Fetzer links British welfare cuts after 2010 to support for the UK Independence Party and for Leave [@fetzer2019].
+  evidence:
+    citation_id: fetzer2019
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record. Fetzer reports an association and a counterfactual Remain victory; the paper here cites only the association.
+    quote: This paper documents a significant association between the exposure of an individual or area to the UK government's austerity-induced welfare reforms begun in 2010, and ... the subsequent rise in support for the UK Independence Party
+- id: intro-summary
+  kind: interpretation
+  passage: The estimated interaction has the opposite sign to the hypothesis and an interval that includes zero; the pre-period placebos are flat; no pre-specified alternative supports amplification at conventional levels.
+  rationale: Summary of /primary/gamma (coef -0.032, interval -0.082 to 0.017), /F1_placebo, /robustness_rows and /bridge; each number is bound where it is reported.
+- id: intro-bridge-summary
+  kind: interpretation
+  passage: Translated into votes, the interval for each of Michigan, Wisconsin and Pennsylvania includes changes larger than the 2016 margin in either direction, so the 2016 question lies below the resolution of this design.
+  rationale: 'From /bridge/counterfactuals/*/states/*: every interval contains values above the FEC margin and losses several times larger.'
+- id: prwora-no-entitlement
+  kind: source
+  passage: Its new section 401(b) of the Social Security Act provides that the part "shall not be interpreted to entitle any individual or family to assistance under any State program funded under this part" [@prwora1996, 110 Stat. 2113].
+  evidence:
+    citation_id: prwora1996
+    locator: Sec. 103, new sec. 401(b), 110 Stat. 2113
+    depth: fulltext
+    verified: false
+    verification_note: Read the enrolled statute text on govinfo (PLAW-104publ193).
+    quote: No Individual Entitlement.--This part shall not be interpreted to entitle any individual or family to assistance under any State program funded under this part.
+- id: prwora-time-limit
+  kind: source
+  passage: Its section 408(a)(7) bars the use of federal funds for a family with an adult who has received federally funded assistance for 60 months [@prwora1996, 110 Stat. 2137].
+  evidence:
+    citation_id: prwora1996
+    locator: Sec. 103, new sec. 408(a)(7), 110 Stat. 2137
+    depth: fulltext
+    verified: false
+    verification_note: Read the statute text on govinfo; the 60-month limit applies to federally funded assistance to families that include an adult, with exceptions not described here.
+    quote: shall not use any part of the grant to provide assistance to a family that includes an adult who has received assistance under any State program funded under this part attributable to funds provided by the Federal Government, for 60 months (whether or not consecutive)
+- id: crs-block-grant
+  kind: source
+  passage: 'The federal grant is fixed: \$16.5 billion a year, unadjusted at the national or state level since 1996, having lost 36% of its value to inflation since 1997 [@crs2019].'
+  evidence:
+    citation_id: crs2019
+    locator: Summary
+    depth: fulltext
+    verified: false
+    verification_note: Read the report summary.
+    quote: TANF provides a fixed block grant to states ($16.5 billion total per year) that has not been adjusted at either the national or state levels since 1996. ... Since 1997, it has lost 36% of its initial value.
+- id: hr4605-work
+  kind: source
+  passage: The Work and Responsibility Act, introduced in the House on June 21, 1994, would have kept AFDC but redesigned it as time-limited, transitional assistance; states were to create temporary work positions for recipients who had received aid for 24 months [@hr4605, proposed sec. 492].
+  evidence:
+    citation_id: hr4605
+    locator: Long title; proposed sec. 492(a)
+    depth: fulltext
+    verified: false
+    verification_note: Read the introduced bill on govinfo (BILLS-103hr4605ih), including the long title and Title II (WORK program).
+    quote: Each State shall establish and operate a program to locate and create temporary positions of employment (in this part referred to as the `WORK program') for individuals who have received aid for 24 months
+- id: s1117-sum-sufficient
+  kind: source
+  passage: The Senate Democrats' Work First Act, introduced on August 3, 1995, would have repealed AFDC but appropriated "a sum sufficient" for its replacement [@s1117, proposed sec. 400], paid states the Medicaid matching percentage of their expenditures [@s1117, proposed sec. 413], and set a 60-month limit that did not count months in which a family lived in an area with unemployment above 7.5% [@s1117, proposed sec. 402(c)(1)].
+  evidence:
+    citation_id: s1117
+    locator: Proposed sec. 400
+    depth: fulltext
+    verified: false
+    verification_note: Read the introduced bill on govinfo (BILLS-104s1117is). Sponsor Mr. Daschle with fifteen Democratic cosponsors.
+    quote: there is hereby authorized to be appropriated, and is hereby appropriated, for each fiscal year a sum sufficient to carry out the purposes of this part.
+- id: s1117-matching
+  kind: source
+  passage: The Senate Democrats' Work First Act, introduced on August 3, 1995, would have repealed AFDC but appropriated "a sum sufficient" for its replacement [@s1117, proposed sec. 400], paid states the Medicaid matching percentage of their expenditures [@s1117, proposed sec. 413], and set a 60-month limit that did not count months in which a family lived in an area with unemployment above 7.5% [@s1117, proposed sec. 402(c)(1)].
+  evidence:
+    citation_id: s1117
+    locator: Proposed sec. 413(a)
+    depth: fulltext
+    verified: false
+    verification_note: Read sec. 413 of the bill.
+    quote: the Secretary of the Treasury shall pay to each State which has an approved plan for temporary employment assistance, for each quarter ... an amount equal to the Federal medical assistance percentage (as defined in section 1905(b)) of the expenditures by the State under such plan.
+- id: s1117-time-limit
+  kind: source
+  passage: The Senate Democrats' Work First Act, introduced on August 3, 1995, would have repealed AFDC but appropriated "a sum sufficient" for its replacement [@s1117, proposed sec. 400], paid states the Medicaid matching percentage of their expenditures [@s1117, proposed sec. 413], and set a 60-month limit that did not count months in which a family lived in an area with unemployment above 7.5% [@s1117, proposed sec. 402(c)(1)].
+  evidence:
+    citation_id: s1117
+    locator: Proposed sec. 402(c)(1)(A)-(B)
+    depth: fulltext
+    verified: false
+    verification_note: Read sec. 402(c) of the bill; the hardship exception also covers families working 20 hours a week at state option and other special hardship (capped).
+    quote: has received assistance under the plan for 60 months, shall no longer be eligible for cash assistance under the plan. ... the State plan shall not include in the determination of the 60-month period ... any month in which ... the family resides in an area with an unemployment rate exceeding 7.5 percent
+- id: veto-hr2491
+  kind: source
+  passage: President Clinton vetoed the Republican budget reconciliation bill, whose Title XII carried welfare provisions, on December 6, 1995 [@clinton1995veto], and the stand-alone welfare bill, H.R. 4, on January 9, 1996.
+  evidence:
+    citation_id: clinton1995veto
+    locator: Public Papers 1995 Book II, pp. 1853-1855
+    depth: fulltext
+    verified: false
+    verification_note: Read the veto message on govinfo (PPP-1995-book2-doc-pg1853).
+    quote: I am returning herewith without my approval H.R. 2491, the budget reconciliation bill ... Title XII includes many welfare provisions.
+- id: veto-hr4-downturn
+  kind: source
+  passage: The second veto message asked Congress to "protect States and families in the event of economic downturn and population growth" [@clinton1996veto, pp. 22–23].
+  evidence:
+    citation_id: clinton1996veto
+    locator: Public Papers 1996 Book I, pp. 22-23
+    depth: fulltext
+    verified: false
+    verification_note: Read the veto message on govinfo (PPP-1996-book1-doc-pg22-2); the quoted phrase spans the page break.
+    quote: require States to maintain their stake in moving people from welfare to work; and protect States and families in the event of economic downturn and population growth.
+- id: house-vote
+  kind: source
+  passage: The conference report on H.R. 3734 passed the House on July 31, 1996, by 328 to 101, with Republicans voting 230 to 2 and Democrats splitting 98 to 98 [@houserc383].
+  evidence:
+    citation_id: houserc383
+    locator: Roll Call 383, vote totals and party breakdown
+    depth: fulltext
+    verified: false
+    verification_note: 'Read the Clerk''s roll-call page (retrieved 2026-11-18): yea 328, nay 101, not voting 5; Republican 230-2, Democratic 98-98, Independent 0-1.'
+    quote: 'Vote Question: On Agreeing to the Conference Report ... VOTES yea: 328 nay: 101 present: 0 not voting: 5 ... Republican 230 2 0 3 Democratic 98 98 0 2 Independent 0 1 0 0'
+- id: senate-vote
+  kind: source
+  passage: The Senate agreed to it the next day by 78 to 21; all 53 Republicans voted yea, and Democrats divided 25 to 21 [@senatevote262].
+  evidence:
+    citation_id: senatevote262
+    locator: Vote Number 262, vote counts and alphabetical list
+    depth: fulltext
+    verified: false
+    verification_note: 'senate.gov refused automated access; read the Internet Archive capture of 2026-02-11 of the official page. Party breakdown counted from the alphabetical list: Republicans 53 yea; Democrats 25 yea, 21 nay, 1 not voting.'
+    quote: 'Vote Number: 262 Vote Date: August 1, 1996 ... Vote Result: Conference Report Agreed to Measure Number: H.R. 3734 ... Vote Counts: YEAs 78 NAYs 21 Not Voting 1'
+- id: signing-contingency
+  kind: source
+  passage: In signing it, the President objected that the Act "fails to provide sufficient contingency funding for States that experience a serious economic downturn" [@clinton1996signing, p. 1329].
+  evidence:
+    citation_id: clinton1996signing
+    locator: Public Papers 1996 Book II, p. 1329
+    depth: fulltext
+    verified: false
+    verification_note: Read the signing statement on govinfo (PPP-1996-book2-doc-pg1328).
+    quote: It fails to provide sufficient contingency funding for States that experience a serious economic downturn
+- id: parolin-decomposition
+  kind: source
+  passage: Parolin decomposes the fall in cash assistance from 1993 to 2016 and attributes 52% of it to lower participation among income-eligible families, 21% to lower need and 27% to lower benefit levels [@parolin2021].
+  evidence:
+    citation_id: parolin2021
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: I find that declining participation explains 52% of the decline in TANF cash assistance from 1993 onward, whereas declining need explains 21%, and declining benefit levels explain 27%.
+- id: bitler-hoynes
+  kind: source
+  passage: Bitler and Hoynes find that TANF did not respond to the Great Recession, while food stamps and unemployment insurance provided at least as much protection as in earlier recessions [@bitler2016].
+  evidence:
+    citation_id: bitler2016
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the OpenAlex record.
+    quote: We find that post-welfare reform, Temporary Assistance for Needy Families did not respond during the Great Recession and extreme poverty is more cyclical than in prior recessions. Food Stamps and Unemployment Insurance are providing more protection—or no less protection—in the Great Recession
+- id: blank-review
+  kind: source
+  passage: 'The broader record is mixed: Blank''s review finds that some of the new-style programs of the 1990s significantly increased work and earnings and reduced poverty [@blank2002], and aggregate welfare spending kept growing while shifting away from non-elderly, nondisabled single-parent families and the poorest families toward the elderly, the disabled, married parents and families with higher incomes [@moffitt2015].'
+  evidence:
+    citation_id: blank2002
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the OpenAlex record.
+    quote: One particular set of "new-style" welfare programs seems to show especially promising results, with significantly increased work and earnings and reduced poverty.
+- id: moffitt-redistribution
+  kind: source
+  passage: 'The broader record is mixed: Blank''s review finds that some of the new-style programs of the 1990s significantly increased work and earnings and reduced poverty [@blank2002], and aggregate welfare spending kept growing while shifting away from non-elderly, nondisabled single-parent families and the poorest families toward the elderly, the disabled, married parents and families with higher incomes [@moffitt2015].'
+  evidence:
+    citation_id: moffitt2015
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: although aggregate spending is higher than ever, there have been redistributions away from non-elderly and nondisabled families to families with older adults and to families with recipients of disability programs; from non-elderly, nondisabled single-parent families to married-parent families; and from the poorest families to those with higher incomes.
+- id: crs-single-mothers
+  kind: source
+  passage: 'The program that eroded served poor families with children: most AFDC assistance went to families headed by single mothers who reported no work [@crs2019], and TANF funds may not aid a family without a minor child or a pregnant member [@prwora1996, 110 Stat. 2134].'
+  evidence:
+    citation_id: crs2019
+    locator: Summary
+    depth: fulltext
+    verified: false
+    verification_note: Read the report summary.
+    quote: Most AFDC assistance was provided to families headed by single mothers who reported no work in the labor market
+- id: prwora-minor-child
+  kind: source
+  passage: 'The program that eroded served poor families with children: most AFDC assistance went to families headed by single mothers who reported no work [@crs2019], and TANF funds may not aid a family without a minor child or a pregnant member [@prwora1996, 110 Stat. 2134].'
+  evidence:
+    citation_id: prwora1996
+    locator: Sec. 103, new sec. 408(a)(1), 110 Stat. 2134
+    depth: fulltext
+    verified: false
+    verification_note: Read the statute text on govinfo.
+    quote: No assistance for families without a minor child.--A State to which a grant is made under section 403 shall not use any part of the grant to provide assistance to a family-- (A) unless the family includes-- (i) a minor child who resides with a custodial parent or other adult caretaker relative of the child; or (ii) a pregnant individual
+- id: tanf-reach
+  kind: interpretation
+  passage: A displaced manufacturing worker could draw on it only as part of such a family.
+  rationale: Follows from the minor-child requirement of PRWORA sec. 408(a)(1); states could also use their own maintenance-of-effort funds, which this sentence does not address.
+- id: adh-labor
+  kind: source
+  passage: Exposure to Chinese imports, measured by commuting zone and instrumented with Chinese exports to other high-income countries, raised unemployment, nonparticipation and transfer receipt [@autor2013].
+  evidence:
+    citation_id: autor2013
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read; full text also inspected.
+    quote: Rising imports cause higher unemployment, lower labor force participation, and reduced wages in local labor markets that house import-competing manufacturing industries.
+- id: adhm-table5
+  kind: source
+  passage: In the same framework, Autor, Dorn, Hanson and Majlesi estimate that each point of increase in Chinese import penetration between 2000 and 2008 raised the county Republican share of the two-party presidential vote between 2000 and 2016 by 1.71 points, with a standard error of 0.90 [-@autor2020, Table 5].
+  evidence:
+    citation_id: autor2020
+    locator: Table 5, panel B, column 5 (full controls), p. 3176
+    depth: fulltext
+    verified: false
+    verification_note: Read Table 5 and Section V in the author-hosted version of record. The text calls the full-controls specification column 6; the printed table has five columns and reports 1.71 (0.90) in the last.
+    quote: Counties that had been more exposed to import competition during the Chinese import boom continued to favor the Republican candidate in the 2016 election, where the impact with full controls in column 6 is larger in magnitude (1.71) and slightly more precisely estimated (t = 1.90)
+- id: jensen-incumbent
+  kind: source
+  passage: Related designs find that incumbent presidential vote shares fell in counties with many low-skilled manufacturing workers [@jensen2017], that manufacturing layoffs moved white voters toward Republican challengers and Black voters toward Democrats [@baccini2021], that counties exposed to NAFTA turned away from the Democratic Party [@choi2024], that exposure to permanent normal trade relations with China first helped Democrats [@che2022], and that Chinese import shocks raised support for Leave in Britain and for nationalist parties in Western Europe [@colantone2018apsr; @colantone2018ajps].
+  evidence:
+    citation_id: jensen2017
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: We find increases in incumbent party vote shares in counties with large numbers of workers in high-skilled tradable services as well as goods, and decreases in counties with high employment in low-skilled manufacturing.
+- id: baccini-race
+  kind: source
+  passage: Related designs find that incumbent presidential vote shares fell in counties with many low-skilled manufacturing workers [@jensen2017], that manufacturing layoffs moved white voters toward Republican challengers and Black voters toward Democrats [@baccini2021], that counties exposed to NAFTA turned away from the Democratic Party [@choi2024], that exposure to permanent normal trade relations with China first helped Democrats [@che2022], and that Chinese import shocks raised support for Leave in Britain and for nationalist parties in Western Europe [@colantone2018apsr; @colantone2018ajps].
+  evidence:
+    citation_id: baccini2021
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: we find white voters were more likely to vote for Republican challengers where manufacturing layoffs were high, whereas Black voters in hard-hit localities were more likely to vote for Democrats.
+- id: choi-nafta
+  kind: source
+  passage: Related designs find that incumbent presidential vote shares fell in counties with many low-skilled manufacturing workers [@jensen2017], that manufacturing layoffs moved white voters toward Republican challengers and Black voters toward Democrats [@baccini2021], that counties exposed to NAFTA turned away from the Democratic Party [@choi2024], that exposure to permanent normal trade relations with China first helped Democrats [@che2022], and that Chinese import shocks raised support for Leave in Britain and for nationalist parties in Western Europe [@colantone2018apsr; @colantone2018ajps].
+  evidence:
+    citation_id: choi2024
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: Voters in these counties (and protectionist voters regardless of geography) turned away from the party of President Clinton, who promoted the agreement.
+- id: che-pntr
+  kind: source
+  passage: Related designs find that incumbent presidential vote shares fell in counties with many low-skilled manufacturing workers [@jensen2017], that manufacturing layoffs moved white voters toward Republican challengers and Black voters toward Democrats [@baccini2021], that counties exposed to NAFTA turned away from the Democratic Party [@choi2024], that exposure to permanent normal trade relations with China first helped Democrats [@che2022], and that Chinese import shocks raised support for Leave in Britain and for nationalist parties in Western Europe [@colantone2018apsr; @colantone2018ajps].
+  evidence:
+    citation_id: che2022
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Semantic Scholar record.
+    quote: Voters in areas more exposed to trade liberalization with China in 2000 subsequently shift their support toward Democrats, relative to the 1990s, though this boost for Democrats wanes after the rise of the Tea Party in 2010.
+- id: colantone-brexit
+  kind: source
+  passage: Related designs find that incumbent presidential vote shares fell in counties with many low-skilled manufacturing workers [@jensen2017], that manufacturing layoffs moved white voters toward Republican challengers and Black voters toward Democrats [@baccini2021], that counties exposed to NAFTA turned away from the Democratic Party [@choi2024], that exposure to permanent normal trade relations with China first helped Democrats [@che2022], and that Chinese import shocks raised support for Leave in Britain and for nationalist parties in Western Europe [@colantone2018apsr; @colantone2018ajps].
+  evidence:
+    citation_id: colantone2018apsr
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: We show that support for the Leave option in the Brexit referendum was systematically higher in regions hit harder by economic globalization.
+- id: colantone-europe
+  kind: source
+  passage: Related designs find that incumbent presidential vote shares fell in counties with many low-skilled manufacturing workers [@jensen2017], that manufacturing layoffs moved white voters toward Republican challengers and Black voters toward Democrats [@baccini2021], that counties exposed to NAFTA turned away from the Democratic Party [@choi2024], that exposure to permanent normal trade relations with China first helped Democrats [@che2022], and that Chinese import shocks raised support for Leave in Britain and for nationalist parties in Western Europe [@colantone2018apsr; @colantone2018ajps].
+  evidence:
+    citation_id: colantone2018ajps
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: At the district level, a stronger import shock leads to (1) an increase in support for nationalist and isolationist parties, (2) an increase in support for radical-right parties, and (3) a general shift to the right in the electorate.
+- id: pierson-feedback
+  kind: source
+  passage: Policies supply resources and interpretive cues to the public as well as to elites [@pierson1993]; welfare clients learn lessons about government from program design [@soss1999]; and the size, visibility and administration of benefits shape participation and attitudes in either direction [@mettler2004; @campbell2012].
+  evidence:
+    citation_id: pierson1993
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: Policies generate resources and incentives for political actors, and they provide those actors with information and cues that encourage particular interpretations of the political world.
+- id: soss-learning
+  kind: source
+  passage: Policies supply resources and interpretive cues to the public as well as to elites [@pierson1993]; welfare clients learn lessons about government from program design [@soss1999]; and the size, visibility and administration of benefits shape participation and attitudes in either direction [@mettler2004; @campbell2012].
+  evidence:
+    citation_id: soss1999
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: policy designs structure clients' program experiences in ways that teach alternative lessons about the nature of government.
+- id: campbell-design
+  kind: source
+  passage: Policies supply resources and interpretive cues to the public as well as to elites [@pierson1993]; welfare clients learn lessons about government from program design [@soss1999]; and the size, visibility and administration of benefits shape participation and attitudes in either direction [@mettler2004; @campbell2012].
+  evidence:
+    citation_id: campbell2012
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: These effects can be positive or negative, enhancing or undercutting participation ... These effects originate in elements of program design, such as the size, visibility, and traceability of benefits, the proximity of beneficiaries, and modes of program administration.
+- id: corman-turnout
+  kind: source
+  passage: 'A quasi-experimental study of the 1996 reform and voting points away from demobilization: welfare reform reduced the decline in turnout among exposed women by about 3 to 4 percentage points between 1990 and 2004 [@corman2017].'
+  evidence:
+    citation_id: corman2017
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: We find robust evidence that welfare reform led to smaller declines in voting (about 3 to 4 percentage points, which translates to about 10% relative to the baseline mean) for women who were exposed to welfare reform
+- id: bisbee-bargain
+  kind: source
+  passage: Bisbee and coauthors trace the anti-globalist turn to disenchantment with the redistributive bargain between globalization's winners and losers [@bisbee2020].
+  evidence:
+    citation_id: bisbee2020
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Semantic Scholar record.
+    quote: a domestic political economy account of the contemporary crisis of the global order, rooted in disenchantment with the redistributive bargain between globalization's winners and losers.
+- id: soss-race
+  kind: source
+  passage: States' restrictive choices after 1996 were shaped especially by the racial composition of the families relying on benefits [@soss2001], so a state's later cash erosion may proxy for its racial politics, which also condition the political response to economic loss [@baccini2021].
+  evidence:
+    citation_id: soss2001
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the OpenAlex record.
+    quote: state policies have been shaped by a variety of social and political forces, but especially by the racial composition of families who rely on program benefits.
+- id: mutz-status
+  kind: source
+  passage: 'And the economic reading of the 2016 vote is itself contested: Mutz attributes changing preferences to status threat over financial hardship, Morgan disputes the separation, and Margalit argues that economic insecurity explains a modest share of populist support even where it matters at the margin [@mutz2018; @morgan2018; @margalit2019].'
+  evidence:
+    citation_id: mutz2018
+    locator: Abstract (Significance)
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: I find that change in financial wellbeing had little impact on candidate preference.
+- id: morgan-reanalysis
+  kind: source
+  passage: 'And the economic reading of the 2016 vote is itself contested: Mutz attributes changing preferences to status threat over financial hardship, Morgan disputes the separation, and Margalit argues that economic insecurity explains a modest share of populist support even where it matters at the margin [@mutz2018; @morgan2018; @margalit2019].'
+  evidence:
+    citation_id: morgan2018
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: her panel data are consistent with the claim that economic interests are at least as important as status threat.
+- id: margalit-modest
+  kind: source
+  passage: 'And the economic reading of the 2016 vote is itself contested: Mutz attributes changing preferences to status threat over financial hardship, Morgan disputes the separation, and Margalit argues that economic insecurity explains a modest share of populist support even where it matters at the margin [@mutz2018; @morgan2018; @margalit2019].'
+  evidence:
+    citation_id: margalit2019
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: it conflates the significance of economic insecurity in influencing the election outcome on the margin with its significance in explaining the overall populist vote. Empirical findings indicate that the share of populist support explained by economic insecurity is modest.
+- id: sample-counties
+  kind: computation
+  passage: The analysis sample has 3,106 counties in 48 states and 722 commuting zones.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /sample/sample_counties
+    reported: 3,106
+    scale: 1
+    decimals: 0
+    units: counties
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: sample-states
+  kind: computation
+  passage: The analysis sample has 3,106 counties in 48 states and 722 commuting zones.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /sample/states
+    reported: '48'
+    scale: 1
+    decimals: 0
+    units: states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: sample-czones
+  kind: computation
+  passage: The analysis sample has 3,106 counties in 48 states and 722 commuting zones.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /sample/czones
+    reported: '722'
+    scale: 1
+    decimals: 0
+    units: commuting zones
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: adhm-leip
+  kind: source
+  passage: The shock, its instrument and the 2000 controls come from the replication archive of Autor, Dorn, Hanson and Majlesi [-@adhmdata2020]; the archive's own vote shares, drawn from a commercial atlas, enter only a validation exercise.
+  evidence:
+    citation_id: adhmdata2020
+    locator: Readme.pdf, 'Main data sources', p. 2
+    depth: fulltext
+    verified: false
+    verification_note: Read the archive's Readme (May 19, 2020).
+    quote: Dave Leip's Atlas of U.S. Elections is the source of our data on election outcomes for both congressional and presidential elections. ... This data is available for purchase at https://uselectionatlas.org/.
+- id: cbpp-definition
+  kind: source
+  passage: The moderator comes from the state AFDC/TANF-to-poverty ratios of the Center on Budget and Policy Priorities [-@cbpp2025], which divide the number of families receiving cash assistance by the number of families with children in poverty, both as two-year averages.
+  evidence:
+    citation_id: cbpp2025
+    locator: Sheets 'State TPR, 2-year avg' and '50-State Ratios 1979-2023'
+    depth: fulltext
+    verified: false
+    verification_note: 'Opened the spreadsheet (Internet Archive capture 2025-04-20, SHA-256 d6ef9b16...). Columns: ''Number of TANF Cases'', ''Number of Families with Children in Poverty'', ''State TANF-to-Poverty Ratio'', two-year averages.'
+    quote: State AFDC/TANF-to-Poverty Ratios, Two-Year Averages
+- id: wrd-table
+  kind: source
+  passage: Benefit levels come from Table L5 of the 2016 Welfare Rules Databook [@wrd2017], deflated with the July consumer price index [@blscpi]; County Business Patterns supply an alternative shock [@cbp2000], aggregated to commuting zones with the county crosswalk of Autor and Dorn [-@autordorn2013]; and the Federal Election Commission [-@fec2017] supplies the official 2016 margins.
+  evidence:
+    citation_id: wrd2017
+    locator: Table L5, pp. 245-246
+    depth: fulltext
+    verified: false
+    verification_note: Read Table L5 and its notes in the PDF; the transcription in simulation/data/wrd_table_l5.csv reproduces the printed 1996 mean and median, and the 2016 mean and median when Wisconsin is excluded as in the table.
+    quote: Table L5. Maximum Monthly Benefit for a Family of Three with No Income, 1996-2016 (July)
+- id: shock-p25
+  kind: computation
+  passage: The shock $X_z$ is the change in Chinese import penetration in commuting zone $z$ from 2000 to 2008, in percentage points; across counties its interquartile range runs from 0.48 to 1.31.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/shock_county_p25
+    reported: '0.48'
+    scale: 1
+    decimals: 2
+    units: percentage points of import penetration, county 25th percentile (unweighted)
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: shock-p75
+  kind: computation
+  passage: The shock $X_z$ is the change in Chinese import penetration in commuting zone $z$ from 2000 to 2008, in percentage points; across counties its interquartile range runs from 0.48 to 1.31.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/shock_county_p75
+    reported: '1.31'
+    scale: 1
+    decimals: 2
+    units: percentage points of import penetration, county 75th percentile (unweighted)
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: moderator-definition
+  kind: definition
+  passage: The moderator is the erosion of the state ratio, $M_s = \mathrm{TPR}_{1995\text{–}96} - \mathrm{TPR}_{2015\text{–}16}$, measured in families aided per 100 poor families.
+  rationale: 'Pre-registered moderator: TPR(1995-96) minus TPR(2015-16), CBPP two-year averages, per 100 poor families with children.'
+- id: erosion-states
+  kind: computation
+  passage: Across the 48 states erosion averages 47.6 points with a standard deviation of 19.0, from 13.1 in Oregon to 98.6 in Missouri.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /sample/states
+    reported: '48'
+    scale: 1
+    decimals: 0
+    units: states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: erosion-mean
+  kind: computation
+  passage: Across the 48 states erosion averages 47.6 points with a standard deviation of 19.0, from 13.1 in Oregon to 98.6 in Missouri.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /moderators/erosion/state_mean
+    reported: '47.6'
+    scale: 1
+    decimals: 1
+    units: points of the TPR, unweighted mean of 48 states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: erosion-sd
+  kind: computation
+  passage: Across the 48 states erosion averages 47.6 points with a standard deviation of 19.0, from 13.1 in Oregon to 98.6 in Missouri.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /moderators/erosion/state_sd
+    reported: '19.0'
+    scale: 1
+    decimals: 1
+    units: points of the TPR, SD across 48 states (ddof 1)
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: erosion-min
+  kind: computation
+  passage: Across the 48 states erosion averages 47.6 points with a standard deviation of 19.0, from 13.1 in Oregon to 98.6 in Missouri.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /moderators/erosion/min
+    reported: '13.1'
+    scale: 1
+    decimals: 1
+    units: points of the TPR (Oregon)
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: erosion-max
+  kind: computation
+  passage: Across the 48 states erosion averages 47.6 points with a standard deviation of 19.0, from 13.1 in Oregon to 98.6 in Missouri.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /moderators/erosion/max
+    reported: '98.6'
+    scale: 1
+    decimals: 1
+    units: points of the TPR (Missouri)
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: erosion-mi
+  kind: computation
+  passage: Michigan lost 74.4 points, Wisconsin 61.5 and Pennsylvania 56.9 (Figure 1a).
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /state_table/Michigan/erosion
+    reported: '74.4'
+    scale: 1
+    decimals: 1
+    units: points of the TPR
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: erosion-wi
+  kind: computation
+  passage: Michigan lost 74.4 points, Wisconsin 61.5 and Pennsylvania 56.9 (Figure 1a).
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /state_table/Wisconsin/erosion
+    reported: '61.5'
+    scale: 1
+    decimals: 1
+    units: points of the TPR
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: erosion-pa
+  kind: computation
+  passage: Michigan lost 74.4 points, Wisconsin 61.5 and Pennsylvania 56.9 (Figure 1a).
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /state_table/Pennsylvania/erosion
+    reported: '56.9'
+    scale: 1
+    decimals: 1
+    units: points of the TPR
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: corr-tpr1996
+  kind: computation
+  passage: 'Its correlation across states is 0.81 with the 1995–96 ratio and $-0.01$ with the 2015–16 ratio: by 2015–16 most states had converged on low coverage, and the states that lost most were those that had aided most.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/corr_erosion_tpr1996_states
+    reported: '0.81'
+    scale: 1
+    decimals: 2
+    units: Pearson correlation across 48 states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: corr-tpr2016
+  kind: computation
+  passage: 'Its correlation across states is 0.81 with the 1995–96 ratio and $-0.01$ with the 2015–16 ratio: by 2015–16 most states had converged on low coverage, and the states that lost most were those that had aided most.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/corr_erosion_tpr2016_states
+    reported: −0.01
+    scale: 1
+    decimals: 2
+    units: Pearson correlation across 48 states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: benefit-fell-n
+  kind: computation
+  passage: The real maximum benefit for a family of three fell between July 1996 and July 2016 in 46 of the 48 states, by 24.5% on average, and its decline is nearly unrelated to the erosion of coverage, with a correlation of 0.13.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/states_real_benefit_fell
+    reported: '46'
+    scale: 1
+    decimals: 0
+    units: states with a lower real maximum benefit in July 2016 than in July 1996
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: benefit-states
+  kind: computation
+  passage: The real maximum benefit for a family of three fell between July 1996 and July 2016 in 46 of the 48 states, by 24.5% on average, and its decline is nearly unrelated to the erosion of coverage, with a correlation of 0.13.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /sample/states
+    reported: '48'
+    scale: 1
+    decimals: 0
+    units: states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: benefit-decline-mean
+  kind: computation
+  passage: The real maximum benefit for a family of three fell between July 1996 and July 2016 in 46 of the 48 states, by 24.5% on average, and its decline is nearly unrelated to the erosion of coverage, with a correlation of 0.13.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/real_benefit_decline_state_mean
+    reported: 24.5%
+    scale: 1
+    decimals: 1
+    units: percent decline of the real maximum benefit (CPI-U July), unweighted state mean
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: benefit-corr
+  kind: computation
+  passage: The real maximum benefit for a family of three fell between July 1996 and July 2016 in 46 of the 48 states, by 24.5% on average, and its decline is nearly unrelated to the erosion of coverage, with a correlation of 0.13.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /moderators/correlation_with_erosion/real_benefit_decline_pct
+    reported: '0.13'
+    scale: 1
+    decimals: 2
+    units: Pearson correlation across 48 states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: benefit-family-of-three
+  kind: definition
+  passage: The real maximum benefit for a family of three fell between July 1996 and July 2016 in 46 of the 48 states, by 24.5% on average, and its decline is nearly unrelated to the erosion of coverage, with a correlation of 0.13.
+  rationale: Welfare Rules Databook Table L5 reports the maximum monthly benefit for a family of three (one adult, two children) with no income, July of each year.
+- id: adhm-eight
+  kind: source
+  passage: The shock and its interaction are instrumented by the exposure built from Chinese imports into eight other high-income countries [@autor2020, p. 3153] and its interaction with $\tilde M_s$.
+  evidence:
+    citation_id: autor2020
+    locator: p. 3153, footnote 25
+    depth: fulltext
+    verified: false
+    verification_note: Read the footnote in the author-hosted version of record.
+    quote: 'These eight other high-income countries are those that have comparable trade data covering the full sample period: Australia, Denmark, Finland, Germany, Japan, New Zealand, Spain, and Switzerland.'
+- id: nizalova-interaction
+  kind: source
+  passage: If the instrumented shock is as good as randomly assigned given the controls, $\gamma$ consistently measures how the shock effect varies with erosion even when erosion itself is correlated with omitted state traits [@nizalova2016; @bun2019].
+  evidence:
+    citation_id: nizalova2016
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record. The paper states the result for OLS with an exogenous treatment; its application here to the instrumented shock is this paper's assumption.
+    quote: We find that if the source of heterogeneity and omitted variable are jointly independent of policy or treatment, then the OLS estimate on the interaction term between the treatment and endogenous factor turns out to be consistent.
+- id: bun-harrison
+  kind: source
+  passage: If the instrumented shock is as good as randomly assigned given the controls, $\gamma$ consistently measures how the shock effect varies with erosion even when erosion itself is correlated with omitted state traits [@nizalova2016; @bun2019].
+  evidence:
+    citation_id: bun2019
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the OpenAlex record.
+    quote: whenever functional form identification is not valid, the ordinary least squares (OLS) estimator of the coefficient of the interaction term is consistent and standard OLS inference applies.
+- id: identification-assumption
+  kind: assumption
+  passage: If the instrumented shock is as good as randomly assigned given the controls, $\gamma$ consistently measures how the shock effect varies with erosion even when erosion itself is correlated with omitted state traits [@nizalova2016; @bun2019].
+  rationale: Conditional exogeneity of the ADHM instrument (shift-share exposure built from Chinese imports into other high-income countries) given the ADHM controls and state fixed effects.
+- id: causal-reading-assumption
+  kind: assumption
+  passage: Reading $\gamma$ as the effect of changing a state's cash protection requires the further assumption that erosion is not standing in for some other state characteristic that conditions the response to job loss.
+  rationale: Required for the bridge to 2016; not testable within this design. The competing-moderator checks (R5) address observed proxies only.
+- id: t-df
+  kind: computation
+  passage: Standard errors are clustered jointly by state and by commuting zone [@cameron2011]; intervals and tests for state-clustered and two-way statistics use the $t$ distribution with 47 degrees of freedom.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma/state+czone/t_df
+    reported: '47'
+    scale: 1
+    decimals: 0
+    units: degrees of freedom (48 state clusters minus one)
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: cgm-multiway
+  kind: source
+  passage: Standard errors are clustered jointly by state and by commuting zone [@cameron2011]; intervals and tests for state-clustered and two-way statistics use the $t$ distribution with 47 degrees of freedom.
+  evidence:
+    citation_id: cameron2011
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the OpenAlex record.
+    quote: This variance estimator enables cluster-robust inference when there is two-way or multiway clustering that is nonnested.
+- id: interval-level
+  kind: definition
+  passage: All intervals reported below are 95% confidence intervals.
+  rationale: 'Pre-registered: the primary test is the two-sided 95% interval for gamma.'
+- id: boot-reps
+  kind: computation
+  passage: A wild cluster bootstrap by state, with Rademacher weights, the null imposed and 9,999 draws, checks the reduced-form interaction [@cameron2008].
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /R3_reduced_form/wild_bootstrap_state/reps
+    reported: 9,999
+    scale: 1
+    decimals: 0
+    units: bootstrap replications
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: akm-overrejection
+  kind: source
+  passage: Correlation of residuals across commuting zones with similar industry mixes, the concern of the shift-share inference literature, is not addressed by these standard errors [@adao2019; @borusyak2022].
+  evidence:
+    citation_id: adao2019
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: this overrejection problem arises because regression residuals are correlated across regions with similar sectoral shares, independent of their geographic location.
+- id: bhj-framework
+  kind: source
+  passage: Correlation of residuals across commuting zones with similar industry mixes, the concern of the shift-share inference literature, is not addressed by these standard errors [@adao2019; @borusyak2022].
+  evidence:
+    citation_id: borusyak2022
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record; cited for the shift-share framework in the Autor et al. (2013) setting.
+    quote: We discuss and illustrate several practical insights of this framework in the setting of Autor et al. (2013), estimating the effect of Chinese import competition on manufacturing employment across U.S. commuting zones.
+- id: preregistration
+  kind: definition
+  passage: The analysis plan, with the primary specification, the secondary window, the robustness checks, the falsification tests and the decision rule, was written into the project's brief and hashed before any election returns were downloaded.
+  rationale: brief.md 'Analysis plan' section; SHA-256 08beb837... recorded at 2026-11-18T18:59Z before the first download of election returns (simulation/data/fetch-log.json records the brief hash at fetch time; audit.md gives the timeline).
+- id: deviations
+  kind: definition
+  passage: The deviations recorded there are the use of the laboratory's public mirror of the same election file, because the current repository copy sits behind a form that collects personal details; corrections to that file found by comparing it with an independent source and with official totals; the handling of a county created in 2001 in the business-pattern data; the degrees of freedom used for intervals; and descriptive additions, which are labelled as such where they appear.
+  rationale: brief.md 'Deviations' items 1-5.
+- id: v1-coef
+  kind: computation
+  passage: With the open returns and the source design's division dummies, the 2000 to 2016 shock coefficient is 1.90 with a standard error of 0.92, against a published 1.71 and 0.90.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /V1_adhm_replication/coef
+    reported: '1.90'
+    scale: 1
+    decimals: 2
+    units: points of Republican share per point of import penetration
+    conditions: ADHM Table 5 panel B full-controls specification with Census division dummies, open returns, 3,106 counties, CZ clustering.
+- id: v1-se
+  kind: computation
+  passage: With the open returns and the source design's division dummies, the 2000 to 2016 shock coefficient is 1.90 with a standard error of 0.92, against a published 1.71 and 0.90.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /V1_adhm_replication/se_cz
+    reported: '0.92'
+    scale: 1
+    decimals: 2
+    units: standard error, CZ-clustered
+    conditions: As above.
+- id: adhm-published
+  kind: source
+  passage: With the open returns and the source design's division dummies, the 2000 to 2016 shock coefficient is 1.90 with a standard error of 0.92, against a published 1.71 and 0.90.
+  evidence:
+    citation_id: autor2020
+    locator: Table 5, panel B, p. 3176
+    depth: fulltext
+    verified: false
+    verification_note: 'Read Table 5: 1.71 (0.90) in the full-controls column.'
+    quote: ΔNet Republican vote share, 2000–2016 ... 1.71 (0.90)
+- id: v1b-coef
+  kind: computation
+  passage: Applied to the source design's own file, the same estimation code returns 1.71 with a standard error of 0.91.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /V1b_adhm_own_file/coef
+    reported: '1.71'
+    scale: 1
+    decimals: 2
+    units: points per point
+    conditions: ADHM's published analysis file (3,107 counties, Leip vote shares, ADHM weights), CZ clustering; validation only.
+- id: v1b-se
+  kind: computation
+  passage: Applied to the source design's own file, the same estimation code returns 1.71 with a standard error of 0.91.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /V1b_adhm_own_file/se_cz
+    reported: '0.91'
+    scale: 1
+    decimals: 2
+    units: standard error, CZ-clustered
+    conditions: As above; finite-sample factor G/(G-1)(N-1)/(N-K).
+- id: v1-gap
+  kind: interpretation
+  passage: The gap therefore lies in the inputs.
+  rationale: V1b reproduces the published 1.71 on ADHM's own file with the same code (/V1b_adhm_own_file/coef), so the 1.90 obtained with open returns reflects input differences (vote source, weights, DC exclusion, county merges).
+- id: dr-mean
+  kind: computation
+  passage: The weighted mean change in the Republican share is $-0.74$ points with a standard deviation of 9.97, close to the published $-0.74$ and 9.95 [@autor2020, Table 5 notes].
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/dR_2000_2016_weighted_mean
+    reported: −0.74
+    scale: 1
+    decimals: 2
+    units: percentage points, weighted by 2000 votes
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: dr-sd
+  kind: computation
+  passage: The weighted mean change in the Republican share is $-0.74$ points with a standard deviation of 9.97, close to the published $-0.74$ and 9.95 [@autor2020, Table 5 notes].
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /descriptives/dR_2000_2016_weighted_sd
+    reported: '9.97'
+    scale: 1
+    decimals: 2
+    units: percentage points, weighted SD
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: adhm-notes
+  kind: source
+  passage: The weighted mean change in the Republican share is $-0.74$ points with a standard deviation of 9.97, close to the published $-0.74$ and 9.95 [@autor2020, Table 5 notes].
+  evidence:
+    citation_id: autor2020
+    locator: Table 5 notes, p. 3176
+    depth: fulltext
+    verified: false
+    verification_note: Read the Table 5 notes.
+    quote: The mean change in net Republican vote share is −3.50 (standard deviation 5.69) between 2000 and 2008 and is −0.74 (standard deviation 9.95) between 2000 and 2016.
+- id: v2-wi-medsl
+  kind: computation
+  passage: The county returns sum exactly to the official Trump and Clinton totals in Michigan and Pennsylvania; in Wisconsin they put Trump's lead at 22,617 votes, against 22,748 in the official returns.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /V2_fec_check/WI/medsl_trump_margin
+    reported: 22,617
+    scale: 1
+    decimals: 0
+    units: votes
+    conditions: MEDSL county returns summed over Wisconsin counties.
+- id: v2-wi-fec
+  kind: computation
+  passage: The county returns sum exactly to the official Trump and Clinton totals in Michigan and Pennsylvania; in Wisconsin they put Trump's lead at 22,617 votes, against 22,748 in the official returns.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /V2_fec_check/WI/fec_trump_margin
+    reported: 22,748
+    scale: 1
+    decimals: 0
+    units: votes
+    conditions: FEC Federal Elections 2016, Table 2.
+- id: v2-exact
+  kind: interpretation
+  passage: The county returns sum exactly to the official Trump and Clinton totals in Michigan and Pennsylvania; in Wisconsin they put Trump's lead at 22,617 votes, against 22,748 in the official returns.
+  rationale: '/V2_fec_check/MI and /PA: MEDSL and FEC Trump and Clinton totals are identical; also asserted in tests/test_data.py.'
+- id: main-fe
+  kind: computation
+  passage: Replacing division dummies with state fixed effects, the shock effect without an interaction is 1.48, with an interval from $-0.78$ to 3.74.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /main_effect_state_fe_2000_2016/coef
+    reported: '1.48'
+    scale: 1
+    decimals: 2
+    units: points per point
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: main-fe-lo
+  kind: computation
+  passage: Replacing division dummies with state fixed effects, the shock effect without an interaction is 1.48, with an interval from $-0.78$ to 3.74.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /main_effect_state_fe_2000_2016/state+czone/ci95/0
+    reported: −0.78
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: main-fe-hi
+  kind: computation
+  passage: Replacing division dummies with state fixed effects, the shock effect without an interaction is 1.48, with an interval from $-0.78$ to 3.74.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /main_effect_state_fe_2000_2016/state+czone/ci95/1
+    reported: '3.74'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: gamma
+  kind: computation
+  passage: The primary estimate of $\gamma$ is $-0.032$ per point of erosion, with an interval from $-0.082$ to 0.017 and a $p$-value of 0.20.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma/coef
+    reported: −0.032
+    scale: 1
+    decimals: 3
+    units: points of Republican share per point of import penetration per point of erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: gamma-lo
+  kind: computation
+  passage: The primary estimate of $\gamma$ is $-0.032$ per point of erosion, with an interval from $-0.082$ to 0.017 and a $p$-value of 0.20.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma/state+czone/ci95/0
+    reported: −0.082
+    scale: 1
+    decimals: 3
+    units: lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: gamma-hi
+  kind: computation
+  passage: The primary estimate of $\gamma$ is $-0.032$ per point of erosion, with an interval from $-0.082$ to 0.017 and a $p$-value of 0.20.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma/state+czone/ci95/1
+    reported: '0.017'
+    scale: 1
+    decimals: 3
+    units: upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: gamma-p
+  kind: computation
+  passage: The primary estimate of $\gamma$ is $-0.032$ per point of erosion, with an interval from $-0.082$ to 0.017 and a $p$-value of 0.20.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma/state+czone/p
+    reported: '0.20'
+    scale: 1
+    decimals: 2
+    units: two-sided p-value, t(47)
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: gamma-sd
+  kind: computation
+  passage: 'Scaled by the cross-state standard deviation of erosion, it is $-0.61$, with an interval from $-1.56$ to 0.33: more erosion goes with a smaller trade-shock effect.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma_per_state_sd
+    reported: −0.61
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: gamma-sd-lo
+  kind: computation
+  passage: 'Scaled by the cross-state standard deviation of erosion, it is $-0.61$, with an interval from $-1.56$ to 0.33: more erosion goes with a smaller trade-shock effect.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma_per_sd_ci95/0
+    reported: −1.56
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: gamma-sd-hi
+  kind: computation
+  passage: 'Scaled by the cross-state standard deviation of erosion, it is $-0.61$, with an interval from $-1.56$ to 0.33: more erosion goes with a smaller trade-shock effect.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma_per_sd_ci95/1
+    reported: '0.33'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: beta
+  kind: computation
+  passage: At mean erosion the shock effect is 1.30, with an interval from $-0.88$ to 3.47.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/beta_at_mean/coef
+    reported: '1.30'
+    scale: 1
+    decimals: 2
+    units: points per point at mean erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: beta-lo
+  kind: computation
+  passage: At mean erosion the shock effect is 1.30, with an interval from $-0.88$ to 3.47.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/beta_at_mean/state+czone/ci95/0
+    reported: −0.88
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: beta-hi
+  kind: computation
+  passage: At mean erosion the shock effect is 1.30, with an interval from $-0.88$ to 3.47.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/beta_at_mean/state+czone/ci95/1
+    reported: '3.47'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: eff-p25
+  kind: computation
+  passage: The implied effect is 1.72 at the 25th percentile of erosion and 0.85 at the 75th, a difference of $-0.87$ with an interval from $-2.19$ to 0.46.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/shock_effect_at_p25_erosion
+    reported: '1.72'
+    scale: 1
+    decimals: 2
+    units: points per point at the 25th percentile of erosion across states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: eff-p75
+  kind: computation
+  passage: The implied effect is 1.72 at the 25th percentile of erosion and 0.85 at the 75th, a difference of $-0.87$ with an interval from $-2.19$ to 0.46.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/shock_effect_at_p75_erosion
+    reported: '0.85'
+    scale: 1
+    decimals: 2
+    units: points per point at the 75th percentile
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: eff-diff
+  kind: computation
+  passage: The implied effect is 1.72 at the 25th percentile of erosion and 0.85 at the 75th, a difference of $-0.87$ with an interval from $-2.19$ to 0.46.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/effect_diff_p75_vs_p25
+    reported: −0.87
+    scale: 1
+    decimals: 2
+    units: difference, 75th minus 25th percentile
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: eff-diff-lo
+  kind: computation
+  passage: The implied effect is 1.72 at the 25th percentile of erosion and 0.85 at the 75th, a difference of $-0.87$ with an interval from $-2.19$ to 0.46.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/effect_diff_p75_vs_p25_ci95/0
+    reported: −2.19
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: eff-diff-hi
+  kind: computation
+  passage: The implied effect is 1.72 at the 25th percentile of erosion and 0.85 at the 75th, a difference of $-0.87$ with an interval from $-2.19$ to 0.46.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/effect_diff_p75_vs_p25_ci95/1
+    reported: '0.46'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: percentiles-definition
+  kind: definition
+  passage: The implied effect is 1.72 at the 25th percentile of erosion and 0.85 at the 75th, a difference of $-0.87$ with an interval from $-2.19$ to 0.46.
+  rationale: 'Pre-registered: effects reported as the difference in the shock effect between states at the 25th and 75th percentiles of erosion (state-level quantiles).'
+- id: fs-shock
+  kind: computation
+  passage: The state-clustered first-stage $F$ statistics are 53 for the shock and 85 for the interaction, and the Sanderson and Windmeijer conditional statistics are 107 and 97 [@sanderson2016].
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/first_stage/shock/F_cluster
+    reported: '53'
+    scale: 1
+    decimals: 0
+    units: state-clustered first-stage F
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: fs-int
+  kind: computation
+  passage: The state-clustered first-stage $F$ statistics are 53 for the shock and 85 for the interaction, and the Sanderson and Windmeijer conditional statistics are 107 and 97 [@sanderson2016].
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/first_stage/shock_x_erosion_c/F_cluster
+    reported: '85'
+    scale: 1
+    decimals: 0
+    units: state-clustered first-stage F
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: sw-shock
+  kind: computation
+  passage: The state-clustered first-stage $F$ statistics are 53 for the shock and 85 for the interaction, and the Sanderson and Windmeijer conditional statistics are 107 and 97 [@sanderson2016].
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/first_stage/shock/F_sanderson_windmeijer_cluster
+    reported: '107'
+    scale: 1
+    decimals: 0
+    units: Sanderson-Windmeijer conditional F, state-clustered
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: sw-int
+  kind: computation
+  passage: The state-clustered first-stage $F$ statistics are 53 for the shock and 85 for the interaction, and the Sanderson and Windmeijer conditional statistics are 107 and 97 [@sanderson2016].
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/first_stage/shock_x_erosion_c/F_sanderson_windmeijer_cluster
+    reported: '97'
+    scale: 1
+    decimals: 0
+    units: Sanderson-Windmeijer conditional F, state-clustered
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: sw-test
+  kind: source
+  passage: The state-clustered first-stage $F$ statistics are 53 for the shock and 85 for the interaction, and the Sanderson and Windmeijer conditional statistics are 107 and 97 [@sanderson2016].
+  evidence:
+    citation_id: sanderson2016
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Semantic Scholar record.
+    quote: We investigate the use of a conditional first-stage F-statistic along the lines of the proposal by Angrist and Pischke (2009)
+- id: terc1
+  kind: computation
+  passage: Estimated separately for terciles of states ordered by erosion, the shock effect is 1.85 in the least-eroded tercile, 1.17 in the middle tercile and 0.87 in the most-eroded tercile (Figure 1b).
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /binned_terciles/0/effect
+    reported: '1.85'
+    scale: 1
+    decimals: 2
+    units: points per point
+    conditions: 'Descriptive (not pre-registered): shock interacted with tercile indicators, states split 16/16/16 by erosion.'
+- id: terc2
+  kind: computation
+  passage: Estimated separately for terciles of states ordered by erosion, the shock effect is 1.85 in the least-eroded tercile, 1.17 in the middle tercile and 0.87 in the most-eroded tercile (Figure 1b).
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /binned_terciles/1/effect
+    reported: '1.17'
+    scale: 1
+    decimals: 2
+    units: points per point
+    conditions: As above.
+- id: terc3
+  kind: computation
+  passage: Estimated separately for terciles of states ordered by erosion, the shock effect is 1.85 in the least-eroded tercile, 1.17 in the middle tercile and 0.87 in the most-eroded tercile (Figure 1b).
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /binned_terciles/2/effect
+    reported: '0.87'
+    scale: 1
+    decimals: 2
+    units: points per point
+    conditions: As above.
+- id: cz-lo
+  kind: computation
+  passage: Clustering by commuting zone alone gives an interval for $\gamma$ from $-0.069$ to 0.004 and a $p$-value of 0.08; clustering by state alone gives a $p$-value of 0.19; the wild cluster bootstrap for the reduced-form interaction gives 0.23.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma/czone/ci95/0
+    reported: −0.069
+    scale: 1
+    decimals: 3
+    units: lower 95% bound, CZ clustering, t(721)
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: cz-hi
+  kind: computation
+  passage: Clustering by commuting zone alone gives an interval for $\gamma$ from $-0.069$ to 0.004 and a $p$-value of 0.08; clustering by state alone gives a $p$-value of 0.19; the wild cluster bootstrap for the reduced-form interaction gives 0.23.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma/czone/ci95/1
+    reported: '0.004'
+    scale: 1
+    decimals: 3
+    units: upper 95% bound, CZ clustering
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: cz-p
+  kind: computation
+  passage: Clustering by commuting zone alone gives an interval for $\gamma$ from $-0.069$ to 0.004 and a $p$-value of 0.08; clustering by state alone gives a $p$-value of 0.19; the wild cluster bootstrap for the reduced-form interaction gives 0.23.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma/czone/p
+    reported: '0.08'
+    scale: 1
+    decimals: 2
+    units: p-value, CZ clustering
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: state-p
+  kind: computation
+  passage: Clustering by commuting zone alone gives an interval for $\gamma$ from $-0.069$ to 0.004 and a $p$-value of 0.08; clustering by state alone gives a $p$-value of 0.19; the wild cluster bootstrap for the reduced-form interaction gives 0.23.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma/state/p
+    reported: '0.19'
+    scale: 1
+    decimals: 2
+    units: p-value, state clustering, t(47)
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: boot-p
+  kind: computation
+  passage: Clustering by commuting zone alone gives an interval for $\gamma$ from $-0.069$ to 0.004 and a $p$-value of 0.08; clustering by state alone gives a $p$-value of 0.19; the wild cluster bootstrap for the reduced-form interaction gives 0.23.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /R3_reduced_form/wild_bootstrap_state/p_value
+    reported: '0.23'
+    scale: 1
+    decimals: 2
+    units: wild cluster bootstrap p-value, reduced form
+    conditions: Reduced-form OLS interaction iv x erosion; Rademacher weights by state, null imposed, 9,999 draws, seed 20261118.
+- id: t1-primary-g
+  kind: computation
+  passage: '| 2000–2016 (primary) | $-0.61$ [$-1.56$, 0.33] | 0.20 | 1.30 [$-0.88$, 3.47] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/primary/coef
+    reported: −0.61
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-primary-glo
+  kind: computation
+  passage: '| 2000–2016 (primary) | $-0.61$ [$-1.56$, 0.33] | 0.20 | 1.30 [$-0.88$, 3.47] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/primary/ci95/0
+    reported: −1.56
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-primary-ghi
+  kind: computation
+  passage: '| 2000–2016 (primary) | $-0.61$ [$-1.56$, 0.33] | 0.20 | 1.30 [$-0.88$, 3.47] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/primary/ci95/1
+    reported: '0.33'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-primary-p
+  kind: computation
+  passage: '| 2000–2016 (primary) | $-0.61$ [$-1.56$, 0.33] | 0.20 | 1.30 [$-0.88$, 3.47] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/primary/p
+    reported: '0.20'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-primary-b
+  kind: computation
+  passage: '| 2000–2016 (primary) | $-0.61$ [$-1.56$, 0.33] | 0.20 | 1.30 [$-0.88$, 3.47] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /windows/dR_2000_2016/beta_at_mean/coef
+    reported: '1.30'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-primary-blo
+  kind: computation
+  passage: '| 2000–2016 (primary) | $-0.61$ [$-1.56$, 0.33] | 0.20 | 1.30 [$-0.88$, 3.47] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /windows/dR_2000_2016/beta_at_mean/state+czone/ci95/0
+    reported: −0.88
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-primary-bhi
+  kind: computation
+  passage: '| 2000–2016 (primary) | $-0.61$ [$-1.56$, 0.33] | 0.20 | 1.30 [$-0.88$, 3.47] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /windows/dR_2000_2016/beta_at_mean/state+czone/ci95/1
+    reported: '3.47'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012-g
+  kind: computation
+  passage: '| 2012–2016 (secondary) | $-0.13$ [$-0.61$, 0.34] | 0.57 | 0.24 [$-0.78$, 1.26] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/w2012/coef
+    reported: −0.13
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012-glo
+  kind: computation
+  passage: '| 2012–2016 (secondary) | $-0.13$ [$-0.61$, 0.34] | 0.57 | 0.24 [$-0.78$, 1.26] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/w2012/ci95/0
+    reported: −0.61
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012-ghi
+  kind: computation
+  passage: '| 2012–2016 (secondary) | $-0.13$ [$-0.61$, 0.34] | 0.57 | 0.24 [$-0.78$, 1.26] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/w2012/ci95/1
+    reported: '0.34'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012-p
+  kind: computation
+  passage: '| 2012–2016 (secondary) | $-0.13$ [$-0.61$, 0.34] | 0.57 | 0.24 [$-0.78$, 1.26] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/w2012/p
+    reported: '0.57'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012-b
+  kind: computation
+  passage: '| 2012–2016 (secondary) | $-0.13$ [$-0.61$, 0.34] | 0.57 | 0.24 [$-0.78$, 1.26] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /windows/dR_2012_2016/beta_at_mean/coef
+    reported: '0.24'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012-blo
+  kind: computation
+  passage: '| 2012–2016 (secondary) | $-0.13$ [$-0.61$, 0.34] | 0.57 | 0.24 [$-0.78$, 1.26] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /windows/dR_2012_2016/beta_at_mean/state+czone/ci95/0
+    reported: −0.78
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012-bhi
+  kind: computation
+  passage: '| 2012–2016 (secondary) | $-0.13$ [$-0.61$, 0.34] | 0.57 | 0.24 [$-0.78$, 1.26] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /windows/dR_2012_2016/beta_at_mean/state+czone/ci95/1
+    reported: '1.26'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2008-g
+  kind: computation
+  passage: '| 2000–2008 | $-0.73$ [$-1.90$, 0.44] | 0.21 | 1.16 [$-1.00$, 3.33] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/w2008/coef
+    reported: −0.73
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2008-glo
+  kind: computation
+  passage: '| 2000–2008 | $-0.73$ [$-1.90$, 0.44] | 0.21 | 1.16 [$-1.00$, 3.33] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/w2008/ci95/0
+    reported: −1.90
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2008-ghi
+  kind: computation
+  passage: '| 2000–2008 | $-0.73$ [$-1.90$, 0.44] | 0.21 | 1.16 [$-1.00$, 3.33] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/w2008/ci95/1
+    reported: '0.44'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2008-p
+  kind: computation
+  passage: '| 2000–2008 | $-0.73$ [$-1.90$, 0.44] | 0.21 | 1.16 [$-1.00$, 3.33] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/w2008/p
+    reported: '0.21'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2008-b
+  kind: computation
+  passage: '| 2000–2008 | $-0.73$ [$-1.90$, 0.44] | 0.21 | 1.16 [$-1.00$, 3.33] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /windows/dR_2000_2008/beta_at_mean/coef
+    reported: '1.16'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2008-blo
+  kind: computation
+  passage: '| 2000–2008 | $-0.73$ [$-1.90$, 0.44] | 0.21 | 1.16 [$-1.00$, 3.33] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /windows/dR_2000_2008/beta_at_mean/state+czone/ci95/0
+    reported: −1.00
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2008-bhi
+  kind: computation
+  passage: '| 2000–2008 | $-0.73$ [$-1.90$, 0.44] | 0.21 | 1.16 [$-1.00$, 3.33] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /windows/dR_2000_2008/beta_at_mean/state+czone/ci95/1
+    reported: '3.33'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012b-g
+  kind: computation
+  passage: '| 2000–2012 | $-0.48$ [$-1.59$, 0.64] | 0.39 | 1.06 [$-0.99$, 3.11] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/w2012b/coef
+    reported: −0.48
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012b-glo
+  kind: computation
+  passage: '| 2000–2012 | $-0.48$ [$-1.59$, 0.64] | 0.39 | 1.06 [$-0.99$, 3.11] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/w2012b/ci95/0
+    reported: −1.59
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012b-ghi
+  kind: computation
+  passage: '| 2000–2012 | $-0.48$ [$-1.59$, 0.64] | 0.39 | 1.06 [$-0.99$, 3.11] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/w2012b/ci95/1
+    reported: '0.64'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012b-p
+  kind: computation
+  passage: '| 2000–2012 | $-0.48$ [$-1.59$, 0.64] | 0.39 | 1.06 [$-0.99$, 3.11] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/w2012b/p
+    reported: '0.39'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012b-b
+  kind: computation
+  passage: '| 2000–2012 | $-0.48$ [$-1.59$, 0.64] | 0.39 | 1.06 [$-0.99$, 3.11] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /windows/dR_2000_2012/beta_at_mean/coef
+    reported: '1.06'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012b-blo
+  kind: computation
+  passage: '| 2000–2012 | $-0.48$ [$-1.59$, 0.64] | 0.39 | 1.06 [$-0.99$, 3.11] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /windows/dR_2000_2012/beta_at_mean/state+czone/ci95/0
+    reported: −0.99
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-w2012b-bhi
+  kind: computation
+  passage: '| 2000–2012 | $-0.48$ [$-1.59$, 0.64] | 0.39 | 1.06 [$-0.99$, 3.11] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /windows/dR_2000_2012/beta_at_mean/state+czone/ci95/1
+    reported: '3.11'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9296-g
+  kind: computation
+  passage: '| 1992–1996 (placebo) | $-0.03$ [$-0.53$, 0.47] | 0.91 | $-0.99$ [$-2.14$, 0.16] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_9296/coef
+    reported: −0.03
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9296-glo
+  kind: computation
+  passage: '| 1992–1996 (placebo) | $-0.03$ [$-0.53$, 0.47] | 0.91 | $-0.99$ [$-2.14$, 0.16] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_9296/ci95/0
+    reported: −0.53
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9296-ghi
+  kind: computation
+  passage: '| 1992–1996 (placebo) | $-0.03$ [$-0.53$, 0.47] | 0.91 | $-0.99$ [$-2.14$, 0.16] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_9296/ci95/1
+    reported: '0.47'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9296-p
+  kind: computation
+  passage: '| 1992–1996 (placebo) | $-0.03$ [$-0.53$, 0.47] | 0.91 | $-0.99$ [$-2.14$, 0.16] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_9296/p
+    reported: '0.91'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9296-b
+  kind: computation
+  passage: '| 1992–1996 (placebo) | $-0.03$ [$-0.53$, 0.47] | 0.91 | $-0.99$ [$-2.14$, 0.16] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /F1_placebo/dR_1992_1996/beta_at_mean/coef
+    reported: −0.99
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9296-blo
+  kind: computation
+  passage: '| 1992–1996 (placebo) | $-0.03$ [$-0.53$, 0.47] | 0.91 | $-0.99$ [$-2.14$, 0.16] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /F1_placebo/dR_1992_1996/beta_at_mean/state+czone/ci95/0
+    reported: −2.14
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9296-bhi
+  kind: computation
+  passage: '| 1992–1996 (placebo) | $-0.03$ [$-0.53$, 0.47] | 0.91 | $-0.99$ [$-2.14$, 0.16] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /F1_placebo/dR_1992_1996/beta_at_mean/state+czone/ci95/1
+    reported: '0.16'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9600-g
+  kind: computation
+  passage: '| 1996–2000 (placebo) | 0.23 [$-0.08$, 0.53] | 0.14 | $-0.39$ [$-1.28$, 0.49] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_9600/coef
+    reported: '0.23'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9600-glo
+  kind: computation
+  passage: '| 1996–2000 (placebo) | 0.23 [$-0.08$, 0.53] | 0.14 | $-0.39$ [$-1.28$, 0.49] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_9600/ci95/0
+    reported: −0.08
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9600-ghi
+  kind: computation
+  passage: '| 1996–2000 (placebo) | 0.23 [$-0.08$, 0.53] | 0.14 | $-0.39$ [$-1.28$, 0.49] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_9600/ci95/1
+    reported: '0.53'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9600-p
+  kind: computation
+  passage: '| 1996–2000 (placebo) | 0.23 [$-0.08$, 0.53] | 0.14 | $-0.39$ [$-1.28$, 0.49] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_9600/p
+    reported: '0.14'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9600-b
+  kind: computation
+  passage: '| 1996–2000 (placebo) | 0.23 [$-0.08$, 0.53] | 0.14 | $-0.39$ [$-1.28$, 0.49] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /F1_placebo/dR_1996_2000/beta_at_mean/coef
+    reported: −0.39
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9600-blo
+  kind: computation
+  passage: '| 1996–2000 (placebo) | 0.23 [$-0.08$, 0.53] | 0.14 | $-0.39$ [$-1.28$, 0.49] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /F1_placebo/dR_1996_2000/beta_at_mean/state+czone/ci95/0
+    reported: −1.28
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: t1-placebo_9600-bhi
+  kind: computation
+  passage: '| 1996–2000 (placebo) | 0.23 [$-0.08$, 0.53] | 0.14 | $-0.39$ [$-1.28$, 0.49] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /F1_placebo/dR_1996_2000/beta_at_mean/state+czone/ci95/1
+    reported: '0.49'
+    scale: 1
+    decimals: 2
+    units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
+    conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: pl9296
+  kind: computation
+  passage: 'The pre-period placebos do not show the pattern: the interaction for the change from 1992 to 1996 is $-0.03$ per standard deviation and that for 1996 to 2000 is 0.23, both with intervals that include zero.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_9296/coef
+    reported: −0.03
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: pl9600
+  kind: computation
+  passage: 'The pre-period placebos do not show the pattern: the interaction for the change from 1992 to 1996 is $-0.03$ per standard deviation and that for 1996 to 2000 is 0.23, both with intervals that include zero.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_9600/coef
+    reported: '0.23'
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: plmod
+  kind: computation
+  passage: The plan's other placebo, the AFDC-era decline in the ratio from 1978–79 to 1995–96 used as the moderator, gives 0.19 per standard deviation, with an interval from $-1.05$ to 1.42.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_mod/coef
+    reported: '0.19'
+    scale: 1
+    decimals: 2
+    units: per state SD of the placebo moderator
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: plmod-lo
+  kind: computation
+  passage: The plan's other placebo, the AFDC-era decline in the ratio from 1978–79 to 1995–96 used as the moderator, gives 0.19 per standard deviation, with an interval from $-1.05$ to 1.42.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_mod/ci95/0
+    reported: −1.05
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: plmod-hi
+  kind: computation
+  passage: The plan's other placebo, the AFDC-era decline in the ratio from 1978–79 to 1995–96 used as the moderator, gives 0.19 per standard deviation, with an interval from $-1.05$ to 1.42.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_mod/ci95/1
+    reported: '1.42'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: ols
+  kind: computation
+  passage: Ordinary least squares gives $-0.51$ per standard deviation and the unweighted estimate $-0.29$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/ols/coef
+    reported: −0.51
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: unw
+  kind: computation
+  passage: Ordinary least squares gives $-0.51$ per standard deviation and the unweighted estimate $-0.29$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/unweighted/coef
+    reported: −0.29
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: comp-min
+  kind: computation
+  passage: Adding interactions of the shock with the county white population share, a South indicator, the state's 1996 Republican share or the state's mean shock leaves the erosion interaction between $-0.66$ and $-0.62$; with all of them included it is $-0.88$, with an interval from $-2.08$ to 0.32.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/comp_south/coef
+    reported: −0.66
+    scale: 1
+    decimals: 2
+    units: per state SD (most negative of the four single additions)
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: comp-max
+  kind: computation
+  passage: Adding interactions of the shock with the county white population share, a South indicator, the state's 1996 Republican share or the state's mean shock leaves the erosion interaction between $-0.66$ and $-0.62$; with all of them included it is $-0.88$, with an interval from $-2.08$ to 0.32.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/comp_state_R1996/coef
+    reported: −0.62
+    scale: 1
+    decimals: 2
+    units: per state SD (least negative of the four single additions)
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: comp-joint
+  kind: computation
+  passage: Adding interactions of the shock with the county white population share, a South indicator, the state's 1996 Republican share or the state's mean shock leaves the erosion interaction between $-0.66$ and $-0.62$; with all of them included it is $-0.88$, with an interval from $-2.08$ to 0.32.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/comp_joint/coef
+    reported: −0.88
+    scale: 1
+    decimals: 2
+    units: per state SD, all four competitors
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: comp-joint-lo
+  kind: computation
+  passage: Adding interactions of the shock with the county white population share, a South indicator, the state's 1996 Republican share or the state's mean shock leaves the erosion interaction between $-0.66$ and $-0.62$; with all of them included it is $-0.88$, with an interval from $-2.08$ to 0.32.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/comp_joint/ci95/0
+    reported: −2.08
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: comp-joint-hi
+  kind: computation
+  passage: Adding interactions of the shock with the county white population share, a South indicator, the state's 1996 Republican share or the state's mean shock leaves the erosion interaction between $-0.66$ and $-0.62$; with all of them included it is $-0.88$, with an interval from $-2.08$ to 0.32.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/comp_joint/ci95/1
+    reported: '0.32'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: loo-min
+  kind: computation
+  passage: Dropping each state in turn moves $\gamma$ between $-0.045$, without New York, and $-0.016$, without California.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /R7_leave_one_state_out/min
+    reported: −0.045
+    scale: 1
+    decimals: 3
+    units: gamma per point of erosion, dropping New York
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: loo-max
+  kind: computation
+  passage: Dropping each state in turn moves $\gamma$ between $-0.045$, without New York, and $-0.016$, without California.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /R7_leave_one_state_out/max
+    reported: −0.016
+    scale: 1
+    decimals: 3
+    units: gamma per point of erosion, dropping California
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: alt-tpr16
+  kind: computation
+  passage: Orienting each so that larger values mean less protection, the interaction per standard deviation is $-0.27$ for a low 2015–16 ratio, 0.15 for a low real 2016 benefit, $-0.14$ for a low 1996 benefit, and 1.32, with an interval from $-0.48$ to 3.12, for the percentage decline in the real benefit.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/alt_neg_tpr_2016/coef
+    reported: −0.27
+    scale: 1
+    decimals: 2
+    units: per state SD of the moderator
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: alt-ben16
+  kind: computation
+  passage: Orienting each so that larger values mean less protection, the interaction per standard deviation is $-0.27$ for a low 2015–16 ratio, 0.15 for a low real 2016 benefit, $-0.14$ for a low 1996 benefit, and 1.32, with an interval from $-0.48$ to 3.12, for the percentage decline in the real benefit.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/alt_neg_real_benefit_2016/coef
+    reported: '0.15'
+    scale: 1
+    decimals: 2
+    units: per state SD
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: alt-ben96
+  kind: computation
+  passage: Orienting each so that larger values mean less protection, the interaction per standard deviation is $-0.27$ for a low 2015–16 ratio, 0.15 for a low real 2016 benefit, $-0.14$ for a low 1996 benefit, and 1.32, with an interval from $-0.48$ to 3.12, for the percentage decline in the real benefit.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/alt_neg_benefit_1996/coef
+    reported: −0.14
+    scale: 1
+    decimals: 2
+    units: per state SD
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: alt-decl
+  kind: computation
+  passage: Orienting each so that larger values mean less protection, the interaction per standard deviation is $-0.27$ for a low 2015–16 ratio, 0.15 for a low real 2016 benefit, $-0.14$ for a low 1996 benefit, and 1.32, with an interval from $-0.48$ to 3.12, for the percentage decline in the real benefit.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/alt_real_benefit_decline_pct/coef
+    reported: '1.32'
+    scale: 1
+    decimals: 2
+    units: per state SD
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: alt-decl-lo
+  kind: computation
+  passage: Orienting each so that larger values mean less protection, the interaction per standard deviation is $-0.27$ for a low 2015–16 ratio, 0.15 for a low real 2016 benefit, $-0.14$ for a low 1996 benefit, and 1.32, with an interval from $-0.48$ to 3.12, for the percentage decline in the real benefit.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/alt_real_benefit_decline_pct/ci95/0
+    reported: −0.48
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: alt-decl-hi
+  kind: computation
+  passage: Orienting each so that larger values mean less protection, the interaction per standard deviation is $-0.27$ for a low 2015–16 ratio, 0.15 for a low real 2016 benefit, $-0.14$ for a low 1996 benefit, and 1.32, with an interval from $-0.48$ to 3.12, for the percentage decline in the real benefit.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/alt_real_benefit_decline_pct/ci95/1
+    reported: '3.12'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: alt-e08
+  kind: computation
+  passage: The only significant estimate, for erosion measured to 2007–08 at the end of the shock window, is $-0.92$ with an interval from $-1.71$ to $-0.14$, in the direction opposite to the hypothesis.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/alt_erosion_2008/coef
+    reported: −0.92
+    scale: 1
+    decimals: 2
+    units: per state SD
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: alt-e08-lo
+  kind: computation
+  passage: The only significant estimate, for erosion measured to 2007–08 at the end of the shock window, is $-0.92$ with an interval from $-1.71$ to $-0.14$, in the direction opposite to the hypothesis.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/alt_erosion_2008/ci95/0
+    reported: −1.71
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: alt-e08-hi
+  kind: computation
+  passage: The only significant estimate, for erosion measured to 2007–08 at the end of the shock window, is $-0.92$ with an interval from $-1.71$ to $-0.14$, in the direction opposite to the hypothesis.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/alt_erosion_2008/ci95/1
+    reported: −0.14
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: six-moderators
+  kind: definition
+  passage: With six pre-specified moderators, a single estimate at this level is weak evidence.
+  rationale: The primary erosion moderator plus the five alternatives of R4 in brief.md.
+- id: cbp-ols
+  kind: computation
+  passage: The County Business Patterns shock, the decline in manufacturing employment between 2000 and 2008 as a share of 2000 employment, gives an interaction of $-0.0023$ per point of erosion by ordinary least squares, with an interval from $-0.0076$ to 0.0031.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/cbp_ols/coef_natural
+    reported: −0.0023
+    scale: 1
+    decimals: 4
+    units: points of Republican share per point of manufacturing-employment loss per point of erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: cbp-ols-lo
+  kind: computation
+  passage: The County Business Patterns shock, the decline in manufacturing employment between 2000 and 2008 as a share of 2000 employment, gives an interaction of $-0.0023$ per point of erosion by ordinary least squares, with an interval from $-0.0076$ to 0.0031.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/cbp_ols/ci95_natural/0
+    reported: −0.0076
+    scale: 1
+    decimals: 4
+    units: lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: cbp-ols-hi
+  kind: computation
+  passage: The County Business Patterns shock, the decline in manufacturing employment between 2000 and 2008 as a share of 2000 employment, gives an interaction of $-0.0023$ per point of erosion by ordinary least squares, with an interval from $-0.0076$ to 0.0031.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/cbp_ols/ci95_natural/1
+    reported: '0.0031'
+    scale: 1
+    decimals: 4
+    units: upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: cbp-fs
+  kind: computation
+  passage: Instrumented with the trade exposure, its first stage is weak, with a state-clustered $F$ of 5.6, so that estimate carries little information.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /R6_cbp/iv/first_stage/cbp_shock/F_cluster
+    reported: '5.6'
+    scale: 1
+    decimals: 1
+    units: state-clustered first-stage F
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: se
+  kind: computation
+  passage: 'Given the estimated two-way standard error of 0.025, the design has 80% power, at the 5% level, only against an interaction of about 0.070 per point of erosion, or 1.34 per standard deviation: an amplification that would double the average shock effect for each standard deviation of erosion.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma/state+czone/se
+    reported: '0.025'
+    scale: 1
+    decimals: 3
+    units: two-way-clustered standard error of gamma
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: mde
+  kind: computation
+  passage: 'Given the estimated two-way standard error of 0.025, the design has 80% power, at the 5% level, only against an interaction of about 0.070 per point of erosion, or 1.34 per standard deviation: an amplification that would double the average shock effect for each standard deviation of erosion.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/mde80/gamma
+    reported: '0.070'
+    scale: 1
+    decimals: 3
+    units: minimum detectable gamma, 80% power, two-sided 5%
+    conditions: 'Descriptive, not pre-registered: (t_0.975,47 + z_0.80) x SE.'
+- id: mde-sd
+  kind: computation
+  passage: 'Given the estimated two-way standard error of 0.025, the design has 80% power, at the 5% level, only against an interaction of about 0.070 per point of erosion, or 1.34 per standard deviation: an amplification that would double the average shock effect for each standard deviation of erosion.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/mde80/per_state_sd
+    reported: '1.34'
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: As above.
+- id: mde-definition
+  kind: definition
+  passage: 'Given the estimated two-way standard error of 0.025, the design has 80% power, at the 5% level, only against an interaction of about 0.070 per point of erosion, or 1.34 per standard deviation: an amplification that would double the average shock effect for each standard deviation of erosion.'
+  rationale: Power 80% and two-sided 5% size define the minimum detectable effect; 'double' compares 1.34 per SD with the shock effect at mean erosion, 1.30 (/primary/beta_at_mean/coef).
+- id: excl
+  kind: computation
+  passage: The interval excludes amplification larger than 0.33 per standard deviation, about a quarter of the shock effect at mean erosion.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma_per_sd_ci95/1
+    reported: '0.33'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound per state SD
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: excl-quarter
+  kind: interpretation
+  passage: The interval excludes amplification larger than 0.33 per standard deviation, about a quarter of the shock effect at mean erosion.
+  rationale: 0.328 / 1.298 = 0.25 (/primary/gamma_per_sd_ci95/1 over /primary/beta_at_mean/coef).
+- id: bridge-extrap
+  kind: computation
+  passage: 'The plan fixed the counterfactuals in advance: retaining the 1995–96 ratio ($M^\ast = 0$), which lies 13.1 points beyond the least-eroded state and is therefore an extrapolation, and the erosion of the least-eroded state, Oregon, which stays within the observed range.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /moderators/erosion/min
+    reported: '13.1'
+    scale: 1
+    decimals: 1
+    units: points of the TPR
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: bridge-assumption
+  kind: assumption
+  passage: 'The plan fixed the counterfactuals in advance: retaining the 1995–96 ratio ($M^\ast = 0$), which lies 13.1 points beyond the least-eroded state and is therefore an extrapolation, and the erosion of the least-eroded state, Oregon, which stays within the observed range.'
+  rationale: Counterfactuals fixed in brief.md; the margin formula reads gamma causally and holds 2016 two-party votes fixed.
+- id: t2-MI-erosion
+  kind: computation
+  passage: '| Michigan | 74.4 | 10,704 | $-197$ [$-500$, 105] | $-163$ [$-412$, 87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /state_table/Michigan/erosion
+    reported: '74.4'
+    scale: 1
+    decimals: 1
+    units: points of the TPR
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: t2-MI-margin
+  kind: computation
+  passage: '| Michigan | 74.4 | 10,704 | $-197$ [$-500$, 105] | $-163$ [$-412$, 87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /V2_fec_check/MI/fec_trump_margin
+    reported: 10,704
+    scale: 1
+    decimals: 0
+    units: votes, FEC official returns
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: t2-MI-r-pt
+  kind: computation
+  passage: '| Michigan | 74.4 | 10,704 | $-197$ [$-500$, 105] | $-163$ [$-412$, 87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/retain_1996/states/MI/net_dem_margin_change
+    reported: −197
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual retain_1996; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-MI-r-lo
+  kind: computation
+  passage: '| Michigan | 74.4 | 10,704 | $-197$ [$-500$, 105] | $-163$ [$-412$, 87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/retain_1996/states/MI/ci95/0
+    reported: −500
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual retain_1996; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-MI-r-hi
+  kind: computation
+  passage: '| Michigan | 74.4 | 10,704 | $-197$ [$-500$, 105] | $-163$ [$-412$, 87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/retain_1996/states/MI/ci95/1
+    reported: '105'
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual retain_1996; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-MI-l-pt
+  kind: computation
+  passage: '| Michigan | 74.4 | 10,704 | $-197$ [$-500$, 105] | $-163$ [$-412$, 87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/least_eroded_state/states/MI/net_dem_margin_change
+    reported: −163
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual least_eroded_state; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-MI-l-lo
+  kind: computation
+  passage: '| Michigan | 74.4 | 10,704 | $-197$ [$-500$, 105] | $-163$ [$-412$, 87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/least_eroded_state/states/MI/ci95/0
+    reported: −412
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual least_eroded_state; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-MI-l-hi
+  kind: computation
+  passage: '| Michigan | 74.4 | 10,704 | $-197$ [$-500$, 105] | $-163$ [$-412$, 87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/least_eroded_state/states/MI/ci95/1
+    reported: '87'
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual least_eroded_state; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-WI-erosion
+  kind: computation
+  passage: '| Wisconsin | 61.5 | 22,748 | $-136$ [$-343$, 72] | $-107$ [$-271$, 57] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /state_table/Wisconsin/erosion
+    reported: '61.5'
+    scale: 1
+    decimals: 1
+    units: points of the TPR
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: t2-WI-margin
+  kind: computation
+  passage: '| Wisconsin | 61.5 | 22,748 | $-136$ [$-343$, 72] | $-107$ [$-271$, 57] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /V2_fec_check/WI/fec_trump_margin
+    reported: 22,748
+    scale: 1
+    decimals: 0
+    units: votes, FEC official returns
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: t2-WI-r-pt
+  kind: computation
+  passage: '| Wisconsin | 61.5 | 22,748 | $-136$ [$-343$, 72] | $-107$ [$-271$, 57] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/retain_1996/states/WI/net_dem_margin_change
+    reported: −136
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual retain_1996; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-WI-r-lo
+  kind: computation
+  passage: '| Wisconsin | 61.5 | 22,748 | $-136$ [$-343$, 72] | $-107$ [$-271$, 57] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/retain_1996/states/WI/ci95/0
+    reported: −343
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual retain_1996; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-WI-r-hi
+  kind: computation
+  passage: '| Wisconsin | 61.5 | 22,748 | $-136$ [$-343$, 72] | $-107$ [$-271$, 57] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/retain_1996/states/WI/ci95/1
+    reported: '72'
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual retain_1996; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-WI-l-pt
+  kind: computation
+  passage: '| Wisconsin | 61.5 | 22,748 | $-136$ [$-343$, 72] | $-107$ [$-271$, 57] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/least_eroded_state/states/WI/net_dem_margin_change
+    reported: −107
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual least_eroded_state; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-WI-l-lo
+  kind: computation
+  passage: '| Wisconsin | 61.5 | 22,748 | $-136$ [$-343$, 72] | $-107$ [$-271$, 57] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/least_eroded_state/states/WI/ci95/0
+    reported: −271
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual least_eroded_state; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-WI-l-hi
+  kind: computation
+  passage: '| Wisconsin | 61.5 | 22,748 | $-136$ [$-343$, 72] | $-107$ [$-271$, 57] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/least_eroded_state/states/WI/ci95/1
+    reported: '57'
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual least_eroded_state; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-PA-erosion
+  kind: computation
+  passage: '| Pennsylvania | 56.9 | 44,292 | $-203$ [$-514$, 108] | $-156$ [$-396$, 83] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /state_table/Pennsylvania/erosion
+    reported: '56.9'
+    scale: 1
+    decimals: 1
+    units: points of the TPR
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: t2-PA-margin
+  kind: computation
+  passage: '| Pennsylvania | 56.9 | 44,292 | $-203$ [$-514$, 108] | $-156$ [$-396$, 83] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /V2_fec_check/PA/fec_trump_margin
+    reported: 44,292
+    scale: 1
+    decimals: 0
+    units: votes, FEC official returns
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: t2-PA-r-pt
+  kind: computation
+  passage: '| Pennsylvania | 56.9 | 44,292 | $-203$ [$-514$, 108] | $-156$ [$-396$, 83] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/retain_1996/states/PA/net_dem_margin_change
+    reported: −203
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual retain_1996; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-PA-r-lo
+  kind: computation
+  passage: '| Pennsylvania | 56.9 | 44,292 | $-203$ [$-514$, 108] | $-156$ [$-396$, 83] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/retain_1996/states/PA/ci95/0
+    reported: −514
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual retain_1996; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-PA-r-hi
+  kind: computation
+  passage: '| Pennsylvania | 56.9 | 44,292 | $-203$ [$-514$, 108] | $-156$ [$-396$, 83] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/retain_1996/states/PA/ci95/1
+    reported: '108'
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual retain_1996; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-PA-l-pt
+  kind: computation
+  passage: '| Pennsylvania | 56.9 | 44,292 | $-203$ [$-514$, 108] | $-156$ [$-396$, 83] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/least_eroded_state/states/PA/net_dem_margin_change
+    reported: −156
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual least_eroded_state; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-PA-l-lo
+  kind: computation
+  passage: '| Pennsylvania | 56.9 | 44,292 | $-203$ [$-514$, 108] | $-156$ [$-396$, 83] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/least_eroded_state/states/PA/ci95/0
+    reported: −396
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual least_eroded_state; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-PA-l-hi
+  kind: computation
+  passage: '| Pennsylvania | 56.9 | 44,292 | $-203$ [$-514$, 108] | $-156$ [$-396$, 83] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/least_eroded_state/states/PA/ci95/1
+    reported: '83'
+    scale: 0.001
+    decimals: 0
+    units: thousands of votes, Democratic-minus-Republican margin
+    conditions: Bridge, counterfactual least_eroded_state; image of the primary 95% interval for gamma; 2016 two-party votes held fixed.
+- id: t2-units
+  kind: definition
+  passage: ': Implied change in the 2016 Democratic-minus-Republican margin, in thousands of votes, under the counterfactual levels of cash-assistance erosion fixed in the plan. Erosion is in points of the state AFDC/TANF-to-poverty ratio; margins are from the Federal Election Commission''s official returns.'
+  rationale: Table 2 entries are in thousands of votes; erosion in TPR points; margins from FEC Table 2.
+- id: f3-units
+  kind: definition
+  passage: '![Implied net change in the 2016 Democratic margin, in thousands of votes, with intervals from the primary interaction, against the official Trump margin (dashed). Left bar in each panel: retaining the 1995–96 ratio; right bar: the erosion of the least-eroded state.](figures/fig3_bridge.png)'
+  rationale: Figure 3 plots /bridge values divided by 1,000.
+- id: flip-mi
+  kind: computation
+  passage: The value of $\gamma$ that would have reversed each state under the first counterfactual is 0.0018 in Michigan, 0.0054 in Wisconsin and 0.0071 in Pennsylvania, all smaller than the standard error of the estimate and well inside its interval, whose upper end is 0.017.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/retain_1996/states/MI/gamma_needed_to_flip
+    reported: '0.0018'
+    scale: 1
+    decimals: 4
+    units: gamma per point of erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: flip-wi
+  kind: computation
+  passage: The value of $\gamma$ that would have reversed each state under the first counterfactual is 0.0018 in Michigan, 0.0054 in Wisconsin and 0.0071 in Pennsylvania, all smaller than the standard error of the estimate and well inside its interval, whose upper end is 0.017.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/retain_1996/states/WI/gamma_needed_to_flip
+    reported: '0.0054'
+    scale: 1
+    decimals: 4
+    units: gamma per point of erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: flip-pa
+  kind: computation
+  passage: The value of $\gamma$ that would have reversed each state under the first counterfactual is 0.0018 in Michigan, 0.0054 in Wisconsin and 0.0071 in Pennsylvania, all smaller than the standard error of the estimate and well inside its interval, whose upper end is 0.017.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /bridge/counterfactuals/retain_1996/states/PA/gamma_needed_to_flip
+    reported: '0.0071'
+    scale: 1
+    decimals: 4
+    units: gamma per point of erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: flip-upper
+  kind: computation
+  passage: The value of $\gamma$ that would have reversed each state under the first counterfactual is 0.0018 in Michigan, 0.0054 in Wisconsin and 0.0071 in Pennsylvania, all smaller than the standard error of the estimate and well inside its interval, whose upper end is 0.017.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/gamma/state+czone/ci95/1
+    reported: '0.017'
+    scale: 1
+    decimals: 3
+    units: upper 95% bound of gamma
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: margin-sum
+  kind: computation
+  passage: Trump's margins in Michigan, Wisconsin and Pennsylvania sum to 77,744 votes [@fec2017].
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /V2_fec_check/three_state_fec_margin_sum
+    reported: 77,744
+    scale: 1
+    decimals: 0
+    units: votes
+    conditions: Sum of FEC Trump-minus-Clinton margins, Table 2 of Federal Elections 2016.
+- id: fec-margins
+  kind: source
+  passage: Trump's margins in Michigan, Wisconsin and Pennsylvania sum to 77,744 votes [@fec2017].
+  evidence:
+    citation_id: fec2017
+    locator: Table 2, 2016 Presidential Electoral and Popular Vote
+    depth: fulltext
+    verified: false
+    verification_note: 'Opened the FEC spreadsheet (federalelections2016.xlsx, December 2017 edition updated 2018 and 2023): MI 2,279,543 v 2,268,839; WI 1,405,284 v 1,382,536; PA 2,970,733 v 2,926,441.'
+    quote: 2016 PRESIDENTIAL ELECTORAL AND POPULAR VOTE
+- id: bridge-reading
+  kind: interpretation
+  passage: Under both counterfactuals the point estimates are Democratic losses, and the intervals include Democratic gains larger than Trump's 2016 margin in each state, as well as losses several times larger (Table 2 and Figure 3).
+  rationale: From Table 2 values; the statement is limited to whether the interval includes margin-sized changes, as the plan specified.
+- id: rules-out
+  kind: interpretation
+  passage: 'The test rules out a strong version of the hypothesis: an amplification of the presidential-vote response to the China shock larger than about a quarter of the average effect per standard deviation of erosion, in the counties and years studied.'
+  rationale: Upper 95% bound 0.33 per SD against shock effect 1.30 at mean erosion; ratio 0.25.
+- id: adh-income-assistance
+  kind: source
+  passage: In the source design's own accounting, federal income assistance, of which TANF is a part alongside Supplemental Security Income and food stamps, rose by \$7 per capita for each \$1,000 of import exposure per worker, against \$8 for disability insurance and \$18 for medical benefits [@autor2013, pp. 2148–2149].
+  evidence:
+    citation_id: autor2013
+    locator: Section on transfers, pp. 2148-2149 (Table 8 discussion)
+    depth: fulltext
+    verified: false
+    verification_note: Read the passage in the author-hosted PDF of the AER article.
+    quote: In-kind medical benefits rise by $18 per capita, while federal income assistance and retirement benefits account for an additional $7 and $10 in per-capita transfer spending.
+- id: adh-ssdi
+  kind: source
+  passage: In the source design's own accounting, federal income assistance, of which TANF is a part alongside Supplemental Security Income and food stamps, rose by \$7 per capita for each \$1,000 of import exposure per worker, against \$8 for disability insurance and \$18 for medical benefits [@autor2013, pp. 2148–2149].
+  evidence:
+    citation_id: autor2013
+    locator: p. 2149
+    depth: fulltext
+    verified: false
+    verification_note: Read the passage in the author-hosted PDF.
+    quote: the increase in federal transfer spending on SSDI payments is large and significant, equal to about $8 per $1,000 growth of export exposure.
+- id: moderator-start
+  kind: interpretation
+  passage: Erosion of the ratio is driven by where states began in 1996, so the test compares states that had aided many poor families with states that had aided few, and such states also differ in region, racial composition and partisanship.
+  rationale: /descriptives/corr_erosion_tpr1996_states = 0.81.
+- id: soss-race-2
+  kind: source
+  passage: That reading fails if erosion proxies for racial composition, region or partisanship in ways the competing interactions do not capture, a concern the history of state policy choices makes concrete [@soss2001].
+  evidence:
+    citation_id: soss2001
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the OpenAlex record.
+    quote: especially by the racial composition of families who rely on program benefits.
+- id: conclusion
+  kind: interpretation
+  passage: On the evidence here, the post-1996 erosion of cash assistance did not measurably amplify the county presidential-vote response to the China shock, and estimates at the county level cannot decide whether a smaller amplification changed the outcome in Michigan, Wisconsin or Pennsylvania.
+  rationale: Primary interval includes zero with negative point estimate; bridge intervals include margin-sized changes in both directions.
+runs:
+- id: analysis
+  required: true
+  record: verification/analysis.json

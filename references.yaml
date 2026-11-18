@@ -1,0 +1,561 @@
+# CSL references with stable IDs; cite using Pandoc [@id] syntax.
+# Every entry was checked against its registry (Crossref, DataCite) or read at its primary
+# source (govinfo, clerk.house.gov, senate.gov via the Internet Archive) on 2026-11-18.
+# Record identities and supporting passages in sources.md and claims.yaml.
+references:
+# ------------------------------------------------------------------ trade shocks and politics
+- id: autor2013
+  type: article-journal
+  author: [{family: Autor, given: David H.}, {family: Dorn, given: David}, {family: Hanson, given: Gordon H.}]
+  title: "The China Syndrome: Local Labor Market Effects of Import Competition in the United States"
+  container-title: American Economic Review
+  volume: 103
+  issue: 6
+  page: 2121-2168
+  issued: {date-parts: [[2013]]}
+  DOI: 10.1257/aer.103.6.2121
+- id: autordorn2013
+  type: article-journal
+  author: [{family: Autor, given: David H.}, {family: Dorn, given: David}]
+  title: "The Growth of Low-Skill Service Jobs and the Polarization of the US Labor Market"
+  container-title: American Economic Review
+  volume: 103
+  issue: 5
+  page: 1553-1597
+  issued: {date-parts: [[2013]]}
+  DOI: 10.1257/aer.103.5.1553
+- id: autor2020
+  type: article-journal
+  author: [{family: Autor, given: David}, {family: Dorn, given: David}, {family: Hanson, given: Gordon}, {family: Majlesi, given: Kaveh}]
+  title: "Importing Political Polarization? The Electoral Consequences of Rising Trade Exposure"
+  container-title: American Economic Review
+  volume: 110
+  issue: 10
+  page: 3139-3183
+  issued: {date-parts: [[2020]]}
+  DOI: 10.1257/aer.20170011
+- id: adhmdata2020
+  type: dataset
+  author: [{family: Autor, given: David}, {family: Dorn, given: David}, {family: Hanson, given: Gordon}, {family: Majlesi, given: Kaveh}]
+  title: "Data for ‘Importing Polarization? The Electoral Consequences of Rising Trade Exposure’ (File Archive)"
+  publisher: David Dorn, University of Zurich
+  issued: {date-parts: [[2020]]}
+  URL: https://www.ddorn.net/data/ADHM-PoliticalPolarization-FileArchive.zip
+- id: margalit2011
+  type: article-journal
+  author: [{family: Margalit, given: Yotam}]
+  title: "Costly Jobs: Trade-Related Layoffs, Government Compensation, and Voting in U.S. Elections"
+  container-title: American Political Science Review
+  volume: 105
+  issue: 1
+  page: 166-188
+  issued: {date-parts: [[2011]]}
+  DOI: 10.1017/S000305541000050X
+- id: margalit2019
+  type: article-journal
+  author: [{family: Margalit, given: Yotam}]
+  title: "Economic Insecurity and the Causes of Populism, Reconsidered"
+  container-title: Journal of Economic Perspectives
+  volume: 33
+  issue: 4
+  page: 152-170
+  issued: {date-parts: [[2019]]}
+  DOI: 10.1257/jep.33.4.152
+- id: colantone2018apsr
+  type: article-journal
+  author: [{family: Colantone, given: Italo}, {family: Stanig, given: Piero}]
+  title: "Global Competition and Brexit"
+  container-title: American Political Science Review
+  volume: 112
+  issue: 2
+  page: 201-218
+  issued: {date-parts: [[2018]]}
+  DOI: 10.1017/S0003055417000685
+- id: colantone2018ajps
+  type: article-journal
+  author: [{family: Colantone, given: Italo}, {family: Stanig, given: Piero}]
+  title: "The Trade Origins of Economic Nationalism: Import Competition and Voting Behavior in Western Europe"
+  container-title: American Journal of Political Science
+  volume: 62
+  issue: 4
+  page: 936-953
+  issued: {date-parts: [[2018]]}
+  DOI: 10.1111/ajps.12358
+- id: che2022
+  type: article-journal
+  author: [{family: Che, given: Yi}, {family: Lu, given: Yi}, {family: Pierce, given: Justin R.}, {family: Schott, given: Peter K.}, {family: Tao, given: Zhigang}]
+  title: "Did Trade Liberalization with China Influence US Elections?"
+  container-title: Journal of International Economics
+  volume: 139
+  page: '103652'
+  issued: {date-parts: [[2022]]}
+  DOI: 10.1016/j.jinteco.2022.103652
+- id: choi2024
+  type: article-journal
+  author: [{family: Choi, given: Jiwon}, {family: Kuziemko, given: Ilyana}, {family: Washington, given: Ebonya}, {family: Wright, given: Gavin}]
+  title: "Local Economic and Political Effects of Trade Deals: Evidence from NAFTA"
+  container-title: American Economic Review
+  volume: 114
+  issue: 6
+  page: 1540-1575
+  issued: {date-parts: [[2024]]}
+  DOI: 10.1257/aer.20220425
+- id: jensen2017
+  type: article-journal
+  author: [{family: Jensen, given: J. Bradford}, {family: Quinn, given: Dennis P.}, {family: Weymouth, given: Stephen}]
+  title: "Winners and Losers in International Trade: The Effects on US Presidential Voting"
+  container-title: International Organization
+  volume: 71
+  issue: 3
+  page: 423-457
+  issued: {date-parts: [[2017]]}
+  DOI: 10.1017/S0020818317000194
+- id: baccini2021
+  type: article-journal
+  author: [{family: Baccini, given: Leonardo}, {family: Weymouth, given: Stephen}]
+  title: "Gone For Good: Deindustrialization, White Voter Backlash, and US Presidential Voting"
+  container-title: American Political Science Review
+  volume: 115
+  issue: 2
+  page: 550-567
+  issued: {date-parts: [[2021]]}
+  DOI: 10.1017/S0003055421000022
+- id: mutz2018
+  type: article-journal
+  author: [{family: Mutz, given: Diana C.}]
+  title: "Status Threat, Not Economic Hardship, Explains the 2016 Presidential Vote"
+  container-title: Proceedings of the National Academy of Sciences
+  volume: 115
+  issue: 19
+  page: E4330-E4339
+  issued: {date-parts: [[2018]]}
+  DOI: 10.1073/pnas.1718155115
+- id: morgan2018
+  type: article-journal
+  author: [{family: Morgan, given: Stephen L.}]
+  title: "Status Threat, Material Interests, and the 2016 Presidential Vote"
+  container-title: "Socius: Sociological Research for a Dynamic World"
+  volume: 4
+  issued: {date-parts: [[2018]]}
+  DOI: 10.1177/2378023118788217
+# ------------------------------------------------------------------ compensation
+- id: ruggie1982
+  type: article-journal
+  author: [{family: Ruggie, given: John Gerard}]
+  title: "International Regimes, Transactions, and Change: Embedded Liberalism in the Postwar Economic Order"
+  container-title: International Organization
+  volume: 36
+  issue: 2
+  page: 379-415
+  issued: {date-parts: [[1982]]}
+  DOI: 10.1017/S0020818300018993
+- id: rodrik1998
+  type: article-journal
+  author: [{family: Rodrik, given: Dani}]
+  title: "Why Do More Open Economies Have Bigger Governments?"
+  container-title: Journal of Political Economy
+  volume: 106
+  issue: 5
+  page: 997-1032
+  issued: {date-parts: [[1998]]}
+  DOI: 10.1086/250038
+- id: swank2003
+  type: article-journal
+  author: [{family: Swank, given: Duane}, {family: Betz, given: Hans-Georg}]
+  title: "Globalization, the Welfare State and Right-Wing Populism in Western Europe"
+  container-title: Socio-Economic Review
+  volume: 1
+  issue: 2
+  page: 215-245
+  issued: {date-parts: [[2003]]}
+  DOI: 10.1093/soceco/1.2.215
+- id: halikiopoulou2016
+  type: article-journal
+  author: [{family: Halikiopoulou, given: Daphne}, {family: Vlandas, given: Tim}]
+  title: "Risks, Costs and Labour Markets: Explaining Cross-National Patterns of Far Right Party Success in European Parliament Elections"
+  container-title: "JCMS: Journal of Common Market Studies"
+  volume: 54
+  issue: 3
+  page: 636-655
+  issued: {date-parts: [[2016]]}
+  DOI: 10.1111/jcms.12310
+- id: vlandas2022
+  type: article-journal
+  author: [{family: Vlandas, given: Tim}, {family: Halikiopoulou, given: Daphne}]
+  title: "Welfare State Policies and Far Right Party Support: Moderating ‘Insecurity Effects’ among Different Social Groups"
+  container-title: West European Politics
+  volume: 45
+  issue: 1
+  page: 24-49
+  issued: {date-parts: [[2022]]}
+  DOI: 10.1080/01402382.2021.1886498
+- id: gingrich2019
+  type: article-journal
+  author: [{family: Gingrich, given: Jane}]
+  title: "Did State Responses to Automation Matter for Voters?"
+  container-title: Research & Politics
+  volume: 6
+  issue: 1
+  issued: {date-parts: [[2019]]}
+  DOI: 10.1177/2053168019832745
+- id: milner2021
+  type: article-journal
+  author: [{family: Milner, given: Helen V.}]
+  title: "Voting for Populism in Europe: Globalization, Technological Change, and the Extreme Right"
+  container-title: Comparative Political Studies
+  volume: 54
+  issue: 13
+  page: 2286-2320
+  issued: {date-parts: [[2021]]}
+  DOI: 10.1177/0010414021997175
+- id: bisbee2020
+  type: article-journal
+  author: [{family: Bisbee, given: James}, {family: Mosley, given: Layna}, {family: Pepinsky, given: Thomas B.}, {family: Rosendorff, given: B. Peter}]
+  title: "Decompensating Domestically: The Political Economy of Anti-Globalism"
+  container-title: Journal of European Public Policy
+  volume: 27
+  issue: 7
+  page: 1090-1102
+  issued: {date-parts: [[2020]]}
+  DOI: 10.1080/13501763.2019.1678662
+- id: fetzer2019
+  type: article-journal
+  author: [{family: Fetzer, given: Thiemo}]
+  title: "Did Austerity Cause Brexit?"
+  container-title: American Economic Review
+  volume: 109
+  issue: 11
+  page: 3849-3886
+  issued: {date-parts: [[2019]]}
+  DOI: 10.1257/aer.20181164
+- id: kim2021psrm
+  type: article-journal
+  author: [{family: Kim, given: Sung Eun}, {family: Pelc, given: Krzysztof}]
+  title: "How Responsive Is Trade Adjustment Assistance?"
+  container-title: Political Science Research and Methods
+  volume: 9
+  issue: 4
+  page: 889-898
+  issued: {date-parts: [[2021]]}
+  DOI: 10.1017/psrm.2020.38
+- id: kim2021cps
+  type: article-journal
+  author: [{family: Kim, given: Sung Eun}, {family: Pelc, given: Krzysztof}]
+  title: "The Politics of Trade Adjustment Versus Trade Protection"
+  container-title: Comparative Political Studies
+  volume: 54
+  issue: 13
+  page: 2354-2381
+  issued: {date-parts: [[2021]]}
+  DOI: 10.1177/0010414020957687
+- id: balcazar2026
+  type: manuscript
+  author: [{family: Balcazar, given: Carlos Felipe}, {family: Lee, given: Kyuwon}]
+  title: "Bureaucratic Performance and Support for International Integration: Evidence from Trade Adjustment Assistance"
+  genre: Working paper
+  issued: {date-parts: [[2026]]}
+  URL: https://cfbalcazar.github.io/files/pdf/research/TAA_petitions.pdf
+# ------------------------------------------------------------------ policy feedback and welfare politics
+- id: pierson1993
+  type: article-journal
+  author: [{family: Pierson, given: Paul}]
+  title: "When Effect Becomes Cause: Policy Feedback and Political Change"
+  container-title: World Politics
+  volume: 45
+  issue: 4
+  page: 595-628
+  issued: {date-parts: [[1993]]}
+  DOI: 10.2307/2950710
+- id: soss1999
+  type: article-journal
+  author: [{family: Soss, given: Joe}]
+  title: "Lessons of Welfare: Policy Design, Political Learning, and Political Action"
+  container-title: American Political Science Review
+  volume: 93
+  issue: 2
+  page: 363-380
+  issued: {date-parts: [[1999]]}
+  DOI: 10.2307/2585401
+- id: mettler2004
+  type: article-journal
+  author: [{family: Mettler, given: Suzanne}, {family: Soss, given: Joe}]
+  title: "The Consequences of Public Policy for Democratic Citizenship: Bridging Policy Studies and Mass Politics"
+  container-title: Perspectives on Politics
+  volume: 2
+  issue: 1
+  page: 55-73
+  issued: {date-parts: [[2004]]}
+  DOI: 10.1017/S1537592704000623
+- id: campbell2012
+  type: article-journal
+  author: [{family: Campbell, given: Andrea Louise}]
+  title: "Policy Makes Mass Politics"
+  container-title: Annual Review of Political Science
+  volume: 15
+  page: 333-351
+  issued: {date-parts: [[2012]]}
+  DOI: 10.1146/annurev-polisci-012610-135202
+- id: soss2001
+  type: article-journal
+  author: [{family: Soss, given: Joe}, {family: Schram, given: Sanford F.}, {family: Vartanian, given: Thomas P.}, {family: O'Brien, given: Erin}]
+  title: "Setting the Terms of Relief: Explaining State Policy Choices in the Devolution Revolution"
+  container-title: American Journal of Political Science
+  volume: 45
+  issue: 2
+  page: 378-395
+  issued: {date-parts: [[2001]]}
+  DOI: 10.2307/2669347
+- id: corman2017
+  type: article-journal
+  author: [{family: Corman, given: Hope}, {family: Dave, given: Dhaval}, {family: Reichman, given: Nancy E.}]
+  title: "Effects of Welfare Reform on Women's Voting Participation"
+  container-title: Economic Inquiry
+  volume: 55
+  issue: 3
+  page: 1430-1451
+  issued: {date-parts: [[2017]]}
+  DOI: 10.1111/ecin.12433
+# ------------------------------------------------------------------ welfare reform and cash protection
+- id: blank2002
+  type: article-journal
+  author: [{family: Blank, given: Rebecca M.}]
+  title: "Evaluating Welfare Reform in the United States"
+  container-title: Journal of Economic Literature
+  volume: 40
+  issue: 4
+  page: 1105-1166
+  issued: {date-parts: [[2002]]}
+  DOI: 10.1257/002205102762203576
+- id: moffitt2015
+  type: article-journal
+  author: [{family: Moffitt, given: Robert A.}]
+  title: "The Deserving Poor, the Family, and the U.S. Welfare System"
+  container-title: Demography
+  volume: 52
+  issue: 3
+  page: 729-749
+  issued: {date-parts: [[2015]]}
+  DOI: 10.1007/s13524-015-0395-0
+- id: parolin2021
+  type: article-journal
+  author: [{family: Parolin, given: Zachary}]
+  title: "Decomposing the Decline of Cash Assistance in the United States, 1993 to 2016"
+  container-title: Demography
+  volume: 58
+  issue: 3
+  page: 1119-1141
+  issued: {date-parts: [[2021]]}
+  DOI: 10.1215/00703370-9157471
+- id: bitler2016
+  type: article-journal
+  author: [{family: Bitler, given: Marianne}, {family: Hoynes, given: Hilary}]
+  title: "The More Things Change, the More They Stay the Same? The Safety Net and Poverty in the Great Recession"
+  container-title: Journal of Labor Economics
+  volume: 34
+  issue: S1
+  page: S403-S444
+  issued: {date-parts: [[2016]]}
+  DOI: 10.1086/683096
+- id: crs2019
+  type: report
+  author: [{family: Falk, given: Gene}, {family: Ghavalyan, given: Mariam}, {family: Carter, given: Jameson A.}]
+  title: "The Temporary Assistance for Needy Families Block Grant: Legislative Issues in the 116th Congress"
+  publisher: Congressional Research Service
+  number: R45966
+  issued: {date-parts: [[2019, 10, 9]]}
+  URL: https://www.everycrsreport.com/reports/R45966.html
+- id: wrd2017
+  type: report
+  author: [{family: Giannarelli, given: Linda}, {family: Heffernan, given: Christine}, {family: Minton, given: Sarah}, {family: Thompson, given: Megan}, {family: Stevens, given: Kathryn}]
+  title: "Welfare Rules Databook: State TANF Policies as of July 2016"
+  publisher: Office of Planning, Research and Evaluation, Administration for Children and Families, U.S. Department of Health and Human Services
+  number: OPRE Report 2017-82
+  issued: {date-parts: [[2017, 10]]}
+  URL: https://www.acf.hhs.gov/sites/default/files/documents/opre/2016_welfare_rules_databook_final_10_30_17_b508_2.pdf
+- id: cbpp2025
+  type: dataset
+  author: [{literal: Center on Budget and Policy Priorities}]
+  title: "State AFDC/TANF-to-Poverty Ratios, Two-Year Averages, 1978–79 to 2022–23 (<span class=\"nocase\">spreadsheet 2025-04-11-TPR-1978-2023.xls</span>)"
+  publisher: Center on Budget and Policy Priorities
+  issued: {date-parts: [[2025, 4, 11]]}
+  URL: https://www.cbpp.org/sites/default/files/2025-04-11-TPR-1978-2023.xls
+# ------------------------------------------------------------------ the 1996 law and its alternatives
+- id: prwora1996
+  type: report
+  author: [{literal: U.S. Congress}]
+  title: "Personal Responsibility and Work Opportunity Reconciliation Act of 1996, Public Law 104-193, 110 Stat. 2105"
+  publisher: U.S. Government Publishing Office
+  issued: {date-parts: [[1996, 8, 22]]}
+  URL: https://www.govinfo.gov/content/pkg/PLAW-104publ193/html/PLAW-104publ193.htm
+- id: hr4605
+  type: report
+  author: [{literal: U.S. House of Representatives}]
+  title: "H.R. 4605, Work and Responsibility Act of 1994, 103rd Congress, introduced June 21, 1994"
+  publisher: U.S. Government Publishing Office
+  issued: {date-parts: [[1994, 6, 21]]}
+  URL: https://www.govinfo.gov/content/pkg/BILLS-103hr4605ih/html/BILLS-103hr4605ih.htm
+- id: s1117
+  type: report
+  author: [{literal: U.S. Senate}]
+  title: "S. 1117, Work First Act of 1995, 104th Congress, introduced August 3, 1995"
+  publisher: U.S. Government Publishing Office
+  issued: {date-parts: [[1995, 8, 3]]}
+  URL: https://www.govinfo.gov/content/pkg/BILLS-104s1117is/html/BILLS-104s1117is.htm
+- id: clinton1995veto
+  type: chapter
+  author: [{family: Clinton, given: William J.}]
+  title: "Message to the House of Representatives Returning Without Approval Budget Reconciliation Legislation, December 6, 1995"
+  container-title: "Public Papers of the Presidents of the United States: William J. Clinton (1995, Book II)"
+  publisher: U.S. Government Printing Office
+  page: 1853-1855
+  issued: {date-parts: [[1995, 12, 6]]}
+  URL: https://www.govinfo.gov/content/pkg/PPP-1995-book2/html/PPP-1995-book2-doc-pg1853.htm
+- id: clinton1996veto
+  type: chapter
+  author: [{family: Clinton, given: William J.}]
+  title: "Message to the House of Representatives Returning Without Approval Legislation on the Welfare System, January 9, 1996"
+  container-title: "Public Papers of the Presidents of the United States: William J. Clinton (1996, Book I)"
+  publisher: U.S. Government Printing Office
+  page: 22-23
+  issued: {date-parts: [[1996, 1, 9]]}
+  URL: https://www.govinfo.gov/content/pkg/PPP-1996-book1/html/PPP-1996-book1-doc-pg22-2.htm
+- id: clinton1996signing
+  type: chapter
+  author: [{family: Clinton, given: William J.}]
+  title: "Statement on Signing the Personal Responsibility and Work Opportunity Reconciliation Act of 1996, August 22, 1996"
+  container-title: "Public Papers of the Presidents of the United States: William J. Clinton (1996, Book II)"
+  publisher: U.S. Government Printing Office
+  page: 1328-1330
+  issued: {date-parts: [[1996, 8, 22]]}
+  URL: https://www.govinfo.gov/content/pkg/PPP-1996-book2/html/PPP-1996-book2-doc-pg1328.htm
+- id: houserc383
+  type: report
+  author: [{literal: "U.S. House of Representatives, Office of the Clerk"}]
+  title: "Roll Call 383, H.R. 3734, On Agreeing to the Conference Report, July 31, 1996"
+  publisher: Office of the Clerk, U.S. House of Representatives
+  issued: {date-parts: [[1996, 7, 31]]}
+  URL: https://clerk.house.gov/Votes/1996383
+- id: senatevote262
+  type: report
+  author: [{literal: U.S. Senate}]
+  title: "Roll Call Vote 104th Congress, 2nd Session, Vote Number 262, H.R. 3734 Conference Report, August 1, 1996"
+  publisher: U.S. Senate
+  issued: {date-parts: [[1996, 8, 1]]}
+  URL: https://www.senate.gov/legislative/LIS/roll_call_votes/vote1042/vote_104_2_00262.htm
+# ------------------------------------------------------------------ election and economic data
+- id: medsl2018
+  type: dataset
+  author: [{literal: MIT Election Data and Science Lab}]
+  title: "County Presidential Election Returns 2000–2016"
+  publisher: Harvard Dataverse
+  issued: {date-parts: [[2018]]}
+  DOI: 10.7910/DVN/VOQCHQ
+- id: algara2021data
+  type: dataset
+  author: [{family: Algara, given: Carlos}, {family: Amlani, given: Sharif}]
+  title: "Replication Data for: Partisanship & Nationalization in American Elections: Evidence from Presidential, Senatorial, & Gubernatorial Elections in the U.S. Counties, 1872–2020"
+  publisher: Harvard Dataverse
+  version: '1.1'
+  issued: {date-parts: [[2021]]}
+  DOI: 10.7910/DVN/DGUMFI
+- id: amlani2021
+  type: article-journal
+  author: [{family: Amlani, given: Sharif}, {family: Algara, given: Carlos}]
+  title: "Partisanship & Nationalization in American Elections: Evidence from Presidential, Senatorial, & Gubernatorial Elections in the U.S. Counties, 1872–2020"
+  container-title: Electoral Studies
+  volume: 73
+  page: '102387'
+  issued: {date-parts: [[2021]]}
+  DOI: 10.1016/j.electstud.2021.102387
+- id: fec2017
+  type: report
+  author: [{literal: Federal Election Commission}]
+  title: "Federal Elections 2016: Election Results for the U.S. President, the U.S. Senate and the U.S. House of Representatives"
+  publisher: Federal Election Commission
+  issued: {date-parts: [[2017, 12]]}
+  URL: https://www.fec.gov/documents/1890/federalelections2016.xlsx
+- id: cbp2000
+  type: dataset
+  author: [{literal: U.S. Census Bureau}]
+  title: "County Business Patterns 2000 and 2008, County Files (<span class=\"nocase\">cbp00co</span>, <span class=\"nocase\">cbp08co</span>)"
+  publisher: U.S. Census Bureau
+  issued: {date-parts: [[2008]]}
+  URL: https://www2.census.gov/programs-surveys/cbp/datasets/
+- id: blscpi
+  type: dataset
+  author: [{literal: U.S. Bureau of Labor Statistics}]
+  title: "Consumer Price Index for All Urban Consumers, U.S. City Average, All Items, Not Seasonally Adjusted (Series CUUR0000SA0)"
+  publisher: U.S. Bureau of Labor Statistics
+  issued: {date-parts: [[2026]]}
+  URL: https://api.bls.gov/publicAPI/v1/timeseries/data/
+# ------------------------------------------------------------------ inference
+- id: cameron2008
+  type: article-journal
+  author: [{family: Cameron, given: A. Colin}, {family: Gelbach, given: Jonah B.}, {family: Miller, given: Douglas L.}]
+  title: "Bootstrap-Based Improvements for Inference with Clustered Errors"
+  container-title: Review of Economics and Statistics
+  volume: 90
+  issue: 3
+  page: 414-427
+  issued: {date-parts: [[2008]]}
+  DOI: 10.1162/rest.90.3.414
+- id: cameron2011
+  type: article-journal
+  author: [{family: Cameron, given: A. Colin}, {family: Gelbach, given: Jonah B.}, {family: Miller, given: Douglas L.}]
+  title: "Robust Inference With Multiway Clustering"
+  container-title: Journal of Business & Economic Statistics
+  volume: 29
+  issue: 2
+  page: 238-249
+  issued: {date-parts: [[2011]]}
+  DOI: 10.1198/jbes.2010.07136
+- id: sanderson2016
+  type: article-journal
+  author: [{family: Sanderson, given: Eleanor}, {family: Windmeijer, given: Frank}]
+  title: "A Weak Instrument F-Test in Linear IV Models with Multiple Endogenous Variables"
+  container-title: Journal of Econometrics
+  volume: 190
+  issue: 2
+  page: 212-221
+  issued: {date-parts: [[2016]]}
+  DOI: 10.1016/j.jeconom.2015.06.004
+- id: adao2019
+  type: article-journal
+  author: [{family: Adão, given: Rodrigo}, {family: Kolesár, given: Michal}, {family: Morales, given: Eduardo}]
+  title: "Shift-Share Designs: Theory and Inference"
+  container-title: Quarterly Journal of Economics
+  volume: 134
+  issue: 4
+  page: 1949-2010
+  issued: {date-parts: [[2019]]}
+  DOI: 10.1093/qje/qjz025
+- id: borusyak2022
+  type: article-journal
+  author: [{family: Borusyak, given: Kirill}, {family: Hull, given: Peter}, {family: Jaravel, given: Xavier}]
+  title: "Quasi-Experimental Shift-Share Research Designs"
+  container-title: Review of Economic Studies
+  volume: 89
+  issue: 1
+  page: 181-213
+  issued: {date-parts: [[2022]]}
+  DOI: 10.1093/restud/rdab030
+- id: nizalova2016
+  type: article-journal
+  author: [{family: Nizalova, given: Olena Y.}, {family: Murtazashvili, given: Irina}]
+  title: "Exogenous Treatment and Endogenous Factors: Vanishing of Omitted Variable Bias on the Interaction Term"
+  container-title: Journal of Econometric Methods
+  volume: 5
+  issue: 1
+  page: 71-77
+  issued: {date-parts: [[2016]]}
+  DOI: 10.1515/jem-2013-0012
+- id: bun2019
+  type: article-journal
+  author: [{family: Bun, given: Maurice J. G.}, {family: Harrison, given: Teresa D.}]
+  title: "OLS and IV Estimation of Regression Models Including Endogenous Interaction Terms"
+  container-title: Econometric Reviews
+  volume: 38
+  issue: 7
+  page: 814-827
+  issued: {date-parts: [[2019]]}
+  DOI: 10.1080/07474938.2018.1427486

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: 'After AFDC: Cash-Assistance Erosion Did Not Detectably Amplify the Vote Response to the China Shock'
+authors:
+- name: PIATRA Institute
+date-released: '2026-11-01'
+url: https://piatra.institute/papers/after-afdc.pdf
+repository-code: https://github.com/piatra-institute/papers-after-afdc
+abstract: 'After the 1996 welfare law, families receiving cash assistance per 100 poor families with children fell in every contiguous state, from an average of 68 in 1995–96 to 20 in 2015–16, unevenly. If social insurance shapes how voters respond to job loss, counties in states that lost more cash protection should have moved further toward the Republican presidential candidate when hit by the same local trade shock. The test uses public data and a design fixed before outcome data were downloaded. The outcome is the 2000–2016 change in the county Republican two-party share; the shock is commuting-zone exposure to Chinese import competition, instrumented as in earlier work; the moderator is the erosion of the state AFDC/TANF-to-poverty ratio, with state fixed effects. Across 3,106 counties the interaction is $-0.61$ points per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33: the sign opposes the hypothesis and the interval includes zero. Pre-period placebos are flat, and no pre-specified alternative moderator, control or shock measure yields significant amplification. The interval excludes amplification larger than about a quarter of the average shock effect per standard deviation. Translated into 2016 votes, it includes Democratic gains larger than the Republican margin in Michigan, Wisconsin and Pennsylvania and much larger losses, so county data cannot settle whether cash-assistance erosion changed those states. The main limit is the moderator: erosion mostly records how many families states aided in 1996, and the program reached few of the workers the shock displaced.'
+preferred-citation:
+  type: article
+  title: 'After AFDC: Cash-Assistance Erosion Did Not Detectably Amplify the Vote Response to the China Shock'
+  authors:
+  - name: PIATRA Institute
+  date-published: '2026-11-01'
+  url: https://piatra.institute/papers/after-afdc.pdf
+  repository-code: https://github.com/piatra-institute/papers-after-afdc
