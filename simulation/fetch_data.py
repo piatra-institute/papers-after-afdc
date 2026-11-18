@@ -9,8 +9,11 @@ Usage:
     uv run python fetch_data.py            # download missing files, verify all
     uv run python fetch_data.py --record   # print hashes of new files instead of failing
 
-The fetch log records the SHA-256 of ../brief.md at the time of download, so the
-order "analysis plan first, outcome data second" can be checked against audit.md.
+The fetch log is append-only from 2026-11-18T20:27Z: each run adds an entry with its UTC
+time, the SHA-256 of ../brief.md and the status of every file. Entries written by
+earlier runs of the first version of this script were overwritten, except the last
+one (2026-11-18T19:03:25Z), which is kept as the first entry. The log is
+self-recorded and is not an external timestamp.
 """
 from __future__ import annotations
 
@@ -105,6 +108,22 @@ SOURCES = [
         "role": "County manufacturing employment, 2008 (alternative shock)",
     },
     {
+        "name": "bea_ca35_2011",
+        "file": "bea_ca35_2011.zip",
+        "url": f"{WAYBACK}/20110508122527id_/http://www.bea.gov/regional/zip/ca35.zip",
+        "sha256": "362a129a2e80ab2de7429fd9f56f884a21f20908810f989571bb6dc0b5a9af27",
+        "licence": "U.S. Bureau of Economic Analysis, Regional Economic Accounts table CA35 (April 2011 release, Internet Archive capture of bea.gov); public domain (U.S. government work).",
+        "role": "County personal current transfer receipts by program, 1969-2009, including family assistance (AFDC/TANF), which later releases no longer separate",
+    },
+    {
+        "name": "bea_ca1_3_2011",
+        "file": "bea_ca1-3_2011.zip",
+        "url": f"{WAYBACK}/20110508121624id_/http://www.bea.gov/regional/zip/ca1-3.zip",
+        "sha256": "90743a71c1248756c0983b30e6cf057ed559d17f914602b86eb1f0ee7e5d2b9b",
+        "licence": "U.S. Bureau of Economic Analysis, table CA1-3 (April 2011 release, Internet Archive capture); public domain.",
+        "role": "County population, same vintage as CA35 (per-capita transfers)",
+    },
+    {
         "name": "fec_2016",
         "file": "federalelections2016.xlsx",
         "url": "https://www.fec.gov/documents/1890/federalelections2016.xlsx",
@@ -118,6 +137,9 @@ SOURCES = [
 # normalised before hashing.
 CPI_QUERIES = [("CUUR0000SA0", "1996"), ("CUUR0000SA0", "2016")]
 CPI_FILE = "bls_cpiu_july_1996_2016.json"
+CPI_ANNUAL_YEARS = ["2000", "2008"]
+CPI_ANNUAL_FILE = "bls_cpiu_monthly_2000_2008.json"
+CPI_ANNUAL_SHA256 = "bb99932fb28fe30b74c563324532ad72bd9619cc232c8f6084af4d0ac715615a"
 CPI_SHA256 = "e4525f426049ab5290d0fdcc04095bcbb7e786da7664da53cdc8cca8b705af77"
 
 
@@ -161,12 +183,29 @@ def fetch_cpi(dest: Path) -> None:
                                 "observations": rows}, indent=1, sort_keys=True) + "\n")
 
 
+def fetch_cpi_monthly(dest: Path) -> None:
+    rows = []
+    for year in CPI_ANNUAL_YEARS:
+        body = json.dumps({"seriesid": ["CUUR0000SA0"], "startyear": year, "endyear": year}).encode()
+        raw = json.loads(get("https://api.bls.gov/publicAPI/v1/timeseries/data/", body,
+                             {"Content-Type": "application/json"}))
+        if raw.get("status") != "REQUEST_SUCCEEDED":
+            raise RuntimeError(f"BLS request failed: {raw.get('message')}")
+        for obs in raw["Results"]["series"][0]["data"]:
+            if obs["period"].startswith("M") and obs["period"] != "M13":
+                rows.append({"series": "CUUR0000SA0", "year": int(obs["year"]), "period": obs["period"],
+                             "value": obs["value"]})
+    rows.sort(key=lambda r: (r["year"], r["period"]))
+    dest.write_text(json.dumps({"source": "U.S. Bureau of Labor Statistics, CPI-U, U.S. city average, all items, not seasonally adjusted, monthly (public domain)",
+                                "observations": rows}, indent=1, sort_keys=True) + "\n")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--record", action="store_true", help="report hashes of unpinned files instead of failing")
     args = ap.parse_args()
     RAW.mkdir(parents=True, exist_ok=True)
-    log = {
+    entry = {
         "fetched_at_utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "brief_md_sha256_at_fetch": sha256(BRIEF),
         "files": [],
@@ -174,13 +213,18 @@ def main() -> int:
     ok = True
     entries = list(SOURCES) + [{"name": "bls_cpi", "file": CPI_FILE, "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/ (POST, normalised)",
                                  "sha256": CPI_SHA256, "licence": "U.S. Bureau of Labor Statistics; public domain.",
-                                 "role": "July CPI-U, 1996 and 2016 (real benefit deflator)"}]
+                                 "role": "July CPI-U, 1996 and 2016 (real benefit deflator)"},
+                               {"name": "bls_cpi_monthly", "file": CPI_ANNUAL_FILE, "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/ (POST, normalised)",
+                                 "sha256": CPI_ANNUAL_SHA256, "licence": "U.S. Bureau of Labor Statistics; public domain.",
+                                 "role": "Monthly CPI-U for 2000 and 2008 (deflator for BEA transfers)"}]
     for src in entries:
         dest = RAW / src["file"]
         if not dest.exists():
             print(f"downloading {src['name']} ...", flush=True)
             if src["name"] == "bls_cpi":
                 fetch_cpi(dest)
+            elif src["name"] == "bls_cpi_monthly":
+                fetch_cpi_monthly(dest)
             else:
                 dest.write_bytes(get(src["url"]))
         digest = sha256(dest)
@@ -194,9 +238,17 @@ def main() -> int:
             status = "MISMATCH"
             ok = False
             print(f"MISMATCH {src['name']}: expected {src['sha256']}, got {digest}")
-        log["files"].append({"name": src["name"], "file": f"data/raw/{src['file']}", "url": src["url"],
+        entry["files"].append({"name": src["name"], "file": f"data/raw/{src['file']}", "url": src["url"],
                              "sha256": digest, "bytes": dest.stat().st_size, "status": status,
                              "licence": src["licence"], "role": src["role"]})
+    log = {"runs": []}
+    if LOG.exists():
+        old = json.loads(LOG.read_text())
+        log = old if "runs" in old else {
+            "note": ("Append-only from 2026-11-18T20:27Z. Runs of the first script version before "
+                     "2026-11-18T19:03:25Z overwrote this file; only that run's entry survives."),
+            "runs": [old]}
+    log["runs"].append(entry)
     LOG.write_text(json.dumps(log, indent=1) + "\n")
     print("fetch log written to", LOG)
     return 0 if ok else 1

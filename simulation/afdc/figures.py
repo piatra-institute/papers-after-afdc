@@ -82,16 +82,16 @@ def fig_moderation(R, path: Path, states: dict) -> None:
 
 
 def fig_robustness(R, path: Path) -> None:
-    rows = [R["robustness_rows"][k] for k in R["robustness_order"] if R["robustness_rows"][k]["group"] != "cbp"]
-    rows = [(r["label"], r["coef"], r["ci95"][0], r["ci95"][1], r["group"]) for r in rows]
+    rows = [R["robustness_rows"][k] for k in R["robustness_order"]]
+    rows = [(r["label"] + (" †" if r["group"] == "cbp" else ""), r["coef"], r["ci95"][0], r["ci95"][1], r["group"]) for r in rows]
 
     n = len(rows)
-    fig, ax = plt.subplots(figsize=(6.5, 0.24 * n + 0.9), constrained_layout=True)
+    fig, ax = plt.subplots(figsize=(6.5, 0.215 * n + 0.9), constrained_layout=True)
     for i, (lab, c, lo, hi, grp) in enumerate(rows):
         yy = n - 1 - i
         col = ACCENT if grp == "main" else (WARN if grp == "placebo" else INK)
-        ax.plot([lo, hi], [yy, yy], color=col, lw=1.2)
-        ax.plot(c, yy, "o", color=col, ms=4)
+        ax.plot([lo, hi], [yy, yy], color=col, lw=1.2, ls=":" if grp == "revision" else "-")
+        ax.plot(c, yy, "o", color=col, ms=4, mfc="white" if grp == "revision" else col)
     ax.axvline(0, color=MUTED, lw=0.8)
     ax.set_yticks(range(n))
     ax.set_yticklabels([r[0] for r in rows][::-1])

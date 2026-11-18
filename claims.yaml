@@ -32,7 +32,7 @@ claims:
   rationale: The AFDC/TANF-to-poverty ratio is defined per 100 poor families with children (CBPP spreadsheet, sheet '50-State Ratios 1979-2023'); 'every contiguous state' refers to the 48 states in the sample (/descriptives/states_with_erosion_positive = 48).
 - id: abstract-n
   kind: computation
-  passage: 'Across 3,106 counties the interaction is $-0.61$ points per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33: the sign opposes the hypothesis and the interval includes zero.'
+  passage: Across 3,106 counties the interaction is $-0.61$ points of Republican share per point of import penetration per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33.
   evidence:
     file: simulation/output/results.json
     run_id: analysis
@@ -44,7 +44,7 @@ claims:
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: abstract-gamma-sd
   kind: computation
-  passage: 'Across 3,106 counties the interaction is $-0.61$ points per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33: the sign opposes the hypothesis and the interval includes zero.'
+  passage: Across 3,106 counties the interaction is $-0.61$ points of Republican share per point of import penetration per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33.
   evidence:
     file: simulation/output/results.json
     run_id: analysis
@@ -56,7 +56,7 @@ claims:
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: abstract-gamma-sd-lo
   kind: computation
-  passage: 'Across 3,106 counties the interaction is $-0.61$ points per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33: the sign opposes the hypothesis and the interval includes zero.'
+  passage: Across 3,106 counties the interaction is $-0.61$ points of Republican share per point of import penetration per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33.
   evidence:
     file: simulation/output/results.json
     run_id: analysis
@@ -68,7 +68,7 @@ claims:
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: abstract-gamma-sd-hi
   kind: computation
-  passage: 'Across 3,106 counties the interaction is $-0.61$ points per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33: the sign opposes the hypothesis and the interval includes zero.'
+  passage: Across 3,106 counties the interaction is $-0.61$ points of Republican share per point of import penetration per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33.
   evidence:
     file: simulation/output/results.json
     run_id: analysis
@@ -80,20 +80,132 @@ claims:
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: abstract-interval-level
   kind: definition
-  passage: 'Across 3,106 counties the interaction is $-0.61$ points per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33: the sign opposes the hypothesis and the interval includes zero.'
-  rationale: 'All reported intervals are 95% confidence intervals (pre-registered: ''the two-sided 95% interval for gamma'').'
-- id: abstract-quarter
+  passage: Across 3,106 counties the interaction is $-0.61$ points of Republican share per point of import penetration per standard deviation of erosion, with a 95% interval from $-1.56$ to 0.33.
+  rationale: 'All reported intervals are 95% confidence intervals (pre-specified: ''the two-sided 95% interval for gamma'').'
+- id: abstract-ub-min
+  kind: computation
+  passage: Across specifications the upper bound ranges from 0.20 to 1.03, against a shock effect of 1.30 at mean erosion, so only very large amplification is excluded.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/upper_bounds_per_sd/min
+    reported: '0.20'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound per state SD, lowest across specifications of the erosion moderator (OLS)
+    conditions: 'Revision round 1, post hoc: specifications of the same moderator listed in /revision1/upper_bounds_per_sd/by_spec.'
+- id: abstract-ub-max
+  kind: computation
+  passage: Across specifications the upper bound ranges from 0.20 to 1.03, against a shock effect of 1.30 at mean erosion, so only very large amplification is excluded.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/upper_bounds_per_sd/max
+    reported: '1.03'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound per state SD, highest (dropping states with 1995-96 ratio above 100)
+    conditions: As above.
+- id: abstract-beta
+  kind: computation
+  passage: Across specifications the upper bound ranges from 0.20 to 1.03, against a shock effect of 1.30 at mean erosion, so only very large amplification is excluded.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /primary/beta_at_mean/coef
+    reported: '1.30'
+    scale: 1
+    decimals: 2
+    units: shock effect at mean erosion, points per point
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: abstract-very-large
   kind: interpretation
-  passage: The interval excludes amplification larger than about a quarter of the average shock effect per standard deviation.
-  rationale: Upper bound of the primary interaction per SD, 0.328 (/primary/gamma_per_sd_ci95/1), divided by the shock effect at mean erosion, 1.298 (/primary/beta_at_mean/coef), is 0.25.
+  passage: Across specifications the upper bound ranges from 0.20 to 1.03, against a shock effect of 1.30 at mean erosion, so only very large amplification is excluded.
+  rationale: An upper bound of 1.03 per SD is 0.79 of the shock effect at mean erosion (/revision1/upper_bounds_per_sd/max_over_beta_at_mean).
+- id: abstract-fs-b
+  kind: computation
+  passage: A first-stage check with county transfer data detects no response of family-assistance payments to the shock (0.98 dollars per capita per point, interval $-6.36$ to 8.32) and no moderation of that response by erosion ($-0.60$ per standard deviation, interval $-3.91$ to 2.72).
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/beta_at_mean/coef
+    reported: '0.98'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: abstract-fs-blo
+  kind: computation
+  passage: A first-stage check with county transfer data detects no response of family-assistance payments to the shock (0.98 dollars per capita per point, interval $-6.36$ to 8.32) and no moderation of that response by erosion ($-0.60$ per standard deviation, interval $-3.91$ to 2.72).
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/beta_at_mean/state+czone/ci95/0
+    reported: −6.36
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: abstract-fs-bhi
+  kind: computation
+  passage: A first-stage check with county transfer data detects no response of family-assistance payments to the shock (0.98 dollars per capita per point, interval $-6.36$ to 8.32) and no moderation of that response by erosion ($-0.60$ per standard deviation, interval $-3.91$ to 2.72).
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/beta_at_mean/state+czone/ci95/1
+    reported: '8.32'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: abstract-fs-g
+  kind: computation
+  passage: A first-stage check with county transfer data detects no response of family-assistance payments to the shock (0.98 dollars per capita per point, interval $-6.36$ to 8.32) and no moderation of that response by erosion ($-0.60$ per standard deviation, interval $-3.91$ to 2.72).
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/gamma_per_state_sd
+    reported: −0.60
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point per state SD of erosion
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: abstract-fs-glo
+  kind: computation
+  passage: A first-stage check with county transfer data detects no response of family-assistance payments to the shock (0.98 dollars per capita per point, interval $-6.36$ to 8.32) and no moderation of that response by erosion ($-0.60$ per standard deviation, interval $-3.91$ to 2.72).
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/gamma_per_sd_ci95/0
+    reported: −3.91
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: abstract-fs-ghi
+  kind: computation
+  passage: A first-stage check with county transfer data detects no response of family-assistance payments to the shock (0.98 dollars per capita per point, interval $-6.36$ to 8.32) and no moderation of that response by erosion ($-0.60$ per standard deviation, interval $-3.91$ to 2.72).
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/gamma_per_sd_ci95/1
+    reported: '2.72'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: abstract-first-stage
+  kind: interpretation
+  passage: A first-stage check with county transfer data detects no response of family-assistance payments to the shock (0.98 dollars per capita per point, interval $-6.36$ to 8.32) and no moderation of that response by erosion ($-0.60$ per standard deviation, interval $-3.91$ to 2.72).
+  rationale: 'Non-detection, not absence: both intervals include zero and leave room for a modest response; post hoc, added after review.'
 - id: abstract-bridge
   kind: interpretation
-  passage: Translated into 2016 votes, it includes Democratic gains larger than the Republican margin in Michigan, Wisconsin and Pennsylvania and much larger losses, so county data cannot settle whether cash-assistance erosion changed those states.
-  rationale: For all three states and both counterfactuals, the upper end of the margin-change interval exceeds the FEC margin and the lower end is a loss several times larger (/bridge/counterfactuals/*/states/*/ci_includes_flip = true).
+  passage: In 2016 votes, the interval includes changes larger than the Michigan, Wisconsin and Pennsylvania margins in both directions, so county data cannot settle whether erosion's amplification of the trade-shock effect changed those states.
+  rationale: For all three states and both counterfactuals, the upper end of the margin-change interval exceeds the FEC margin and the lower end is a loss several times larger (/bridge/counterfactuals/*/states/*/ci_includes_flip = true). The bridge uses only the interaction channel.
 - id: abstract-limit
   kind: interpretation
-  passage: 'The main limit is the moderator: erosion mostly records how many families states aided in 1996, and the program reached few of the workers the shock displaced.'
-  rationale: Erosion correlates 0.81 with the 1995-96 ratio (/descriptives/corr_erosion_tpr1996_states); TANF serves families with children (PRWORA sec. 408(a)(1)); ADH (2013, pp. 2148-2149) find small income-assistance responses to the shock.
+  passage: The main limits are a moderator that mostly records 1996 coverage and a program that reached few displaced workers.
+  rationale: Erosion correlates 0.81 with the 1995-96 ratio (/descriptives/corr_erosion_tpr1996_states); TANF serves families with children (PRWORA sec. 408(a)(1)); family assistance did not respond measurably to the shock (/revision1/first_stage_transfers/d_fa_pc).
 - id: intro-tpr-1996
   kind: computation
   passage: In 1995–96 the average contiguous state aided about 68 families with Aid to Families with Dependent Children (AFDC) for every 100 poor families with children.
@@ -184,6 +296,26 @@ claims:
     verified: false
     verification_note: Abstract read via Semantic Scholar record of the JPE article. Ruggie's embedded liberalism is cited for its well-known content only (title read; full text not inspected), so it carries no source claim.
     quote: One explanation is that government spending plays a risk-reducing role in economies exposed to a significant amount of external risk.
+- id: hays-embedded
+  kind: source
+  passage: Hays, Ehrlich and Peinhardt test the thesis's critical assumption, that programs protecting those harmed by imports reduce opposition to free trade, and find support for it with individual and national data from OECD countries [@hays2005]; Walter traces the individual-level chain from globalization losses through economic insecurity to support for welfare expansion and for the Social Democratic Party in Switzerland [@walter2010].
+  evidence:
+    citation_id: hays2005
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: We provide a micro-level test of the critical assumption behind the embedded liberalism thesis that government programs designed to protect individuals harmed by imports reduce opposition to free trade. ... We find empirical support for the embedded liberalism thesis in both our micro- and macro-level analyses.
+- id: walter-micro
+  kind: source
+  passage: Hays, Ehrlich and Peinhardt test the thesis's critical assumption, that programs protecting those harmed by imports reduce opposition to free trade, and find support for it with individual and national data from OECD countries [@hays2005]; Walter traces the individual-level chain from globalization losses through economic insecurity to support for welfare expansion and for the Social Democratic Party in Switzerland [@walter2010].
+  evidence:
+    citation_id: walter2010
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the OpenAlex record.
+    quote: It finds that globalization losers are more likely to express feelings of economic insecurity. Such feelings, in turn, increase preferences for welfare state expansion, which in turn increase the likelihood of voting for the Social Democratic Party.
 - id: margalit-taa
   kind: source
   passage: Margalit finds that between 2000 and 2004 the anti-incumbent effect of trade-related layoffs was smaller in counties where more workers were certified for Trade Adjustment Assistance [@margalit2011].
@@ -224,6 +356,16 @@ claims:
     verified: false
     verification_note: Read the title page and introduction of the working paper PDF (author website, created 2026-03-02). Working paper, not peer reviewed.
     quote: Leveraging quasi-random assignment of TAA petitions to individual bureaucrats, we find that bureaucrat-driven delays in processing petitions shift voting behavior and public attitudes in the affected communities against international integration and the government.
+- id: bbc-tradewar
+  kind: source
+  passage: In the 2018 House elections, Republican candidates lost support in counties more exposed to retaliatory tariffs, and also fared worse where health insurance coverage had recently grown [@blanchard2024].
+  evidence:
+    citation_id: blanchard2024
+    locator: Abstract
+    depth: fulltext
+    verified: false
+    verification_note: Read the abstract and introduction of the version of record (author-hosted PDF, SHA-256 702d9503...); the health-insurance finding is in the abstract and Section 5.
+    quote: Republican House candidates lost support in counties more exposed to tariff retaliation ... Republicans also fared worse in counties that had seen recent gains in health insurance coverage
 - id: swank-betz
   kind: source
   passage: In Western Europe, Swank and Betz report that universal welfare states weaken the link between openness and far-right support [@swank2003].
@@ -284,13 +426,21 @@ claims:
     verified: false
     verification_note: Abstract read from the Crossref record. Fetzer reports an association and a counterfactual Remain victory; the paper here cites only the association.
     quote: This paper documents a significant association between the exposure of an individual or area to the UK government's austerity-induced welfare reforms begun in 2010, and ... the subsequent rise in support for the UK Independence Party
+- id: novelty
+  kind: interpretation
+  passage: None asks whether state differences in the general, means-tested cash program for poor families moderated the presidential-vote response to the China shock, and none checks whether that program responded to the shock at all.
+  rationale: Searches recorded in sources.md found no prior test of this moderator or of the program's response to the shock.
 - id: intro-summary
   kind: interpretation
-  passage: The estimated interaction has the opposite sign to the hypothesis and an interval that includes zero; the pre-period placebos are flat; no pre-specified alternative supports amplification at conventional levels.
-  rationale: Summary of /primary/gamma (coef -0.032, interval -0.082 to 0.017), /F1_placebo, /robustness_rows and /bridge; each number is bound where it is reported.
+  passage: The estimated interaction is not distinguishable from zero, and its point estimate is negative.
+  rationale: '/primary/gamma: -0.032, interval -0.082 to 0.017, p = 0.20.'
+- id: intro-transfers
+  kind: interpretation
+  passage: County transfer data detect no response of family-assistance payments to the shock and no moderation of that response by erosion, with wide intervals.
+  rationale: /revision1/first_stage_transfers/d_fa_pc; post hoc, added after review.
 - id: intro-bridge-summary
   kind: interpretation
-  passage: Translated into votes, the interval for each of Michigan, Wisconsin and Pennsylvania includes changes larger than the 2016 margin in either direction, so the 2016 question lies below the resolution of this design.
+  passage: Translated into votes, the interval for each of Michigan, Wisconsin and Pennsylvania includes changes larger than the 2016 margin in either direction.
   rationale: 'From /bridge/counterfactuals/*/states/*: every interval contains values above the FEC margin and losses several times larger.'
 - id: prwora-no-entitlement
   kind: source
@@ -412,6 +562,16 @@ claims:
     verified: false
     verification_note: Read the signing statement on govinfo (PPP-1996-book2-doc-pg1328).
     quote: It fails to provide sufficient contingency funding for States that experience a serious economic downturn
+- id: ziliak-caseloads
+  kind: source
+  passage: Many states operated AFDC under federal waivers in the mid-1990s, although Ziliak and coauthors attribute most of the 1993–96 decline in caseloads to economic conditions [@ziliak2000].
+  evidence:
+    citation_id: ziliak2000
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the OpenAlex record.
+    quote: Our results suggest that the decline in per capita AFDC caseloads is attributable largely to the economic conditions in states and not to waivers from federal welfare policies. Nationwide, we attribute 66 percent of the decline to the macroeconomy.
 - id: parolin-decomposition
   kind: source
   passage: Parolin decomposes the fall in cash assistance from 1993 to 2016 and attributes 52% of it to lower participation among income-eligible families, 21% to lower need and 27% to lower benefit levels [@parolin2021].
@@ -704,10 +864,10 @@ claims:
     quote: State AFDC/TANF-to-Poverty Ratios, Two-Year Averages
 - id: wrd-table
   kind: source
-  passage: Benefit levels come from Table L5 of the 2016 Welfare Rules Databook [@wrd2017], deflated with the July consumer price index [@blscpi]; County Business Patterns supply an alternative shock [@cbp2000], aggregated to commuting zones with the county crosswalk of Autor and Dorn [-@autordorn2013]; and the Federal Election Commission [-@fec2017] supplies the official 2016 margins.
+  passage: Benefit levels come from Table L5 of the 2016 Welfare Rules Databook [@wrd2017], deflated with the July consumer price index [@blscpi]; County Business Patterns supply an alternative shock [@cbp2000], aggregated to commuting zones with the county crosswalk of Autor and Dorn [-@autordorn2013]; county transfer payments come from the Bureau of Economic Analysis [-@beaca35]; and the Federal Election Commission [-@fec2017] supplies the official 2016 margins.
   evidence:
     citation_id: wrd2017
-    locator: Table L5, pp. 245-246
+    locator: Table L5, pp. 246-247
     depth: fulltext
     verified: false
     verification_note: Read Table L5 and its notes in the PDF; the transcription in simulation/data/wrd_table_l5.csv reproduces the printed 1996 mean and median, and the 2016 mean and median when Wisconsin is excluded as in the table.
@@ -860,6 +1020,58 @@ claims:
     decimals: 2
     units: Pearson correlation across 48 states
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: early-states
+  kind: computation
+  passage: 'Much of the loss came early: across the 48 states, 55% of the erosion measured to 2015–16 had occurred by 1999–2000, before the shock window.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /sample/states
+    reported: '48'
+    scale: 1
+    decimals: 0
+    units: states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: early-share
+  kind: computation
+  passage: 'Much of the loss came early: across the 48 states, 55% of the erosion measured to 2015–16 had occurred by 1999–2000, before the shock window.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/share_of_erosion_by_1999_2000
+    reported: 55%
+    scale: 100
+    decimals: 0
+    units: percent of mean erosion (1995-96 to 2015-16) that occurred by 1999-2000
+    conditions: Revision round 1, post hoc; CBPP two-year averages.
+- id: cps-denominator
+  kind: interpretation
+  passage: Its denominator is a Current Population Survey estimate of poor families with children, which in small states rests on few sample households; four states had 1995–96 ratios above 100 (California, Missouri, New Jersey and Rhode Island).
+  rationale: /revision1/base_le_100/states_dropped lists California, Missouri, New Jersey and Rhode Island, whose 1995-96 ratio per 100 poor families exceeds 100.
+- id: pov-growth-corr
+  kind: computation
+  passage: Across states, the log growth in poor families with children between 1995–96 and 2015–16 correlates $-0.12$ with the state's mean shock, and erosion correlates 0.15 with it.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/corr_log_poverty_growth_state_mean_shock
+    reported: −0.12
+    scale: 1
+    decimals: 2
+    units: Pearson correlation across 48 states
+    conditions: Revision round 1, post hoc; CBPP 'Poverty (2 yr)' sheet.
+- id: erosion-shock-corr
+  kind: computation
+  passage: Across states, the log growth in poor families with children between 1995–96 and 2015–16 correlates $-0.12$ with the state's mean shock, and erosion correlates 0.15 with it.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/corr_erosion_state_mean_shock
+    reported: '0.15'
+    scale: 1
+    decimals: 2
+    units: Pearson correlation across 48 states
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: benefit-fell-n
   kind: computation
   passage: The real maximum benefit for a family of three fell between July 1996 and July 2016 in 46 of the 48 states, by 24.5% on average, and its decline is nearly unrelated to the erosion of coverage, with a correlation of 0.13.
@@ -950,6 +1162,16 @@ claims:
   kind: assumption
   passage: Reading $\gamma$ as the effect of changing a state's cash protection requires the further assumption that erosion is not standing in for some other state characteristic that conditions the response to job loss.
   rationale: Required for the bridge to 2016; not testable within this design. The competing-moderator checks (R5) address observed proxies only.
+- id: hmx-binning
+  kind: source
+  passage: The linear form is checked by estimating the shock effect separately in terciles of states ordered by erosion [@hainmueller2019].
+  evidence:
+    citation_id: hainmueller2019
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Abstract read from the Crossref record.
+    quote: First, these models assume a linear interaction effect that changes at a constant rate with the moderator. ... We propose a checklist of simple diagnostics to assess the validity of these assumptions
 - id: t-df
   kind: computation
   passage: Standard errors are clustered jointly by state and by commuting zone [@cameron2011]; intervals and tests for state-clustered and two-way statistics use the $t$ distribution with 47 degrees of freedom.
@@ -990,7 +1212,7 @@ claims:
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: akm-overrejection
   kind: source
-  passage: Correlation of residuals across commuting zones with similar industry mixes, the concern of the shift-share inference literature, is not addressed by these standard errors [@adao2019; @borusyak2022].
+  passage: These standard errors do not account for correlation of residuals across commuting zones with similar industry mixes, which in shift-share designs can make conventional intervals too narrow [@adao2019; @borusyak2022].
   evidence:
     citation_id: adao2019
     locator: Abstract
@@ -1000,7 +1222,7 @@ claims:
     quote: this overrejection problem arises because regression residuals are correlated across regions with similar sectoral shares, independent of their geographic location.
 - id: bhj-framework
   kind: source
-  passage: Correlation of residuals across commuting zones with similar industry mixes, the concern of the shift-share inference literature, is not addressed by these standard errors [@adao2019; @borusyak2022].
+  passage: These standard errors do not account for correlation of residuals across commuting zones with similar industry mixes, which in shift-share designs can make conventional intervals too narrow [@adao2019; @borusyak2022].
   evidence:
     citation_id: borusyak2022
     locator: Abstract
@@ -1008,13 +1230,21 @@ claims:
     verified: false
     verification_note: Abstract read from the Crossref record; cited for the shift-share framework in the Autor et al. (2013) setting.
     quote: We discuss and illustrate several practical insights of this framework in the setting of Autor et al. (2013), estimating the effect of Chinese import competition on manufacturing employment across U.S. commuting zones.
-- id: preregistration
+- id: plan-time
   kind: definition
-  passage: The analysis plan, with the primary specification, the secondary window, the robustness checks, the falsification tests and the decision rule, was written into the project's brief and hashed before any election returns were downloaded.
-  rationale: brief.md 'Analysis plan' section; SHA-256 08beb837... recorded at 2026-11-18T18:59Z before the first download of election returns (simulation/data/fetch-log.json records the brief hash at fetch time; audit.md gives the timeline).
+  passage: The specification, the secondary window, the robustness checks, the falsification tests and the decision rule were written into the project's brief at 18:59 UTC on November 18, 2026.
+  rationale: audit.md and simulation/data/fetch-log.json (first surviving entry 2026-11-18T19:03:25Z with brief hash 08beb837...). Self-recorded; no external timestamp.
+- id: plan-hash
+  kind: definition
+  passage: The brief's current text, with its later Deviations section reset to the placeholder it then held, reproduces the SHA-256 recorded at that time, 08beb837.
+  rationale: SHA-256 of brief.md truncated at '## Deviations' plus the line 'None yet.' equals 08beb8370d1309bb6860c427520e7174255efe473b7863efeaa8474b0a3f7c6a; reproduction steps in brief.md.
+- id: plan-seen
+  kind: definition
+  passage: Before the brief was written, the moderator data had been downloaded and examined, and so had the replication archive of Autor, Dorn, Hanson and Majlesi, which contains county presidential vote shares for 1992 to 2016; only its variable names and the shock and instrument columns were read.
+  rationale: 'audit.md timeline: CBPP ratios, Welfare Rules Databook Table L5 and the ADHM archive (variable names and shock/instrument columns) were opened before the plan; the archive''s Leip-derived vote shares were present on disk.'
 - id: deviations
   kind: definition
-  passage: The deviations recorded there are the use of the laboratory's public mirror of the same election file, because the current repository copy sits behind a form that collects personal details; corrections to that file found by comparing it with an independent source and with official totals; the handling of a county created in 2001 in the business-pattern data; the degrees of freedom used for intervals; and descriptive additions, which are labelled as such where they appear.
+  passage: The deviations recorded in the brief are the use of the laboratory's public mirror of the same election file, because the current repository copy sits behind a form that collects personal details; corrections to that file found by comparing it with an independent source and with official totals; the handling of a county created in 2001 in the business-pattern data; the degrees of freedom used for intervals; and descriptive additions.
   rationale: brief.md 'Deviations' items 1-5.
 - id: v1-coef
   kind: computation
@@ -1074,10 +1304,30 @@ claims:
     decimals: 2
     units: standard error, CZ-clustered
     conditions: As above; finite-sample factor G/(G-1)(N-1)/(N-K).
-- id: v1-gap
-  kind: interpretation
-  passage: The gap therefore lies in the inputs.
-  rationale: V1b reproduces the published 1.71 on ADHM's own file with the same code (/V1b_adhm_own_file/coef), so the 1.90 obtained with open returns reflects input differences (vote source, weights, DC exclusion, county merges).
+- id: v1b-nodc-coef
+  kind: computation
+  passage: Dropping the District of Columbia from that file, as the sample here does, gives 1.88 with a standard error of 0.92, so the gap comes from that single heavily weighted county and the open returns otherwise reproduce the source design.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /V1b_adhm_own_file/no_dc/coef
+    reported: '1.88'
+    scale: 1
+    decimals: 2
+    units: points per point
+    conditions: ADHM's published analysis file without DC (3,106 counties), CZ clustering; added after review.
+- id: v1b-nodc-se
+  kind: computation
+  passage: Dropping the District of Columbia from that file, as the sample here does, gives 1.88 with a standard error of 0.92, so the gap comes from that single heavily weighted county and the open returns otherwise reproduce the source design.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /V1b_adhm_own_file/no_dc/se_cz
+    reported: '0.92'
+    scale: 1
+    decimals: 2
+    units: standard error, CZ-clustered
+    conditions: As above.
 - id: dr-mean
   kind: computation
   passage: The weighted mean change in the Republican share is $-0.74$ points with a standard deviation of 9.97, close to the published $-0.74$ and 9.95 [@autor2020, Table 5 notes].
@@ -1226,7 +1476,7 @@ claims:
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: gamma-sd
   kind: computation
-  passage: 'Scaled by the cross-state standard deviation of erosion, it is $-0.61$, with an interval from $-1.56$ to 0.33: more erosion goes with a smaller trade-shock effect.'
+  passage: Scaled by the cross-state standard deviation of erosion, it is $-0.61$, with an interval from $-1.56$ to 0.33.
   evidence:
     file: simulation/output/results.json
     run_id: analysis
@@ -1238,7 +1488,7 @@ claims:
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: gamma-sd-lo
   kind: computation
-  passage: 'Scaled by the cross-state standard deviation of erosion, it is $-0.61$, with an interval from $-1.56$ to 0.33: more erosion goes with a smaller trade-shock effect.'
+  passage: Scaled by the cross-state standard deviation of erosion, it is $-0.61$, with an interval from $-1.56$ to 0.33.
   evidence:
     file: simulation/output/results.json
     run_id: analysis
@@ -1250,7 +1500,7 @@ claims:
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: gamma-sd-hi
   kind: computation
-  passage: 'Scaled by the cross-state standard deviation of erosion, it is $-0.61$, with an interval from $-1.56$ to 0.33: more erosion goes with a smaller trade-shock effect.'
+  passage: Scaled by the cross-state standard deviation of erosion, it is $-0.61$, with an interval from $-1.56$ to 0.33.
   evidence:
     file: simulation/output/results.json
     run_id: analysis
@@ -1296,6 +1546,10 @@ claims:
     decimals: 2
     units: upper 95% bound
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: sign-not-established
+  kind: interpretation
+  passage: The point estimate is negative, but the interval includes zero and the sign is not established.
+  rationale: /primary/gamma/state+czone/p = 0.20.
 - id: eff-p25
   kind: computation
   passage: The implied effect is 1.72 at the 25th percentile of erosion and 0.85 at the 75th, a difference of $-0.87$ with an interval from $-2.19$ to 0.46.
@@ -1454,6 +1708,10 @@ claims:
     decimals: 2
     units: points per point
     conditions: As above.
+- id: tercile-overlap
+  kind: interpretation
+  passage: The pattern is consistent with a linear interaction, and the tercile intervals overlap heavily.
+  rationale: '/binned_terciles: 1.85 [-0.55, 4.25], 1.17 [-2.50, 4.83], 0.87 [-1.63, 3.37].'
 - id: cz-lo
   kind: computation
   passage: Clustering by commuting zone alone gives an interval for $\gamma$ from $-0.069$ to 0.004 and a $p$-value of 0.08; clustering by state alone gives a $p$-value of 0.19; the wild cluster bootstrap for the reduced-form interaction gives 0.23.
@@ -2018,9 +2276,13 @@ claims:
     decimals: 2
     units: 'Table 1 entry: interaction per state SD of erosion, or shock effect at mean erosion, points per point; p two-sided'
     conditions: Table 1 row; placebo rows omit the 1992/1996 vote-share controls.
+- id: windows-dependent
+  kind: interpretation
+  passage: The windows share the shock and the moderator, and all but the secondary window share the 2000 baseline, so they are not independent evidence; none of their interaction intervals excludes zero (Table 1).
+  rationale: run_all.py builds the 2000-2008, 2000-2012 and 2000-2016 changes from the same 2000 shares; all windows use the same shock and moderator.
 - id: pl9296
   kind: computation
-  passage: 'The pre-period placebos do not show the pattern: the interaction for the change from 1992 to 1996 is $-0.03$ per standard deviation and that for 1996 to 2000 is 0.23, both with intervals that include zero.'
+  passage: 'The pre-period placebo interactions are not distinguishable from zero: $-0.03$ per standard deviation for the change from 1992 to 1996, and 0.23 for 1996 to 2000, the latter in the hypothesized direction with a $p$-value of 0.14.'
   evidence:
     file: simulation/output/results.json
     run_id: analysis
@@ -2032,7 +2294,7 @@ claims:
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: pl9600
   kind: computation
-  passage: 'The pre-period placebos do not show the pattern: the interaction for the change from 1992 to 1996 is $-0.03$ per standard deviation and that for 1996 to 2000 is 0.23, both with intervals that include zero.'
+  passage: 'The pre-period placebo interactions are not distinguishable from zero: $-0.03$ per standard deviation for the change from 1992 to 1996, and 0.23 for 1996 to 2000, the latter in the hypothesized direction with a $p$-value of 0.14.'
   evidence:
     file: simulation/output/results.json
     run_id: analysis
@@ -2041,6 +2303,66 @@ claims:
     scale: 1
     decimals: 2
     units: per state SD of erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: pl9600-p
+  kind: computation
+  passage: 'The pre-period placebo interactions are not distinguishable from zero: $-0.03$ per standard deviation for the change from 1992 to 1996, and 0.23 for 1996 to 2000, the latter in the hypothesized direction with a $p$-value of 0.14.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/placebo_9600/p
+    reported: '0.14'
+    scale: 1
+    decimals: 2
+    units: two-sided p-value
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: pl9296-beta
+  kind: computation
+  passage: 'In the 1992 to 1996 placebo the shock''s main effect is $-0.99$, with an interval from $-2.14$ to 0.16 and a $p$-value of 0.09: a pre-trend opposite in sign to the post-period effect and of similar size, which the primary specification relies on the 1992 and 1996 vote-share controls to absorb.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /F1_placebo/dR_1992_1996/beta_at_mean/coef
+    reported: −0.99
+    scale: 1
+    decimals: 2
+    units: points per point at mean erosion
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: pl9296-beta-lo
+  kind: computation
+  passage: 'In the 1992 to 1996 placebo the shock''s main effect is $-0.99$, with an interval from $-2.14$ to 0.16 and a $p$-value of 0.09: a pre-trend opposite in sign to the post-period effect and of similar size, which the primary specification relies on the 1992 and 1996 vote-share controls to absorb.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /F1_placebo/dR_1992_1996/beta_at_mean/state+czone/ci95/0
+    reported: −2.14
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: pl9296-beta-hi
+  kind: computation
+  passage: 'In the 1992 to 1996 placebo the shock''s main effect is $-0.99$, with an interval from $-2.14$ to 0.16 and a $p$-value of 0.09: a pre-trend opposite in sign to the post-period effect and of similar size, which the primary specification relies on the 1992 and 1996 vote-share controls to absorb.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /F1_placebo/dR_1992_1996/beta_at_mean/state+czone/ci95/1
+    reported: '0.16'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: pl9296-beta-p
+  kind: computation
+  passage: 'In the 1992 to 1996 placebo the shock''s main effect is $-0.99$, with an interval from $-2.14$ to 0.16 and a $p$-value of 0.09: a pre-trend opposite in sign to the post-period effect and of similar size, which the primary specification relies on the 1992 and 1996 vote-share controls to absorb.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /F1_placebo/dR_1992_1996/beta_at_mean/state+czone/p
+    reported: '0.09'
+    scale: 1
+    decimals: 2
+    units: two-sided p-value
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: plmod
   kind: computation
@@ -2334,9 +2656,57 @@ claims:
     decimals: 4
     units: upper 95% bound
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: cbp-iv
+  kind: computation
+  passage: Instrumented with the trade exposure, it gives $-0.18$ per standard deviation of erosion, with an interval from $-0.38$ to 0.03 and a $p$-value of 0.09.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/cbp_iv/coef
+    reported: −0.18
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion, per point of manufacturing employment loss
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: cbp-iv-lo
+  kind: computation
+  passage: Instrumented with the trade exposure, it gives $-0.18$ per standard deviation of erosion, with an interval from $-0.38$ to 0.03 and a $p$-value of 0.09.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/cbp_iv/ci95/0
+    reported: −0.38
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: cbp-iv-hi
+  kind: computation
+  passage: Instrumented with the trade exposure, it gives $-0.18$ per standard deviation of erosion, with an interval from $-0.38$ to 0.03 and a $p$-value of 0.09.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/cbp_iv/ci95/1
+    reported: '0.03'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: cbp-iv-p
+  kind: computation
+  passage: Instrumented with the trade exposure, it gives $-0.18$ per standard deviation of erosion, with an interval from $-0.38$ to 0.03 and a $p$-value of 0.09.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/cbp_iv/p
+    reported: '0.09'
+    scale: 1
+    decimals: 2
+    units: two-sided p-value
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: cbp-fs
   kind: computation
-  passage: Instrumented with the trade exposure, its first stage is weak, with a state-clustered $F$ of 5.6, so that estimate carries little information.
+  passage: That first stage is weak, with a state-clustered $F$ of 5.6 and a Sanderson and Windmeijer statistic of 10.7.
   evidence:
     file: simulation/output/results.json
     run_id: analysis
@@ -2346,6 +2716,306 @@ claims:
     decimals: 1
     units: state-clustered first-stage F
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: cbp-sw
+  kind: computation
+  passage: That first stage is weak, with a state-clustered $F$ of 5.6 and a Sanderson and Windmeijer statistic of 10.7.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /R6_cbp/iv/first_stage/cbp_shock/F_sanderson_windmeijer_cluster
+    reported: '10.7'
+    scale: 1
+    decimals: 1
+    units: Sanderson-Windmeijer conditional F, state-clustered
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: rev-x-cz
+  kind: computation
+  passage: Interacting erosion with the three commuting-zone controls of the source design gives $-0.99$ per standard deviation, with an interval from $-2.64$ to 0.67; adding interactions with the county white, Black, Hispanic, college-educated and foreign-born shares and the 1996 Republican share gives $-0.86$, with an interval from $-2.25$ to 0.53.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_ero_x_cz/coef
+    reported: −0.99
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-x-cz-lo
+  kind: computation
+  passage: Interacting erosion with the three commuting-zone controls of the source design gives $-0.99$ per standard deviation, with an interval from $-2.64$ to 0.67; adding interactions with the county white, Black, Hispanic, college-educated and foreign-born shares and the 1996 Republican share gives $-0.86$, with an interval from $-2.25$ to 0.53.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_ero_x_cz/ci95/0
+    reported: −2.64
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-x-cz-hi
+  kind: computation
+  passage: Interacting erosion with the three commuting-zone controls of the source design gives $-0.99$ per standard deviation, with an interval from $-2.64$ to 0.67; adding interactions with the county white, Black, Hispanic, college-educated and foreign-born shares and the 1996 Republican share gives $-0.86$, with an interval from $-2.25$ to 0.53.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_ero_x_cz/ci95/1
+    reported: '0.67'
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-x-czd
+  kind: computation
+  passage: Interacting erosion with the three commuting-zone controls of the source design gives $-0.99$ per standard deviation, with an interval from $-2.64$ to 0.67; adding interactions with the county white, Black, Hispanic, college-educated and foreign-born shares and the 1996 Republican share gives $-0.86$, with an interval from $-2.25$ to 0.53.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_ero_x_cz_demog/coef
+    reported: −0.86
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-x-czd-lo
+  kind: computation
+  passage: Interacting erosion with the three commuting-zone controls of the source design gives $-0.99$ per standard deviation, with an interval from $-2.64$ to 0.67; adding interactions with the county white, Black, Hispanic, college-educated and foreign-born shares and the 1996 Republican share gives $-0.86$, with an interval from $-2.25$ to 0.53.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_ero_x_cz_demog/ci95/0
+    reported: −2.25
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-x-czd-hi
+  kind: computation
+  passage: Interacting erosion with the three commuting-zone controls of the source design gives $-0.99$ per standard deviation, with an interval from $-2.64$ to 0.67; adding interactions with the county white, Black, Hispanic, college-educated and foreign-born shares and the 1996 Republican share gives $-0.86$, with an interval from $-2.25$ to 0.53.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_ero_x_cz_demog/ci95/1
+    reported: '0.53'
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-three-cz
+  kind: definition
+  passage: Interacting erosion with the three commuting-zone controls of the source design gives $-0.99$ per standard deviation, with an interval from $-2.64$ to 0.67; adding interactions with the county white, Black, Hispanic, college-educated and foreign-born shares and the 1996 Republican share gives $-0.86$, with an interval from $-2.25$ to 0.53.
+  rationale: 'The source design''s three commuting-zone controls: 2000 manufacturing share, routine-task share and offshorability index.'
+- id: rev-9394
+  kind: computation
+  passage: Measuring erosion from 1993–94 gives $-0.27$ per standard deviation of that measure, with an interval from $-1.31$ to 0.77; this measure correlates 0.59 with the primary one.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_erosion_9394/coef
+    reported: −0.27
+    scale: 1
+    decimals: 2
+    units: per state SD of the 1993-94-based erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-9394-lo
+  kind: computation
+  passage: Measuring erosion from 1993–94 gives $-0.27$ per standard deviation of that measure, with an interval from $-1.31$ to 0.77; this measure correlates 0.59 with the primary one.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_erosion_9394/ci95/0
+    reported: −1.31
+    scale: 1
+    decimals: 2
+    units: per state SD of the 1993-94-based erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-9394-hi
+  kind: computation
+  passage: Measuring erosion from 1993–94 gives $-0.27$ per standard deviation of that measure, with an interval from $-1.31$ to 0.77; this measure correlates 0.59 with the primary one.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_erosion_9394/ci95/1
+    reported: '0.77'
+    scale: 1
+    decimals: 2
+    units: per state SD of the 1993-94-based erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-9394-corr
+  kind: computation
+  passage: Measuring erosion from 1993–94 gives $-0.27$ per standard deviation of that measure, with an interval from $-1.31$ to 0.77; this measure correlates 0.59 with the primary one.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/erosion_9394/corr_with_erosion
+    reported: '0.59'
+    scale: 1
+    decimals: 2
+    units: Pearson correlation across 48 states
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-4yr
+  kind: computation
+  passage: Four-year averages at both ends give $-0.56$, with an interval from $-1.61$ to 0.50.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_erosion_4yr/coef
+    reported: −0.56
+    scale: 1
+    decimals: 2
+    units: per state SD of the four-year-average erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-4yr-lo
+  kind: computation
+  passage: Four-year averages at both ends give $-0.56$, with an interval from $-1.61$ to 0.50.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_erosion_4yr/ci95/0
+    reported: −1.61
+    scale: 1
+    decimals: 2
+    units: per state SD of the four-year-average erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-4yr-hi
+  kind: computation
+  passage: Four-year averages at both ends give $-0.56$, with an interval from $-1.61$ to 0.50.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_erosion_4yr/ci95/1
+    reported: '0.50'
+    scale: 1
+    decimals: 2
+    units: per state SD of the four-year-average erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-le100
+  kind: computation
+  passage: Dropping the four states whose 1995–96 ratio exceeded 100 gives $-0.12$, with an interval from $-1.26$ to 1.03.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_base_le_100/coef
+    reported: −0.12
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion (48-state SD)
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-le100-lo
+  kind: computation
+  passage: Dropping the four states whose 1995–96 ratio exceeded 100 gives $-0.12$, with an interval from $-1.26$ to 1.03.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_base_le_100/ci95/0
+    reported: −1.26
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion (48-state SD)
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-le100-hi
+  kind: computation
+  passage: Dropping the four states whose 1995–96 ratio exceeded 100 gives $-0.12$, with an interval from $-1.26$ to 1.03.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /robustness_rows/rev_base_le_100/ci95/1
+    reported: '1.03'
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion (48-state SD)
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rev-four-states
+  kind: definition
+  passage: Dropping the four states whose 1995–96 ratio exceeded 100 gives $-0.12$, with an interval from $-1.26$ to 1.03.
+  rationale: '/revision1/base_le_100/states_dropped: California, Missouri, New Jersey, Rhode Island (ratio per 100 poor families above 100).'
+- id: rel-sdlog
+  kind: computation
+  passage: Between the non-overlapping windows 2013–14 and 2015–16, when policy changed little, the change in the log ratio has a cross-state standard deviation of 0.19.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/reliability/2013_14_vs_2015_16/sd_log_change
+    reported: '0.19'
+    scale: 1
+    decimals: 2
+    units: SD across 48 states of log(TPR 2015-16 / TPR 2013-14)
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rel-lambda
+  kind: computation
+  passage: Treating all of that change as noise gives the erosion measure a reliability of 0.70; correcting the primary estimate for attenuation moves its interval per point of erosion to $-0.116$ to 0.025, and the upper end of the interval per standard deviation of true erosion to 0.39.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/reliability/2013_14_vs_2015_16/reliability
+    reported: '0.70'
+    scale: 1
+    decimals: 2
+    units: reliability of erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated. Noise per window = SD(log change)/sqrt(2) times the ratio; classical errors assumed.
+- id: rel-lo
+  kind: computation
+  passage: Treating all of that change as noise gives the erosion measure a reliability of 0.70; correcting the primary estimate for attenuation moves its interval per point of erosion to $-0.116$ to 0.025, and the upper end of the interval per standard deviation of true erosion to 0.39.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/reliability/2013_14_vs_2015_16/gamma_corrected_ci95/0
+    reported: −0.116
+    scale: 1
+    decimals: 3
+    units: attenuation-corrected lower bound per point of erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rel-hi
+  kind: computation
+  passage: Treating all of that change as noise gives the erosion measure a reliability of 0.70; correcting the primary estimate for attenuation moves its interval per point of erosion to $-0.116$ to 0.025, and the upper end of the interval per standard deviation of true erosion to 0.39.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/reliability/2013_14_vs_2015_16/gamma_corrected_ci95/1
+    reported: '0.025'
+    scale: 1
+    decimals: 3
+    units: attenuation-corrected upper bound per point of erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rel-ub
+  kind: computation
+  passage: Treating all of that change as noise gives the erosion measure a reliability of 0.70; correcting the primary estimate for attenuation moves its interval per point of erosion to $-0.116$ to 0.025, and the upper end of the interval per standard deviation of true erosion to 0.39.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/reliability/2013_14_vs_2015_16/upper_per_true_sd
+    reported: '0.39'
+    scale: 1
+    decimals: 2
+    units: upper bound per SD of true erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rel-approximation
+  kind: interpretation
+  passage: 'Both figures are approximations: they assume independent noise in the two windows, but the Current Population Survey interviews households in two consecutive March supplements, so adjacent windows share part of their sample and their difference understates the noise, while treating the whole change as noise overstates it.'
+  rationale: CPS ASEC households are interviewed in two consecutive March supplements (4-8-4 rotation), so the 2013-14 and 2015-16 two-year windows share sample through the 2014 and 2015 supplements; the direction of the net error is unknown.
+- id: rel2-lambda
+  kind: computation
+  passage: Using the 1993–94 to 1995–96 change instead, which also contains real declines, gives a reliability of 0.59 and an upper end of 0.43.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/reliability/1993_94_vs_1995_96/reliability
+    reported: '0.59'
+    scale: 1
+    decimals: 2
+    units: reliability of erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
+- id: rel2-ub
+  kind: computation
+  passage: Using the 1993–94 to 1995–96 change instead, which also contains real declines, gives a reliability of 0.59 and an upper end of 0.43.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/reliability/1993_94_vs_1995_96/upper_per_true_sd
+    reported: '0.43'
+    scale: 1
+    decimals: 2
+    units: upper bound per SD of true erosion
+    conditions: Revision round 1, post hoc (added after review); 2SLS as in the primary specification unless stated.
 - id: se
   kind: computation
   passage: 'Given the estimated two-way standard error of 0.025, the design has 80% power, at the 5% level, only against an interaction of about 0.070 per point of erosion, or 1.34 per standard deviation: an amplification that would double the average shock effect for each standard deviation of erosion.'
@@ -2388,7 +3058,7 @@ claims:
   rationale: Power 80% and two-sided 5% size define the minimum detectable effect; 'double' compares 1.34 per SD with the shock effect at mean erosion, 1.30 (/primary/beta_at_mean/coef).
 - id: excl
   kind: computation
-  passage: The interval excludes amplification larger than 0.33 per standard deviation, about a quarter of the shock effect at mean erosion.
+  passage: In the primary specification, with standard errors that ignore correlation across commuting zones with similar industries, the interval excludes amplification above 0.33 per standard deviation, about a quarter of the shock effect at mean erosion.
   evidence:
     file: simulation/output/results.json
     run_id: analysis
@@ -2400,8 +3070,448 @@ claims:
     conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
 - id: excl-quarter
   kind: interpretation
-  passage: The interval excludes amplification larger than 0.33 per standard deviation, about a quarter of the shock effect at mean erosion.
+  passage: In the primary specification, with standard errors that ignore correlation across commuting zones with similar industries, the interval excludes amplification above 0.33 per standard deviation, about a quarter of the shock effect at mean erosion.
   rationale: 0.328 / 1.298 = 0.25 (/primary/gamma_per_sd_ci95/1 over /primary/beta_at_mean/coef).
+- id: ub-min
+  kind: computation
+  passage: Across the specifications of the same moderator in Figure 2, the upper bound ranges from 0.20 to 1.03, up to 0.79 of the shock effect at mean erosion, and the interval for the decline in real benefits reaches 3.12.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/upper_bounds_per_sd/min
+    reported: '0.20'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound per state SD, lowest (OLS)
+    conditions: Specifications listed in /revision1/upper_bounds_per_sd/by_spec.
+- id: ub-max
+  kind: computation
+  passage: Across the specifications of the same moderator in Figure 2, the upper bound ranges from 0.20 to 1.03, up to 0.79 of the shock effect at mean erosion, and the interval for the decline in real benefits reaches 3.12.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/upper_bounds_per_sd/max
+    reported: '1.03'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound per state SD, highest
+    conditions: As above.
+- id: ub-ratio
+  kind: computation
+  passage: Across the specifications of the same moderator in Figure 2, the upper bound ranges from 0.20 to 1.03, up to 0.79 of the shock effect at mean erosion, and the interval for the decline in real benefits reaches 3.12.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/upper_bounds_per_sd/max_over_beta_at_mean
+    reported: '0.79'
+    scale: 1
+    decimals: 2
+    units: ratio of the highest upper bound to the shock effect at mean erosion
+    conditions: As above.
+- id: ub-alt
+  kind: computation
+  passage: Across the specifications of the same moderator in Figure 2, the upper bound ranges from 0.20 to 1.03, up to 0.79 of the shock effect at mean erosion, and the interval for the decline in real benefits reaches 3.12.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/upper_bounds_per_sd/alternative_moderator_max
+    reported: '3.12'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound per SD, real-benefit-decline moderator
+    conditions: As above.
+- id: only-very-large
+  kind: interpretation
+  passage: The data therefore exclude only very large amplification.
+  rationale: Upper bounds 0.20 to 1.03 per SD against 1.30.
+- id: fs-n
+  kind: computation
+  passage: The sample has 3,054 counties; the Virginia counties and independent cities that the Bureau reports as combined areas drop out.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/nobs
+    reported: 3,054
+    scale: 1
+    decimals: 0
+    units: counties
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: fs-fa-mean
+  kind: computation
+  passage: Family assistance averaged \$65 per capita in 2000 and fell by \$13 per capita by 2008.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/fa_pc2000_weighted_mean
+    reported: '65'
+    scale: 1
+    decimals: 0
+    units: dollars per capita, 2000, population-weighted
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: fs-fa-change
+  kind: computation
+  passage: Family assistance averaged \$65 per capita in 2000 and fell by \$13 per capita by 2008.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc_weighted_mean
+    reported: '13'
+    scale: -1
+    decimals: 0
+    units: dollars per capita decline 2000-2008, 2000 prices
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_fa_pc-b
+  kind: computation
+  passage: '| Family assistance (AFDC/TANF) | 0.98 [$-6.36$, 8.32] | $-0.60$ [$-3.91$, 2.72] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/beta_at_mean/coef
+    reported: '0.98'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_fa_pc-blo
+  kind: computation
+  passage: '| Family assistance (AFDC/TANF) | 0.98 [$-6.36$, 8.32] | $-0.60$ [$-3.91$, 2.72] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/beta_at_mean/state+czone/ci95/0
+    reported: −6.36
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_fa_pc-bhi
+  kind: computation
+  passage: '| Family assistance (AFDC/TANF) | 0.98 [$-6.36$, 8.32] | $-0.60$ [$-3.91$, 2.72] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/beta_at_mean/state+czone/ci95/1
+    reported: '8.32'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_fa_pc-g
+  kind: computation
+  passage: '| Family assistance (AFDC/TANF) | 0.98 [$-6.36$, 8.32] | $-0.60$ [$-3.91$, 2.72] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/gamma_per_state_sd
+    reported: −0.60
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_fa_pc-glo
+  kind: computation
+  passage: '| Family assistance (AFDC/TANF) | 0.98 [$-6.36$, 8.32] | $-0.60$ [$-3.91$, 2.72] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/gamma_per_sd_ci95/0
+    reported: −3.91
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_fa_pc-ghi
+  kind: computation
+  passage: '| Family assistance (AFDC/TANF) | 0.98 [$-6.36$, 8.32] | $-0.60$ [$-3.91$, 2.72] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/gamma_per_sd_ci95/1
+    reported: '2.72'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_ui_pc-b
+  kind: computation
+  passage: '| Unemployment insurance | 10.44 [$-3.88$, 24.77] | 1.11 [$-3.18$, 5.40] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_ui_pc/beta_at_mean/coef
+    reported: '10.44'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_ui_pc-blo
+  kind: computation
+  passage: '| Unemployment insurance | 10.44 [$-3.88$, 24.77] | 1.11 [$-3.18$, 5.40] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_ui_pc/beta_at_mean/state+czone/ci95/0
+    reported: −3.88
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_ui_pc-bhi
+  kind: computation
+  passage: '| Unemployment insurance | 10.44 [$-3.88$, 24.77] | 1.11 [$-3.18$, 5.40] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_ui_pc/beta_at_mean/state+czone/ci95/1
+    reported: '24.77'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_ui_pc-g
+  kind: computation
+  passage: '| Unemployment insurance | 10.44 [$-3.88$, 24.77] | 1.11 [$-3.18$, 5.40] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_ui_pc/gamma_per_state_sd
+    reported: '1.11'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_ui_pc-glo
+  kind: computation
+  passage: '| Unemployment insurance | 10.44 [$-3.88$, 24.77] | 1.11 [$-3.18$, 5.40] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_ui_pc/gamma_per_sd_ci95/0
+    reported: −3.18
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_ui_pc-ghi
+  kind: computation
+  passage: '| Unemployment insurance | 10.44 [$-3.88$, 24.77] | 1.11 [$-3.18$, 5.40] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_ui_pc/gamma_per_sd_ci95/1
+    reported: '5.40'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_snap_pc-b
+  kind: computation
+  passage: '| Food stamps (SNAP) | 1.38 [$-3.98$, 6.73] | 2.12 [$-1.64$, 5.87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_snap_pc/beta_at_mean/coef
+    reported: '1.38'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_snap_pc-blo
+  kind: computation
+  passage: '| Food stamps (SNAP) | 1.38 [$-3.98$, 6.73] | 2.12 [$-1.64$, 5.87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_snap_pc/beta_at_mean/state+czone/ci95/0
+    reported: −3.98
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_snap_pc-bhi
+  kind: computation
+  passage: '| Food stamps (SNAP) | 1.38 [$-3.98$, 6.73] | 2.12 [$-1.64$, 5.87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_snap_pc/beta_at_mean/state+czone/ci95/1
+    reported: '6.73'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_snap_pc-g
+  kind: computation
+  passage: '| Food stamps (SNAP) | 1.38 [$-3.98$, 6.73] | 2.12 [$-1.64$, 5.87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_snap_pc/gamma_per_state_sd
+    reported: '2.12'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_snap_pc-glo
+  kind: computation
+  passage: '| Food stamps (SNAP) | 1.38 [$-3.98$, 6.73] | 2.12 [$-1.64$, 5.87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_snap_pc/gamma_per_sd_ci95/0
+    reported: −1.64
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-d_snap_pc-ghi
+  kind: computation
+  passage: '| Food stamps (SNAP) | 1.38 [$-3.98$, 6.73] | 2.12 [$-1.64$, 5.87] |'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_snap_pc/gamma_per_sd_ci95/1
+    reported: '5.87'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point of import penetration (interaction per state SD of erosion)
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: t3-n
+  kind: computation
+  passage: ': Transfer response to the trade shock, added after review. Dollars per capita in 2000 prices per point of import penetration; two-stage least squares with the vote specification''s instruments, controls and state fixed effects, weighted by 2000 population, intervals two-way clustered by state and commuting zone; 3,054 counties.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/nobs
+    reported: 3,054
+    scale: 1
+    decimals: 0
+    units: counties
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: fs-b
+  kind: computation
+  passage: At mean erosion the shock effect is 0.98 dollars per capita per point of import penetration, with an interval from $-6.36$ to 8.32 and a $p$-value of 0.79, and its interaction with erosion is $-0.60$ per standard deviation, with an interval from $-3.91$ to 2.72.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/beta_at_mean/coef
+    reported: '0.98'
+    scale: 1
+    decimals: 2
+    units: dollars per capita per point
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: fs-blo
+  kind: computation
+  passage: At mean erosion the shock effect is 0.98 dollars per capita per point of import penetration, with an interval from $-6.36$ to 8.32 and a $p$-value of 0.79, and its interaction with erosion is $-0.60$ per standard deviation, with an interval from $-3.91$ to 2.72.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/beta_at_mean/state+czone/ci95/0
+    reported: −6.36
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: fs-bhi
+  kind: computation
+  passage: At mean erosion the shock effect is 0.98 dollars per capita per point of import penetration, with an interval from $-6.36$ to 8.32 and a $p$-value of 0.79, and its interaction with erosion is $-0.60$ per standard deviation, with an interval from $-3.91$ to 2.72.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/beta_at_mean/state+czone/ci95/1
+    reported: '8.32'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: fs-bp
+  kind: computation
+  passage: At mean erosion the shock effect is 0.98 dollars per capita per point of import penetration, with an interval from $-6.36$ to 8.32 and a $p$-value of 0.79, and its interaction with erosion is $-0.60$ per standard deviation, with an interval from $-3.91$ to 2.72.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/beta_at_mean/state+czone/p
+    reported: '0.79'
+    scale: 1
+    decimals: 2
+    units: two-sided p-value
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: fs-g
+  kind: computation
+  passage: At mean erosion the shock effect is 0.98 dollars per capita per point of import penetration, with an interval from $-6.36$ to 8.32 and a $p$-value of 0.79, and its interaction with erosion is $-0.60$ per standard deviation, with an interval from $-3.91$ to 2.72.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/gamma_per_state_sd
+    reported: −0.60
+    scale: 1
+    decimals: 2
+    units: per state SD of erosion
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: fs-glo
+  kind: computation
+  passage: At mean erosion the shock effect is 0.98 dollars per capita per point of import penetration, with an interval from $-6.36$ to 8.32 and a $p$-value of 0.79, and its interaction with erosion is $-0.60$ per standard deviation, with an interval from $-3.91$ to 2.72.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/gamma_per_sd_ci95/0
+    reported: −3.91
+    scale: 1
+    decimals: 2
+    units: lower 95% bound
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: fs-ghi
+  kind: computation
+  passage: At mean erosion the shock effect is 0.98 dollars per capita per point of import penetration, with an interval from $-6.36$ to 8.32 and a $p$-value of 0.79, and its interaction with erosion is $-0.60$ per standard deviation, with an interval from $-3.91$ to 2.72.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /revision1/first_stage_transfers/d_fa_pc/gamma_per_sd_ci95/1
+    reported: '2.72'
+    scale: 1
+    decimals: 2
+    units: upper 95% bound
+    conditions: 'Revision round 1, post hoc: BEA CA35 (April 2011), change 2000-2008 in 2000 dollars per capita; 2SLS as in the vote specification, weighted by 2000 population; 3,054 counties.'
+- id: fs-eighth
+  kind: interpretation
+  passage: The upper end of the main-effect interval is about an eighth of family assistance per capita in 2000.
+  rationale: 8.32 / 65.2 = 0.13 (/revision1/first_stage_transfers/d_fa_pc/beta_at_mean upper bound over fa_pc2000_weighted_mean).
+- id: fs-no-first-stage
+  kind: interpretation
+  passage: 'The vote test therefore has no demonstrated first stage: the program whose erosion it measures shows no detectable cushioning response for erosion to have weakened.'
+  rationale: Family-assistance response to the shock and its interaction with erosion are both indistinguishable from zero.
+- id: fs-ui-snap
+  kind: interpretation
+  passage: Unemployment insurance and food stamps show larger point responses, also with intervals that include zero, and neither varies detectably with cash-assistance erosion.
+  rationale: Table 2 rows for UI and SNAP.
+- id: or-9394
+  kind: computation
+  passage: Oregon's small erosion after 1995–96 followed earlier declines; its ratio was 66.0 in 1993–94 and 50.1 in 1995–96.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /state_table/Oregon/tpr_9394
+    reported: '66.0'
+    scale: 1
+    decimals: 1
+    units: families aided per 100 poor families with children, 1993-94
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: or-9596
+  kind: computation
+  passage: Oregon's small erosion after 1995–96 followed earlier declines; its ratio was 66.0 in 1993–94 and 50.1 in 1995–96.
+  evidence:
+    file: simulation/output/results.json
+    run_id: analysis
+    pointer: /state_table/Oregon/tpr_1996
+    reported: '50.1'
+    scale: 1
+    decimals: 1
+    units: families aided per 100 poor families with children, 1995-96
+    conditions: Recorded run 'analysis'; 3,106 counties in 48 contiguous states; 2SLS with state fixed effects, weighted by 2000 votes, intervals two-way clustered by state and commuting zone, t(47), unless the pointer names another statistic.
+- id: bridge-scope
+  kind: definition
+  passage: 'The bridge concerns only the amplification of the trade-shock effect: erosion''s own effect on votes is absorbed by the state fixed effects and is not identified.'
+  rationale: State fixed effects absorb erosion's main effect; the margin formula uses only gamma.
 - id: bridge-extrap
   kind: computation
   passage: 'The plan fixed the counterfactuals in advance: retaining the 1995–96 ratio ($M^\ast = 0$), which lies 13.1 points beyond the least-eroded state and is therefore an extrapolation, and the erosion of the least-eroded state, Oregon, which stays within the observed range.'
@@ -2709,7 +3819,7 @@ claims:
 - id: t2-units
   kind: definition
   passage: ': Implied change in the 2016 Democratic-minus-Republican margin, in thousands of votes, under the counterfactual levels of cash-assistance erosion fixed in the plan. Erosion is in points of the state AFDC/TANF-to-poverty ratio; margins are from the Federal Election Commission''s official returns.'
-  rationale: Table 2 entries are in thousands of votes; erosion in TPR points; margins from FEC Table 2.
+  rationale: Table 3 entries are in thousands of votes; erosion in TPR points; margins from FEC Table 2.
 - id: f3-units
   kind: definition
   passage: '![Implied net change in the 2016 Democratic margin, in thousands of votes, with intervals from the primary interaction, against the official Trump margin (dashed). Left bar in each panel: retaining the 1995–96 ratio; right bar: the erosion of the least-eroded state.](figures/fig3_bridge.png)'
@@ -2786,12 +3896,20 @@ claims:
     quote: 2016 PRESIDENTIAL ELECTORAL AND POPULAR VOTE
 - id: bridge-reading
   kind: interpretation
-  passage: Under both counterfactuals the point estimates are Democratic losses, and the intervals include Democratic gains larger than Trump's 2016 margin in each state, as well as losses several times larger (Table 2 and Figure 3).
-  rationale: From Table 2 values; the statement is limited to whether the interval includes margin-sized changes, as the plan specified.
+  passage: Under both counterfactuals the point estimates are Democratic losses, and the intervals include Democratic gains larger than Trump's 2016 margin in each state, as well as losses several times larger (Table 3 and Figure 3).
+  rationale: From Table 3 values; the statement is limited to whether the interval includes margin-sized changes, as the plan specified.
 - id: rules-out
   kind: interpretation
-  passage: 'The test rules out a strong version of the hypothesis: an amplification of the presidential-vote response to the China shock larger than about a quarter of the average effect per standard deviation of erosion, in the counties and years studied.'
+  passage: In the primary specification the interval excludes amplification of the presidential-vote response to the China shock larger than about a quarter of the average effect per standard deviation of erosion.
   rationale: Upper 95% bound 0.33 per SD against shock effect 1.30 at mean erosion; ratio 0.25.
+- id: bound-conditional
+  kind: interpretation
+  passage: 'That bound is conditional: across the other specifications and measures of the same moderator it reaches about four-fifths of the effect, standard errors that allowed for industry-level correlation could be wider, and an approximate correction for sampling error in the ratio raises it.'
+  rationale: /revision1/upper_bounds_per_sd/max_over_beta_at_mean = 0.79; reliability-adjusted bound 0.39 per SD of true erosion; AKM/BHJ standard errors not computed.
+- id: transfers-informative
+  kind: interpretation
+  passage: 'The transfer data add the more informative result: family assistance did not measurably respond to the shock and erosion did not detectably moderate its response, although the intervals leave room for a modest response, so the vote test has no demonstrated first stage.'
+  rationale: /revision1/first_stage_transfers/d_fa_pc.
 - id: adh-income-assistance
   kind: source
   passage: In the source design's own accounting, federal income assistance, of which TANF is a part alongside Supplemental Security Income and food stamps, rose by \$7 per capita for each \$1,000 of import exposure per worker, against \$8 for disability insurance and \$18 for medical benefits [@autor2013, pp. 2148–2149].
@@ -2828,7 +3946,7 @@ claims:
     quote: especially by the racial composition of families who rely on program benefits.
 - id: conclusion
   kind: interpretation
-  passage: On the evidence here, the post-1996 erosion of cash assistance did not measurably amplify the county presidential-vote response to the China shock, and estimates at the county level cannot decide whether a smaller amplification changed the outcome in Michigan, Wisconsin or Pennsylvania.
+  passage: On the evidence here, the post-1996 erosion of cash assistance did not measurably amplify the county presidential-vote response to the China shock, the cash program itself did not measurably respond to the shock, and estimates at the county level cannot decide whether a smaller amplification changed the outcome in Michigan, Wisconsin or Pennsylvania.
   rationale: Primary interval includes zero with negative point estimate; bridge intervals include margin-sized changes in both directions.
 runs:
 - id: analysis

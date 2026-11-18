@@ -1,4 +1,4 @@
-"""Pre-registered specifications (see ../../brief.md, "Analysis plan")."""
+"""Specifications fixed in the project brief (see ../../brief.md, "Analysis plan") and checks added after review."""
 from __future__ import annotations
 
 import numpy as np
@@ -18,7 +18,8 @@ TWOWAY = "state+czone"
 def state_table(p: pd.DataFrame) -> pd.DataFrame:
     cols = ["tpr_1996", "tpr_2008", "tpr_2016", "tpr_1979", "erosion", "erosion_2008",
             "pre_reform_decline", "benefit_1996", "benefit_2016_nominal", "benefit_2016_real96",
-            "real_benefit_decline_pct", "state_R1996", "state_mean_shock", "south"]
+            "real_benefit_decline_pct", "state_R1996", "state_mean_shock", "south",
+            "tpr_9394", "tpr_9900", "tpr_1314", "erosion_9394", "erosion_4yr", "log_poverty_growth"]
     return p.groupby("state")[cols].first()
 
 
@@ -35,6 +36,8 @@ def add_moderators(p: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
         "neg_benefit_1996": -st["benefit_1996"],
         "erosion_2008": st["erosion_2008"],
         "pre_reform_decline": st["pre_reform_decline"],
+        "erosion_9394": st["erosion_9394"],
+        "erosion_4yr": st["erosion_4yr"],
     }
     for name, s in oriented.items():
         mu, sd = float(s.mean()), float(s.std(ddof=1))
@@ -70,7 +73,7 @@ def clusters(p):
 
 
 def run_iv(p, y, mods=("erosion_c",), shock="shock", iv="iv", controls=CONTROLS, fe="state",
-           weighted=True, extra_endog=None):
+           weighted=True, extra_endog=None, weight_col="weight"):
     """2SLS with endogenous [shock, shock*m for m in mods] and instruments [iv, iv*m]."""
     Xn = pd.DataFrame({shock: p[shock]})
     Ze = pd.DataFrame({iv: p[iv]})
@@ -79,7 +82,7 @@ def run_iv(p, y, mods=("erosion_c",), shock="shock", iv="iv", controls=CONTROLS,
         Ze[f"{iv}_x_{m}"] = p[iv] * p[m]
     exog = p[list(controls)].astype(float)
     exog = pd.concat([exog, _state_dummies(p) if fe == "state" else _region_dummies(p)], axis=1)
-    w = p["weight"].to_numpy() if weighted else None
+    w = p[weight_col].to_numpy() if weighted else None
     fit = iv2sls(p[y].to_numpy(), Xn.to_numpy(), exog.to_numpy(), Ze.to_numpy(),
                  list(Xn.columns), list(exog.columns), w=w, clusters=clusters(p),
                  first_stage_cluster="state" if fe == "state" else "czone")
@@ -185,11 +188,18 @@ def adhm_own_file():
     import zipfile
     with zipfile.ZipFile(D.RAW_FILES["adhm"]) as z:
         a = pd.read_stata(io.BytesIO(z.read("2-FinalDataPackage/dta/president_2000_2016.dta")))
-    y = (a["shnr_pres2016"] - a["shnr_pres2000"]).to_numpy()
-    ctr = D.ADHM_CONTROLS_CZ + D.ADHM_CONTROLS_DEMOG + ["shnr_pres1992", "shnr_pres1996"]
-    exog = pd.concat([a[ctr].astype(float), a[D.ADHM_REGIONS].astype(float).assign(const=1.0)], axis=1)
-    fit = iv2sls(y, a[["d_imp_usch_pd_0008"]].to_numpy(float), exog.to_numpy(), a[["d_imp_otch_lag_pd_0008"]].to_numpy(float),
-                 ["shock"], list(exog.columns), w=a["totvote_2000pres"].to_numpy(float),
-                 clusters={"czone": a["czone"].to_numpy()}, first_stage_cluster="czone")
-    return {"coef": float(fit.coef[0]), "se_cz": fit.se("shock", "czone"), "nobs": fit.nobs,
-            "published_coef": 1.71, "published_se": 0.90}
+    out = {"published_coef": 1.71, "published_se": 0.90}
+    for label, keep in [("all", np.ones(len(a), bool)), ("no_dc", (a["cty_fips"].astype(int) != 11001).to_numpy())]:
+        b = a[keep]
+        y = (b["shnr_pres2016"] - b["shnr_pres2000"]).to_numpy()
+        ctr = D.ADHM_CONTROLS_CZ + D.ADHM_CONTROLS_DEMOG + ["shnr_pres1992", "shnr_pres1996"]
+        exog = pd.concat([b[ctr].astype(float), b[D.ADHM_REGIONS].astype(float).assign(const=1.0)], axis=1)
+        fit = iv2sls(y, b[["d_imp_usch_pd_0008"]].to_numpy(float), exog.to_numpy(), b[["d_imp_otch_lag_pd_0008"]].to_numpy(float),
+                     ["shock"], list(exog.columns), w=b["totvote_2000pres"].to_numpy(float),
+                     clusters={"czone": b["czone"].to_numpy()}, first_stage_cluster="czone")
+        res = {"coef": float(fit.coef[0]), "se_cz": fit.se("shock", "czone"), "nobs": fit.nobs}
+        if label == "all":
+            out.update(res)
+        else:
+            out["no_dc"] = res
+    return out

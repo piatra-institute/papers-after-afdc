@@ -2,6 +2,42 @@
 
 Dated log of editorial passes and verification runs. Newest first.
 
+## 2026-11-18 — closure round (fix round 2)
+
+Scope: six minor points from closure-round1.json; responses in revision/2026-11/ledger/after-afdc/fix-round2.json.
+
+Changes:
+  - The transfer first stage is stated as non-detection with its intervals, in the abstract, the introduction and the discussion (N1).
+  - "pre-registered" removed from the metadata genre (the only metadata edit) and from docstrings, comments and one results note in run_all.py, analysis.py and data.py; re-recorded (N3).
+  - The CBP estimate is no longer read as evidence against the hypothesis; the post-treatment check "speaks to" the alternative (N4).
+  - The reliability correction is called an approximation, with the shared CPS sample across adjacent windows explained (N5).
+  - wrd-table locator corrected to pp. 246-247; two rationales now say Table 3 (N6).
+  - The BEA citation moved next to the agency name; Table 1 moved after the paragraph that discusses it (visual).
+  - Title, status and web_blurb untouched (N2: owner's decisions).
+
+Verification:
+  - recorded run `analysis` re-run 2026-11-18T21:03Z (code comments and one results note changed; every number unchanged; previous receipt archived).
+  - claims: 372 (254 computation, 71 source, 47 other); 70 source claims byte-identical to round 1, wrd-table changed in its locator only; all `verified: false`.
+  - coverage self-audit: 301 numerals, 256 bound to computation claims and 45 to source or definition claims, 0 uncovered; 16 spelled-out quantities, all covered.
+  - refs: 66, no mismatch; standards: abstract 250 words; build: 21 pages, empty log; papers check: no FAIL.
+
+## 2026-11-18 — revision round 1 (independent Claude referee)
+
+Scope: response to referee-claude.json (F1-F11) and the suggested first-stage extension; per-finding responses in revision/2026-11/ledger/after-afdc/fix-round1.json.
+
+Changes:
+  - Process claims rewritten (F1): no "pre-registered"; the paper states that the ADHM archive (which contains Leip vote shares) and the moderator data were opened before the plan, that the open returns were downloaded after it, and that the ordering is self-recorded. The plan hash 08beb837... is shown to be reproducible from brief.md. fetch_data.py now appends to the fetch log instead of overwriting it.
+  - Bound restated with its spread (F2): upper bounds per SD 0.20 to 1.03 across specifications of the moderator, 3.12 for the real-benefit decline; "rules out" removed; new moderator-by-control interactions.
+  - DC decomposition of the replication gap (F3); CPS noise discussion, reliability bound and three measurement variants (F4); waivers, Ziliak et al. (2000), the 1993-94 base, early erosion share and the post-treatment check (F5); placebo, sign and window wording (F6, F7); abstract scope and units (F8); CBP 2SLS estimate, Sanderson-Windmeijer F and CBP rows in Figure 2 (F9); Hays et al. (2005), Walter (2010), Blanchard, Bown and Chor (2024), Hainmueller, Mummolo and Xu (2019) added after registry checks (F10, F11).
+  - Extension: first-stage test with BEA CA35 (April 2011 release via the Internet Archive): family assistance did not measurably respond to the shock (0.98 dollars per capita per point, interval -6.36 to 8.32) and erosion did not moderate it. Subtitle changed to "No Detectable Cash-Assistance Channel from the China Shock to the Presidential Vote".
+
+Verification:
+  - recorded run `analysis` re-run 2026-11-18T20:30Z with 14 declared inputs (three new: BEA CA35 and CA1-3 April 2011, BLS monthly CPI 2000 and 2008); previous receipt archived; 9 tests pass.
+  - claims: 365 (248 computation, 71 source, 46 other), all source claims `verified: false`.
+  - coverage self-audit: 295 numerals, 250 bound to computation claims and 45 to source or definition claims, 0 uncovered; 14 spelled-out quantities, all covered (the audit now also catches hyphenated fractions such as four-fifths, and exempts clock times).
+  - refs: 66 entries, all cited, no identity mismatch; standards: abstract 242 words, no self-reference.
+
+
 ## 2026-11-18 — initial build
 
 Scope: new paper written from seed material (an ideation conversation and a draft synthesis), replaced by a pre-registered empirical test on public data.

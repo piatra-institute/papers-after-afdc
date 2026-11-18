@@ -53,6 +53,11 @@ Findings, tiered by source proximity. T1 primary · T2 authoritative secondary �
 - FEC Federal Elections 2016 (xlsx, Table 2): MI 2,279,543 v 2,268,839; WI 1,405,284 v 1,382,536; PA 2,970,733 v 2,926,441.
 - County Business Patterns 2000, 2008; BLS CPI-U July 1996 157.0, July 2016 240.628.
 
+## Revision round 1 additions
+
+- [T1] BEA CA35, April 2011 release (Internet Archive): county family assistance (AFDC/TANF), UI and SNAP, 1969-2009. First-stage result: family assistance per capita did not measurably respond to the China shock 2000-2008 and its response did not vary with erosion.
+- [T2] Hays, Ehrlich and Peinhardt 2005 (abstract): embedded liberalism, spending reduces opposition to trade among those harmed by imports. Walter 2010 (abstract): micro-level compensation chain in Switzerland. Blanchard, Bown and Chor 2024 (version of record): 2018 House vote, retaliatory tariffs and health-insurance coverage gains. Hainmueller, Mummolo and Xu 2019 (abstract): linearity and common support in interaction models. Ziliak et al. 2000 (abstract): 1993-96 caseload decline mostly macroeconomic.
+
 ## Inference (T2)
 
 - Cameron, Gelbach and Miller 2008, 2011; Sanderson and Windmeijer 2016; Adão, Kolesár and Morales 2019; Borusyak, Hull and Jaravel 2022; Nizalova and Murtazashvili 2016; Bun and Harrison 2019 (abstracts; 2008 identity only).

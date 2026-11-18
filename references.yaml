@@ -139,6 +139,35 @@ references:
   issued: {date-parts: [[2018]]}
   DOI: 10.1177/2378023118788217
 # ------------------------------------------------------------------ compensation
+- id: hays2005
+  type: article-journal
+  author: [{family: Hays, given: Jude C.}, {family: Ehrlich, given: Sean D.}, {family: Peinhardt, given: Clint}]
+  title: "Government Spending and Public Support for Trade in the OECD: An Empirical Test of the Embedded Liberalism Thesis"
+  container-title: International Organization
+  volume: 59
+  issue: 2
+  page: 473-494
+  issued: {date-parts: [[2005]]}
+  DOI: 10.1017/S0020818305050150
+- id: walter2010
+  type: article-journal
+  author: [{family: Walter, given: Stefanie}]
+  title: "Globalization and the Welfare State: Testing the Microfoundations of the Compensation Hypothesis"
+  container-title: International Studies Quarterly
+  volume: 54
+  issue: 2
+  page: 403-426
+  issued: {date-parts: [[2010]]}
+  DOI: 10.1111/j.1468-2478.2010.00593.x
+- id: blanchard2024
+  type: article-journal
+  author: [{family: Blanchard, given: Emily J.}, {family: Bown, given: Chad P.}, {family: Chor, given: Davin}]
+  title: "Did Trump's Trade War Impact the 2018 Election?"
+  container-title: Journal of International Economics
+  volume: 148
+  page: '103891'
+  issued: {date-parts: [[2024]]}
+  DOI: 10.1016/j.jinteco.2024.103891
 - id: ruggie1982
   type: article-journal
   author: [{family: Ruggie, given: John Gerard}]
@@ -356,6 +385,16 @@ references:
   page: S403-S444
   issued: {date-parts: [[2016]]}
   DOI: 10.1086/683096
+- id: ziliak2000
+  type: article-journal
+  author: [{family: Ziliak, given: James P.}, {family: Figlio, given: David N.}, {family: Davis, given: Elizabeth E.}, {family: Connolly, given: Laura S.}]
+  title: "Accounting for the Decline in AFDC Caseloads: Welfare Reform or the Economy?"
+  container-title: The Journal of Human Resources
+  volume: 35
+  issue: 3
+  page: '570'
+  issued: {date-parts: [[2000]]}
+  DOI: 10.2307/146393
 - id: crs2019
   type: report
   author: [{family: Falk, given: Gene}, {family: Ghavalyan, given: Mariam}, {family: Carter, given: Jameson A.}]
@@ -481,6 +520,13 @@ references:
   publisher: U.S. Census Bureau
   issued: {date-parts: [[2008]]}
   URL: https://www2.census.gov/programs-surveys/cbp/datasets/
+- id: beaca35
+  type: dataset
+  author: [{literal: U.S. Bureau of Economic Analysis}]
+  title: "Regional Economic Accounts, County Tables CA35 (Personal Current Transfer Receipts) and CA1-3 (Personal Income Summary), Release of April 2011"
+  publisher: U.S. Bureau of Economic Analysis
+  issued: {date-parts: [[2011, 4]]}
+  URL: http://www.bea.gov/regional/zip/ca35.zip
 - id: blscpi
   type: dataset
   author: [{literal: U.S. Bureau of Labor Statistics}]
@@ -539,6 +585,16 @@ references:
   page: 181-213
   issued: {date-parts: [[2022]]}
   DOI: 10.1093/restud/rdab030
+- id: hainmueller2019
+  type: article-journal
+  author: [{family: Hainmueller, given: Jens}, {family: Mummolo, given: Jonathan}, {family: Xu, given: Yiqing}]
+  title: "How Much Should We Trust Estimates from Multiplicative Interaction Models? Simple Tools to Improve Empirical Practice"
+  container-title: Political Analysis
+  volume: 27
+  issue: 2
+  page: 163-192
+  issued: {date-parts: [[2019]]}
+  DOI: 10.1017/pan.2018.46
 - id: nizalova2016
   type: article-journal
   author: [{family: Nizalova, given: Olena Y.}, {family: Murtazashvili, given: Irina}]

@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "id": "analysis",
+  "started": "2026-11-18T20:30:35.490988+00:00",
+  "finished": "2026-11-18T20:30:44.081822+00:00",
+  "command": [
+    "uv",
+    "run",
+    "python",
+    "run_all.py"
+  ],
+  "cwd": "simulation",
+  "runtime": {
+    "scope": "recorder",
+    "python": "3.14.3 (main, Mar 25 2026, 03:28:18) [Clang 22.1.1 ]",
+    "platform": "macOS-15.1-arm64-arm-64bit-Mach-O"
+  },
+  "execution_result": null,
+  "execution": {
+    "status": "PASS",
+    "exit_code": 0,
+    "detail": "command completed"
+  },
+  "input_scope": "execution-v1",
+  "additional_inputs": [
+    "simulation/data/raw/ADHM-PoliticalPolarization-FileArchive.zip",
+    "simulation/data/raw/cw_cty_czone.zip",
+    "simulation/data/raw/countypres_2000-2016.csv",
+    "simulation/data/raw/dataverse_shareable_presidential_county_returns_1868_2020.Rdata",
+    "simulation/data/raw/2025-04-11-TPR-1978-2023.xls",
+    "simulation/data/raw/2016_welfare_rules_databook.pdf",
+    "simulation/data/raw/cbp00co.zip",
+    "simulation/data/raw/cbp08co.zip",
+    "simulation/data/raw/federalelections2016.xlsx",
+    "simulation/data/raw/bls_cpiu_july_1996_2016.json",
+    "simulation/data/raw/bls_cpiu_monthly_2000_2008.json",
+    "simulation/data/raw/bea_ca35_2011.zip",
+    "simulation/data/raw/bea_ca1-3_2011.zip",
+    "simulation/data/wrd_table_l5.csv"
+  ],
+  "inputs": {
+    "simulation/afdc/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulation/afdc/analysis.py": "ba5e7005b40cf83d958902f47f712a85dbc4433cfe351b6517c322ed4e1a5b62",
+    "simulation/afdc/data.py": "7b5a82c90db59d7abb0b2adeaf5ac0955d7b2e8581109dcbf5ab0e5c539cf9ad",
+    "simulation/afdc/estimators.py": "fcab20d2bb0294483160159e82623eeb9e345f0831bbc8a4b70326aaaa564c7e",
+    "simulation/afdc/figures.py": "f58ab9b68fbaf9ec244a1e28116838029de8c751adb39ae454e3f4e985d1659b",
+    "simulation/data/raw/2016_welfare_rules_databook.pdf": "7cfeca5375d2ddbcf016ba19a0d8516f05bb5560b70b5b0d59056a8c36668140",
+    "simulation/data/raw/2025-04-11-TPR-1978-2023.xls": "d6ef9b16745e927c1fcdd567da1e9b08d661c8f8a180c9d65dd92e1c3ec0e27b",
+    "simulation/data/raw/ADHM-PoliticalPolarization-FileArchive.zip": "c3cb574c63d05f0cd1607ffd4a35c1b758cdf1658a18b0d21b6a72d97bb82258",
+    "simulation/data/raw/bea_ca1-3_2011.zip": "90743a71c1248756c0983b30e6cf057ed559d17f914602b86eb1f0ee7e5d2b9b",
+    "simulation/data/raw/bea_ca35_2011.zip": "362a129a2e80ab2de7429fd9f56f884a21f20908810f989571bb6dc0b5a9af27",
+    "simulation/data/raw/bls_cpiu_july_1996_2016.json": "e4525f426049ab5290d0fdcc04095bcbb7e786da7664da53cdc8cca8b705af77",
+    "simulation/data/raw/bls_cpiu_monthly_2000_2008.json": "bb99932fb28fe30b74c563324532ad72bd9619cc232c8f6084af4d0ac715615a",
+    "simulation/data/raw/cbp00co.zip": "a57c70e9561c475edb9307eb241e84aea880e2df35666d33d46ebe385992f9cd",
+    "simulation/data/raw/cbp08co.zip": "baa2e780c028b03cecc80542a0a43cfc7c81c95673a676f7baa913a97ad5ca38",
+    "simulation/data/raw/countypres_2000-2016.csv": "017111108d12cd68c1ad75cab5c18f15103d021de7e8a895bf13c6ef2ad3e887",
+    "simulation/data/raw/cw_cty_czone.zip": "0843c69c6598ec01311d131e08996a9805e17e2cc7cedbd2d72d617193ed6b9a",
+    "simulation/data/raw/dataverse_shareable_presidential_county_returns_1868_2020.Rdata": "c3ad5e87a6dfd8aaf25725ca43b47e86c1cfe828958f6371fe096543906c1687",
+    "simulation/data/raw/federalelections2016.xlsx": "b4a1d1383602bc388cfbdf1fbea2476476d32e0b44b44236d3a3910fa9782eb6",
+    "simulation/data/wrd_table_l5.csv": "ce739ed12332de495458d57a586bc92634dd5f34ecfce8c372241898b684bb80",
+    "simulation/fetch_data.py": "ef71ddf7ae3ddbe0559ae109e580e7d88b02a074579c42ab00d34b59d0eb368e",
+    "simulation/pyproject.toml": "c48c97d3c7e1958777b710f318a57be94c3550666e82939243b1658d29cc438a",
+    "simulation/run_all.py": "cca97027007607432d659925933dce3053f9b4fb376d522102ab486a6591c35f",
+    "simulation/tests/test_data.py": "14a0fe376be4647513378bd9ee5c3a35c839b88678b4bd6f45eb443f618212d7",
+    "simulation/tests/test_estimators.py": "314f804155a8c8cbfd8d191f0ceea233426d42c9596a8ae10fbca0dd358d9e5d",
+    "simulation/uv.lock": "175f210e614de819517ec57ce29d0ba32dc5c165e48487ba6192e5485443c22b"
+  },
+  "artifacts": {
+    "simulation/output/results.json": "2e0830963e4d24dd220ad3486c6777d52a3a7a4b85d2b83e1206ef977bbc773d",
+    "paper/figures/fig1_moderation.png": "5c6fb20c71bd9aa0a6d9c7b9c73c15bc2fcc1ae2d7ea858e02bbde2f80722065",
+    "paper/figures/fig2_robustness.png": "ac226cc9ef16db3cf2c816696fff4f0a2a378104aed6ed211434651110ee158b",
+    "paper/figures/fig3_bridge.png": "3e673b58b7822efc57e8e7e61eacd118ec3a29774072758bc8ce7336ed284eb2"
+  }
+}

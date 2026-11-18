@@ -1,116 +1,413 @@
 {
- "fetched_at_utc": "2026-11-18T19:03:25Z",
- "brief_md_sha256_at_fetch": "08beb8370d1309bb6860c427520e7174255efe473b7863efeaa8474b0a3f7c6a",
- "files": [
+ "note": "Append-only from 2026-11-18T20:27Z. Runs of the first script version before 2026-11-18T19:03:25Z overwrote this file; only that run's entry survives.",
+ "runs": [
   {
-   "name": "adhm_archive",
-   "file": "data/raw/ADHM-PoliticalPolarization-FileArchive.zip",
-   "url": "https://www.ddorn.net/data/ADHM-PoliticalPolarization-FileArchive.zip",
-   "sha256": "c3cb574c63d05f0cd1607ffd4a35c1b758cdf1658a18b0d21b6a72d97bb82258",
-   "bytes": 3597398,
-   "status": "verified",
-   "licence": "Public download from David Dorn's data page; no licence stated; cite ADHM (2020). Not redistributed.",
-   "role": "CZ trade shock 2000-2008, instrument, CZ and county 2000 controls (vote-share columns not used)"
+   "fetched_at_utc": "2026-11-18T19:03:25Z",
+   "brief_md_sha256_at_fetch": "08beb8370d1309bb6860c427520e7174255efe473b7863efeaa8474b0a3f7c6a",
+   "files": [
+    {
+     "name": "adhm_archive",
+     "file": "data/raw/ADHM-PoliticalPolarization-FileArchive.zip",
+     "url": "https://www.ddorn.net/data/ADHM-PoliticalPolarization-FileArchive.zip",
+     "sha256": "c3cb574c63d05f0cd1607ffd4a35c1b758cdf1658a18b0d21b6a72d97bb82258",
+     "bytes": 3597398,
+     "status": "verified",
+     "licence": "Public download from David Dorn's data page; no licence stated; cite ADHM (2020). Not redistributed.",
+     "role": "CZ trade shock 2000-2008, instrument, CZ and county 2000 controls (vote-share columns not used)"
+    },
+    {
+     "name": "cw_cty_czone",
+     "file": "data/raw/cw_cty_czone.zip",
+     "url": "https://www.ddorn.net/data/cw_cty_czone.zip",
+     "sha256": "0843c69c6598ec01311d131e08996a9805e17e2cc7cedbd2d72d617193ed6b9a",
+     "bytes": 13000,
+     "status": "verified",
+     "licence": "Public download from David Dorn's data page; no licence stated; cite Autor and Dorn (2013). Not redistributed.",
+     "role": "1990 county to 1990 commuting-zone crosswalk (used for County Business Patterns aggregation)"
+    },
+    {
+     "name": "medsl_county",
+     "file": "data/raw/countypres_2000-2016.csv",
+     "url": "https://raw.githubusercontent.com/MEDSL/county-returns/f44e3fc105ab3a229b810d769349436bff9bd580/countypres_2000-2016.csv",
+     "sha256": "017111108d12cd68c1ad75cab5c18f15103d021de7e8a895bf13c6ef2ad3e887",
+     "bytes": 4538055,
+     "status": "verified",
+     "licence": "MIT Election Data and Science Lab; the Harvard Dataverse release of this dataset (doi:10.7910/DVN/VOQCHQ) is CC0 1.0.",
+     "role": "County presidential returns 2000-2016 (outcomes, 2000 weights, 2016 two-party votes)"
+    },
+    {
+     "name": "algara_amlani_pres",
+     "file": "data/raw/dataverse_shareable_presidential_county_returns_1868_2020.Rdata",
+     "url": "https://dataverse.harvard.edu/api/access/datafile/5028532",
+     "sha256": "c3ad5e87a6dfd8aaf25725ca43b47e86c1cfe828958f6371fe096543906c1687",
+     "bytes": 1459576,
+     "status": "verified",
+     "licence": "CC0 1.0 (Harvard Dataverse doi:10.7910/DVN/DGUMFI, version 1.1).",
+     "role": "County presidential returns 1988-2000 (placebo outcomes, 1992/1996 controls, state 1996 shares, cross-check)"
+    },
+    {
+     "name": "algara_amlani_manual",
+     "file": "data/raw/County_Level_Dataset_Manual_READ_ME.pdf",
+     "url": "https://dataverse.harvard.edu/api/access/datafile/5028533",
+     "sha256": "0143e6dc05cf6d86db8b100ce7f3d2f981d1bc2f563d3f0119b92f4511cfab1e",
+     "bytes": 266932,
+     "status": "verified",
+     "licence": "CC0 1.0 (same dataset).",
+     "role": "Codebook (documentation only)"
+    },
+    {
+     "name": "cbpp_tpr",
+     "file": "data/raw/2025-04-11-TPR-1978-2023.xls",
+     "url": "http://web.archive.org/web/20250420040351id_/https://www.cbpp.org/sites/default/files/2025-04-11-TPR-1978-2023.xls",
+     "sha256": "d6ef9b16745e927c1fcdd567da1e9b08d661c8f8a180c9d65dd92e1c3ec0e27b",
+     "bytes": 375808,
+     "status": "verified",
+     "licence": "Center on Budget and Policy Priorities; noncommercial reproduction with attribution, no derivative databases (cbpp.org terms of use). Retrieved from the Internet Archive capture because cbpp.org refuses automated clients. Not redistributed.",
+     "role": "State AFDC/TANF-to-poverty ratios, two-year averages, 1978-79 to 2022-23 (moderator)"
+    },
+    {
+     "name": "wrd_2016",
+     "file": "data/raw/2016_welfare_rules_databook.pdf",
+     "url": "http://web.archive.org/web/20250113180305id_/https://www.acf.hhs.gov/sites/default/files/documents/opre/2016_welfare_rules_databook_final_10_30_17_b508_2.pdf",
+     "sha256": "7cfeca5375d2ddbcf016ba19a0d8516f05bb5560b70b5b0d59056a8c36668140",
+     "bytes": 4152975,
+     "status": "verified",
+     "licence": "Public domain (OPRE Report 2017-82 states: 'This report is in the public domain').",
+     "role": "Table L5 maximum benefits, July 1996 and July 2016 (transcribed to data/wrd_table_l5.csv)"
+    },
+    {
+     "name": "cbp_2000",
+     "file": "data/raw/cbp00co.zip",
+     "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2000/cbp00co.zip",
+     "sha256": "a57c70e9561c475edb9307eb241e84aea880e2df35666d33d46ebe385992f9cd",
+     "bytes": 16024897,
+     "status": "verified",
+     "licence": "U.S. Census Bureau County Business Patterns; public domain (U.S. government work).",
+     "role": "County manufacturing and total employment, 2000 (alternative shock)"
+    },
+    {
+     "name": "cbp_2008",
+     "file": "data/raw/cbp08co.zip",
+     "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2008/cbp08co.zip",
+     "sha256": "baa2e780c028b03cecc80542a0a43cfc7c81c95673a676f7baa913a97ad5ca38",
+     "bytes": 16430296,
+     "status": "verified",
+     "licence": "U.S. Census Bureau County Business Patterns; public domain (U.S. government work).",
+     "role": "County manufacturing employment, 2008 (alternative shock)"
+    },
+    {
+     "name": "fec_2016",
+     "file": "data/raw/federalelections2016.xlsx",
+     "url": "https://www.fec.gov/documents/1890/federalelections2016.xlsx",
+     "sha256": "b4a1d1383602bc388cfbdf1fbea2476476d32e0b44b44236d3a3910fa9782eb6",
+     "bytes": 1549194,
+     "status": "verified",
+     "licence": "Federal Election Commission, Federal Elections 2016; public domain (U.S. government work).",
+     "role": "Official 2016 presidential popular vote by state (margins for the bridge)"
+    },
+    {
+     "name": "bls_cpi",
+     "file": "data/raw/bls_cpiu_july_1996_2016.json",
+     "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/ (POST, normalised)",
+     "sha256": "e4525f426049ab5290d0fdcc04095bcbb7e786da7664da53cdc8cca8b705af77",
+     "bytes": 341,
+     "status": "verified",
+     "licence": "U.S. Bureau of Labor Statistics; public domain.",
+     "role": "July CPI-U, 1996 and 2016 (real benefit deflator)"
+    }
+   ]
   },
   {
-   "name": "cw_cty_czone",
-   "file": "data/raw/cw_cty_czone.zip",
-   "url": "https://www.ddorn.net/data/cw_cty_czone.zip",
-   "sha256": "0843c69c6598ec01311d131e08996a9805e17e2cc7cedbd2d72d617193ed6b9a",
-   "bytes": 13000,
-   "status": "verified",
-   "licence": "Public download from David Dorn's data page; no licence stated; cite Autor and Dorn (2013). Not redistributed.",
-   "role": "1990 county to 1990 commuting-zone crosswalk (used for County Business Patterns aggregation)"
+   "fetched_at_utc": "2026-11-18T20:27:08Z",
+   "brief_md_sha256_at_fetch": "d0a1ca7710b064ace5958d2cd384a7f6ce85b36d82f7281c860cfc04cef6fdf2",
+   "files": [
+    {
+     "name": "adhm_archive",
+     "file": "data/raw/ADHM-PoliticalPolarization-FileArchive.zip",
+     "url": "https://www.ddorn.net/data/ADHM-PoliticalPolarization-FileArchive.zip",
+     "sha256": "c3cb574c63d05f0cd1607ffd4a35c1b758cdf1658a18b0d21b6a72d97bb82258",
+     "bytes": 3597398,
+     "status": "verified",
+     "licence": "Public download from David Dorn's data page; no licence stated; cite ADHM (2020). Not redistributed.",
+     "role": "CZ trade shock 2000-2008, instrument, CZ and county 2000 controls (vote-share columns not used)"
+    },
+    {
+     "name": "cw_cty_czone",
+     "file": "data/raw/cw_cty_czone.zip",
+     "url": "https://www.ddorn.net/data/cw_cty_czone.zip",
+     "sha256": "0843c69c6598ec01311d131e08996a9805e17e2cc7cedbd2d72d617193ed6b9a",
+     "bytes": 13000,
+     "status": "verified",
+     "licence": "Public download from David Dorn's data page; no licence stated; cite Autor and Dorn (2013). Not redistributed.",
+     "role": "1990 county to 1990 commuting-zone crosswalk (used for County Business Patterns aggregation)"
+    },
+    {
+     "name": "medsl_county",
+     "file": "data/raw/countypres_2000-2016.csv",
+     "url": "https://raw.githubusercontent.com/MEDSL/county-returns/f44e3fc105ab3a229b810d769349436bff9bd580/countypres_2000-2016.csv",
+     "sha256": "017111108d12cd68c1ad75cab5c18f15103d021de7e8a895bf13c6ef2ad3e887",
+     "bytes": 4538055,
+     "status": "verified",
+     "licence": "MIT Election Data and Science Lab; the Harvard Dataverse release of this dataset (doi:10.7910/DVN/VOQCHQ) is CC0 1.0.",
+     "role": "County presidential returns 2000-2016 (outcomes, 2000 weights, 2016 two-party votes)"
+    },
+    {
+     "name": "algara_amlani_pres",
+     "file": "data/raw/dataverse_shareable_presidential_county_returns_1868_2020.Rdata",
+     "url": "https://dataverse.harvard.edu/api/access/datafile/5028532",
+     "sha256": "c3ad5e87a6dfd8aaf25725ca43b47e86c1cfe828958f6371fe096543906c1687",
+     "bytes": 1459576,
+     "status": "verified",
+     "licence": "CC0 1.0 (Harvard Dataverse doi:10.7910/DVN/DGUMFI, version 1.1).",
+     "role": "County presidential returns 1988-2000 (placebo outcomes, 1992/1996 controls, state 1996 shares, cross-check)"
+    },
+    {
+     "name": "algara_amlani_manual",
+     "file": "data/raw/County_Level_Dataset_Manual_READ_ME.pdf",
+     "url": "https://dataverse.harvard.edu/api/access/datafile/5028533",
+     "sha256": "0143e6dc05cf6d86db8b100ce7f3d2f981d1bc2f563d3f0119b92f4511cfab1e",
+     "bytes": 266932,
+     "status": "verified",
+     "licence": "CC0 1.0 (same dataset).",
+     "role": "Codebook (documentation only)"
+    },
+    {
+     "name": "cbpp_tpr",
+     "file": "data/raw/2025-04-11-TPR-1978-2023.xls",
+     "url": "http://web.archive.org/web/20250420040351id_/https://www.cbpp.org/sites/default/files/2025-04-11-TPR-1978-2023.xls",
+     "sha256": "d6ef9b16745e927c1fcdd567da1e9b08d661c8f8a180c9d65dd92e1c3ec0e27b",
+     "bytes": 375808,
+     "status": "verified",
+     "licence": "Center on Budget and Policy Priorities; noncommercial reproduction with attribution, no derivative databases (cbpp.org terms of use). Retrieved from the Internet Archive capture because cbpp.org refuses automated clients. Not redistributed.",
+     "role": "State AFDC/TANF-to-poverty ratios, two-year averages, 1978-79 to 2022-23 (moderator)"
+    },
+    {
+     "name": "wrd_2016",
+     "file": "data/raw/2016_welfare_rules_databook.pdf",
+     "url": "http://web.archive.org/web/20250113180305id_/https://www.acf.hhs.gov/sites/default/files/documents/opre/2016_welfare_rules_databook_final_10_30_17_b508_2.pdf",
+     "sha256": "7cfeca5375d2ddbcf016ba19a0d8516f05bb5560b70b5b0d59056a8c36668140",
+     "bytes": 4152975,
+     "status": "verified",
+     "licence": "Public domain (OPRE Report 2017-82 states: 'This report is in the public domain').",
+     "role": "Table L5 maximum benefits, July 1996 and July 2016 (transcribed to data/wrd_table_l5.csv)"
+    },
+    {
+     "name": "cbp_2000",
+     "file": "data/raw/cbp00co.zip",
+     "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2000/cbp00co.zip",
+     "sha256": "a57c70e9561c475edb9307eb241e84aea880e2df35666d33d46ebe385992f9cd",
+     "bytes": 16024897,
+     "status": "verified",
+     "licence": "U.S. Census Bureau County Business Patterns; public domain (U.S. government work).",
+     "role": "County manufacturing and total employment, 2000 (alternative shock)"
+    },
+    {
+     "name": "cbp_2008",
+     "file": "data/raw/cbp08co.zip",
+     "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2008/cbp08co.zip",
+     "sha256": "baa2e780c028b03cecc80542a0a43cfc7c81c95673a676f7baa913a97ad5ca38",
+     "bytes": 16430296,
+     "status": "verified",
+     "licence": "U.S. Census Bureau County Business Patterns; public domain (U.S. government work).",
+     "role": "County manufacturing employment, 2008 (alternative shock)"
+    },
+    {
+     "name": "bea_ca35_2011",
+     "file": "data/raw/bea_ca35_2011.zip",
+     "url": "http://web.archive.org/web/20110508122527id_/http://www.bea.gov/regional/zip/ca35.zip",
+     "sha256": "362a129a2e80ab2de7429fd9f56f884a21f20908810f989571bb6dc0b5a9af27",
+     "bytes": 14561063,
+     "status": "verified",
+     "licence": "U.S. Bureau of Economic Analysis, Regional Economic Accounts table CA35 (April 2011 release, Internet Archive capture of bea.gov); public domain (U.S. government work).",
+     "role": "County personal current transfer receipts by program, 1969-2009, including family assistance (AFDC/TANF), which later releases no longer separate"
+    },
+    {
+     "name": "bea_ca1_3_2011",
+     "file": "data/raw/bea_ca1-3_2011.zip",
+     "url": "http://web.archive.org/web/20110508121624id_/http://www.bea.gov/regional/zip/ca1-3.zip",
+     "sha256": "90743a71c1248756c0983b30e6cf057ed559d17f914602b86eb1f0ee7e5d2b9b",
+     "bytes": 1994227,
+     "status": "verified",
+     "licence": "U.S. Bureau of Economic Analysis, table CA1-3 (April 2011 release, Internet Archive capture); public domain.",
+     "role": "County population, same vintage as CA35 (per-capita transfers)"
+    },
+    {
+     "name": "fec_2016",
+     "file": "data/raw/federalelections2016.xlsx",
+     "url": "https://www.fec.gov/documents/1890/federalelections2016.xlsx",
+     "sha256": "b4a1d1383602bc388cfbdf1fbea2476476d32e0b44b44236d3a3910fa9782eb6",
+     "bytes": 1549194,
+     "status": "verified",
+     "licence": "Federal Election Commission, Federal Elections 2016; public domain (U.S. government work).",
+     "role": "Official 2016 presidential popular vote by state (margins for the bridge)"
+    },
+    {
+     "name": "bls_cpi",
+     "file": "data/raw/bls_cpiu_july_1996_2016.json",
+     "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/ (POST, normalised)",
+     "sha256": "e4525f426049ab5290d0fdcc04095bcbb7e786da7664da53cdc8cca8b705af77",
+     "bytes": 341,
+     "status": "verified",
+     "licence": "U.S. Bureau of Labor Statistics; public domain.",
+     "role": "July CPI-U, 1996 and 2016 (real benefit deflator)"
+    },
+    {
+     "name": "bls_cpi_monthly",
+     "file": "data/raw/bls_cpiu_monthly_2000_2008.json",
+     "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/ (POST, normalised)",
+     "sha256": "bb99932fb28fe30b74c563324532ad72bd9619cc232c8f6084af4d0ac715615a",
+     "bytes": 2438,
+     "status": "unpinned",
+     "licence": "U.S. Bureau of Labor Statistics; public domain.",
+     "role": "Monthly CPI-U for 2000 and 2008 (deflator for BEA transfers)"
+    }
+   ]
   },
   {
-   "name": "medsl_county",
-   "file": "data/raw/countypres_2000-2016.csv",
-   "url": "https://raw.githubusercontent.com/MEDSL/county-returns/f44e3fc105ab3a229b810d769349436bff9bd580/countypres_2000-2016.csv",
-   "sha256": "017111108d12cd68c1ad75cab5c18f15103d021de7e8a895bf13c6ef2ad3e887",
-   "bytes": 4538055,
-   "status": "verified",
-   "licence": "MIT Election Data and Science Lab; the Harvard Dataverse release of this dataset (doi:10.7910/DVN/VOQCHQ) is CC0 1.0.",
-   "role": "County presidential returns 2000-2016 (outcomes, 2000 weights, 2016 two-party votes)"
-  },
-  {
-   "name": "algara_amlani_pres",
-   "file": "data/raw/dataverse_shareable_presidential_county_returns_1868_2020.Rdata",
-   "url": "https://dataverse.harvard.edu/api/access/datafile/5028532",
-   "sha256": "c3ad5e87a6dfd8aaf25725ca43b47e86c1cfe828958f6371fe096543906c1687",
-   "bytes": 1459576,
-   "status": "verified",
-   "licence": "CC0 1.0 (Harvard Dataverse doi:10.7910/DVN/DGUMFI, version 1.1).",
-   "role": "County presidential returns 1988-2000 (placebo outcomes, 1992/1996 controls, state 1996 shares, cross-check)"
-  },
-  {
-   "name": "algara_amlani_manual",
-   "file": "data/raw/County_Level_Dataset_Manual_READ_ME.pdf",
-   "url": "https://dataverse.harvard.edu/api/access/datafile/5028533",
-   "sha256": "0143e6dc05cf6d86db8b100ce7f3d2f981d1bc2f563d3f0119b92f4511cfab1e",
-   "bytes": 266932,
-   "status": "verified",
-   "licence": "CC0 1.0 (same dataset).",
-   "role": "Codebook (documentation only)"
-  },
-  {
-   "name": "cbpp_tpr",
-   "file": "data/raw/2025-04-11-TPR-1978-2023.xls",
-   "url": "http://web.archive.org/web/20250420040351id_/https://www.cbpp.org/sites/default/files/2025-04-11-TPR-1978-2023.xls",
-   "sha256": "d6ef9b16745e927c1fcdd567da1e9b08d661c8f8a180c9d65dd92e1c3ec0e27b",
-   "bytes": 375808,
-   "status": "verified",
-   "licence": "Center on Budget and Policy Priorities; noncommercial reproduction with attribution, no derivative databases (cbpp.org terms of use). Retrieved from the Internet Archive capture because cbpp.org refuses automated clients. Not redistributed.",
-   "role": "State AFDC/TANF-to-poverty ratios, two-year averages, 1978-79 to 2022-23 (moderator)"
-  },
-  {
-   "name": "wrd_2016",
-   "file": "data/raw/2016_welfare_rules_databook.pdf",
-   "url": "http://web.archive.org/web/20250113180305id_/https://www.acf.hhs.gov/sites/default/files/documents/opre/2016_welfare_rules_databook_final_10_30_17_b508_2.pdf",
-   "sha256": "7cfeca5375d2ddbcf016ba19a0d8516f05bb5560b70b5b0d59056a8c36668140",
-   "bytes": 4152975,
-   "status": "verified",
-   "licence": "Public domain (OPRE Report 2017-82 states: 'This report is in the public domain').",
-   "role": "Table L5 maximum benefits, July 1996 and July 2016 (transcribed to data/wrd_table_l5.csv)"
-  },
-  {
-   "name": "cbp_2000",
-   "file": "data/raw/cbp00co.zip",
-   "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2000/cbp00co.zip",
-   "sha256": "a57c70e9561c475edb9307eb241e84aea880e2df35666d33d46ebe385992f9cd",
-   "bytes": 16024897,
-   "status": "verified",
-   "licence": "U.S. Census Bureau County Business Patterns; public domain (U.S. government work).",
-   "role": "County manufacturing and total employment, 2000 (alternative shock)"
-  },
-  {
-   "name": "cbp_2008",
-   "file": "data/raw/cbp08co.zip",
-   "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2008/cbp08co.zip",
-   "sha256": "baa2e780c028b03cecc80542a0a43cfc7c81c95673a676f7baa913a97ad5ca38",
-   "bytes": 16430296,
-   "status": "verified",
-   "licence": "U.S. Census Bureau County Business Patterns; public domain (U.S. government work).",
-   "role": "County manufacturing employment, 2008 (alternative shock)"
-  },
-  {
-   "name": "fec_2016",
-   "file": "data/raw/federalelections2016.xlsx",
-   "url": "https://www.fec.gov/documents/1890/federalelections2016.xlsx",
-   "sha256": "b4a1d1383602bc388cfbdf1fbea2476476d32e0b44b44236d3a3910fa9782eb6",
-   "bytes": 1549194,
-   "status": "verified",
-   "licence": "Federal Election Commission, Federal Elections 2016; public domain (U.S. government work).",
-   "role": "Official 2016 presidential popular vote by state (margins for the bridge)"
-  },
-  {
-   "name": "bls_cpi",
-   "file": "data/raw/bls_cpiu_july_1996_2016.json",
-   "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/ (POST, normalised)",
-   "sha256": "e4525f426049ab5290d0fdcc04095bcbb7e786da7664da53cdc8cca8b705af77",
-   "bytes": 341,
-   "status": "verified",
-   "licence": "U.S. Bureau of Labor Statistics; public domain.",
-   "role": "July CPI-U, 1996 and 2016 (real benefit deflator)"
+   "fetched_at_utc": "2026-11-18T20:27:43Z",
+   "brief_md_sha256_at_fetch": "d0a1ca7710b064ace5958d2cd384a7f6ce85b36d82f7281c860cfc04cef6fdf2",
+   "files": [
+    {
+     "name": "adhm_archive",
+     "file": "data/raw/ADHM-PoliticalPolarization-FileArchive.zip",
+     "url": "https://www.ddorn.net/data/ADHM-PoliticalPolarization-FileArchive.zip",
+     "sha256": "c3cb574c63d05f0cd1607ffd4a35c1b758cdf1658a18b0d21b6a72d97bb82258",
+     "bytes": 3597398,
+     "status": "verified",
+     "licence": "Public download from David Dorn's data page; no licence stated; cite ADHM (2020). Not redistributed.",
+     "role": "CZ trade shock 2000-2008, instrument, CZ and county 2000 controls (vote-share columns not used)"
+    },
+    {
+     "name": "cw_cty_czone",
+     "file": "data/raw/cw_cty_czone.zip",
+     "url": "https://www.ddorn.net/data/cw_cty_czone.zip",
+     "sha256": "0843c69c6598ec01311d131e08996a9805e17e2cc7cedbd2d72d617193ed6b9a",
+     "bytes": 13000,
+     "status": "verified",
+     "licence": "Public download from David Dorn's data page; no licence stated; cite Autor and Dorn (2013). Not redistributed.",
+     "role": "1990 county to 1990 commuting-zone crosswalk (used for County Business Patterns aggregation)"
+    },
+    {
+     "name": "medsl_county",
+     "file": "data/raw/countypres_2000-2016.csv",
+     "url": "https://raw.githubusercontent.com/MEDSL/county-returns/f44e3fc105ab3a229b810d769349436bff9bd580/countypres_2000-2016.csv",
+     "sha256": "017111108d12cd68c1ad75cab5c18f15103d021de7e8a895bf13c6ef2ad3e887",
+     "bytes": 4538055,
+     "status": "verified",
+     "licence": "MIT Election Data and Science Lab; the Harvard Dataverse release of this dataset (doi:10.7910/DVN/VOQCHQ) is CC0 1.0.",
+     "role": "County presidential returns 2000-2016 (outcomes, 2000 weights, 2016 two-party votes)"
+    },
+    {
+     "name": "algara_amlani_pres",
+     "file": "data/raw/dataverse_shareable_presidential_county_returns_1868_2020.Rdata",
+     "url": "https://dataverse.harvard.edu/api/access/datafile/5028532",
+     "sha256": "c3ad5e87a6dfd8aaf25725ca43b47e86c1cfe828958f6371fe096543906c1687",
+     "bytes": 1459576,
+     "status": "verified",
+     "licence": "CC0 1.0 (Harvard Dataverse doi:10.7910/DVN/DGUMFI, version 1.1).",
+     "role": "County presidential returns 1988-2000 (placebo outcomes, 1992/1996 controls, state 1996 shares, cross-check)"
+    },
+    {
+     "name": "algara_amlani_manual",
+     "file": "data/raw/County_Level_Dataset_Manual_READ_ME.pdf",
+     "url": "https://dataverse.harvard.edu/api/access/datafile/5028533",
+     "sha256": "0143e6dc05cf6d86db8b100ce7f3d2f981d1bc2f563d3f0119b92f4511cfab1e",
+     "bytes": 266932,
+     "status": "verified",
+     "licence": "CC0 1.0 (same dataset).",
+     "role": "Codebook (documentation only)"
+    },
+    {
+     "name": "cbpp_tpr",
+     "file": "data/raw/2025-04-11-TPR-1978-2023.xls",
+     "url": "http://web.archive.org/web/20250420040351id_/https://www.cbpp.org/sites/default/files/2025-04-11-TPR-1978-2023.xls",
+     "sha256": "d6ef9b16745e927c1fcdd567da1e9b08d661c8f8a180c9d65dd92e1c3ec0e27b",
+     "bytes": 375808,
+     "status": "verified",
+     "licence": "Center on Budget and Policy Priorities; noncommercial reproduction with attribution, no derivative databases (cbpp.org terms of use). Retrieved from the Internet Archive capture because cbpp.org refuses automated clients. Not redistributed.",
+     "role": "State AFDC/TANF-to-poverty ratios, two-year averages, 1978-79 to 2022-23 (moderator)"
+    },
+    {
+     "name": "wrd_2016",
+     "file": "data/raw/2016_welfare_rules_databook.pdf",
+     "url": "http://web.archive.org/web/20250113180305id_/https://www.acf.hhs.gov/sites/default/files/documents/opre/2016_welfare_rules_databook_final_10_30_17_b508_2.pdf",
+     "sha256": "7cfeca5375d2ddbcf016ba19a0d8516f05bb5560b70b5b0d59056a8c36668140",
+     "bytes": 4152975,
+     "status": "verified",
+     "licence": "Public domain (OPRE Report 2017-82 states: 'This report is in the public domain').",
+     "role": "Table L5 maximum benefits, July 1996 and July 2016 (transcribed to data/wrd_table_l5.csv)"
+    },
+    {
+     "name": "cbp_2000",
+     "file": "data/raw/cbp00co.zip",
+     "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2000/cbp00co.zip",
+     "sha256": "a57c70e9561c475edb9307eb241e84aea880e2df35666d33d46ebe385992f9cd",
+     "bytes": 16024897,
+     "status": "verified",
+     "licence": "U.S. Census Bureau County Business Patterns; public domain (U.S. government work).",
+     "role": "County manufacturing and total employment, 2000 (alternative shock)"
+    },
+    {
+     "name": "cbp_2008",
+     "file": "data/raw/cbp08co.zip",
+     "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2008/cbp08co.zip",
+     "sha256": "baa2e780c028b03cecc80542a0a43cfc7c81c95673a676f7baa913a97ad5ca38",
+     "bytes": 16430296,
+     "status": "verified",
+     "licence": "U.S. Census Bureau County Business Patterns; public domain (U.S. government work).",
+     "role": "County manufacturing employment, 2008 (alternative shock)"
+    },
+    {
+     "name": "bea_ca35_2011",
+     "file": "data/raw/bea_ca35_2011.zip",
+     "url": "http://web.archive.org/web/20110508122527id_/http://www.bea.gov/regional/zip/ca35.zip",
+     "sha256": "362a129a2e80ab2de7429fd9f56f884a21f20908810f989571bb6dc0b5a9af27",
+     "bytes": 14561063,
+     "status": "verified",
+     "licence": "U.S. Bureau of Economic Analysis, Regional Economic Accounts table CA35 (April 2011 release, Internet Archive capture of bea.gov); public domain (U.S. government work).",
+     "role": "County personal current transfer receipts by program, 1969-2009, including family assistance (AFDC/TANF), which later releases no longer separate"
+    },
+    {
+     "name": "bea_ca1_3_2011",
+     "file": "data/raw/bea_ca1-3_2011.zip",
+     "url": "http://web.archive.org/web/20110508121624id_/http://www.bea.gov/regional/zip/ca1-3.zip",
+     "sha256": "90743a71c1248756c0983b30e6cf057ed559d17f914602b86eb1f0ee7e5d2b9b",
+     "bytes": 1994227,
+     "status": "verified",
+     "licence": "U.S. Bureau of Economic Analysis, table CA1-3 (April 2011 release, Internet Archive capture); public domain.",
+     "role": "County population, same vintage as CA35 (per-capita transfers)"
+    },
+    {
+     "name": "fec_2016",
+     "file": "data/raw/federalelections2016.xlsx",
+     "url": "https://www.fec.gov/documents/1890/federalelections2016.xlsx",
+     "sha256": "b4a1d1383602bc388cfbdf1fbea2476476d32e0b44b44236d3a3910fa9782eb6",
+     "bytes": 1549194,
+     "status": "verified",
+     "licence": "Federal Election Commission, Federal Elections 2016; public domain (U.S. government work).",
+     "role": "Official 2016 presidential popular vote by state (margins for the bridge)"
+    },
+    {
+     "name": "bls_cpi",
+     "file": "data/raw/bls_cpiu_july_1996_2016.json",
+     "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/ (POST, normalised)",
+     "sha256": "e4525f426049ab5290d0fdcc04095bcbb7e786da7664da53cdc8cca8b705af77",
+     "bytes": 341,
+     "status": "verified",
+     "licence": "U.S. Bureau of Labor Statistics; public domain.",
+     "role": "July CPI-U, 1996 and 2016 (real benefit deflator)"
+    },
+    {
+     "name": "bls_cpi_monthly",
+     "file": "data/raw/bls_cpiu_monthly_2000_2008.json",
+     "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/ (POST, normalised)",
+     "sha256": "bb99932fb28fe30b74c563324532ad72bd9619cc232c8f6084af4d0ac715615a",
+     "bytes": 2438,
+     "status": "verified",
+     "licence": "U.S. Bureau of Labor Statistics; public domain.",
+     "role": "Monthly CPI-U for 2000 and 2008 (deflator for BEA transfers)"
+    }
+   ]
   }
  ]
 }

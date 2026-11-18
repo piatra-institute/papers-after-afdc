@@ -1,4 +1,5 @@
-"""Run every pre-registered analysis and write output/results.json and the figures.
+"""Run every analysis specified in the brief, and those added after review, and write
+output/results.json and the figures.
 
 Reads only frozen inputs (data/raw/ written by fetch_data.py, data/wrd_table_l5.csv).
 """
@@ -46,7 +47,8 @@ def main() -> None:
     # The CBPP terms bar derivative databases: CBPP-derived ratios are written only for the
     # states named in the paper; the full table is used in memory for Figure 1 only.
     named = {"Michigan", "Wisconsin", "Pennsylvania", "Oregon", "Missouri"}
-    cbpp_fields = {"tpr_1996", "tpr_2008", "tpr_2016", "tpr_1979", "erosion", "erosion_2008", "pre_reform_decline"}
+    cbpp_fields = {"tpr_1996", "tpr_2008", "tpr_2016", "tpr_1979", "erosion", "erosion_2008", "pre_reform_decline",
+                   "tpr_9394", "tpr_9900", "tpr_1314", "erosion_9394", "erosion_4yr", "log_poverty_growth"}
     R["state_table"] = {s: {k: v for k, v in row.items()
                             if (k not in cbpp_fields or s in named) and k != "state_mean_shock"}
                         for s, row in full_states.items()}
@@ -109,13 +111,13 @@ def main() -> None:
     R["primary"]["shock_effect_at_p25_erosion"] = R["primary"]["beta_at_mean"]["coef"] + g * (modinfo["erosion"]["p25"] - modinfo["erosion"]["state_mean"])
     R["primary"]["shock_effect_at_p75_erosion"] = R["primary"]["beta_at_mean"]["coef"] + g * (modinfo["erosion"]["p75"] - modinfo["erosion"]["state_mean"])
     R["main_effect_state_fe_2000_2016"] = A.main_effect_state_fe(p, "dR_2000_2016")
-    # Not pre-registered, descriptive: precision of the primary interaction
+    # Not specified in the brief, descriptive: precision of the primary interaction
     from scipy import stats as _st
     se = R["primary"]["gamma"][A.TWOWAY]["se"]
     mult = float(_st.t.ppf(0.975, R["primary"]["gamma"][A.TWOWAY]["t_df"]) + _st.norm.ppf(0.80))
     R["primary"]["mde80"] = {"multiplier": mult, "gamma": mult * se,
                              "per_state_sd": mult * se * modinfo["erosion"]["state_sd"],
-                             "note": "two-sided 5% test, 80% power, using the estimated two-way SE; descriptive, not pre-registered"}
+                             "note": "two-sided 5% test, 80% power, using the estimated two-way SE; descriptive, not specified in the brief"}
 
     # Secondary window and time profile
     R["windows"] = {}
@@ -184,6 +186,64 @@ def main() -> None:
     f = A.run_iv(p, "dR_2000_2016", mods=("pre_reform_decline_z",))
     R["F2_placebo_moderator"] = A.interaction_block(f, "pre_reform_decline_z")
 
+    # ------------------------------------------------------------------ revision round 1 (post hoc,
+    # added after review; not specified in the brief)
+    REV = {}
+    sd = modinfo["erosion"]["state_sd"]
+    # (a) erosion interacted with controls, entered as exogenous regressors
+    cz = D.ADHM_CONTROLS_CZ
+    demo = ["l_sh_pop_white", "l_sh_pop_black", "l_sh_pop_hispanic", "l_sh_pop_edu_c", "l_sh_fborn", "AA_R1996"]
+    q = p.copy()
+    for c in cz + demo:
+        q[f"ero_x_{c}"] = q["erosion_c"] * (q[c] - q[c].mean())
+    for key, extra in [("ero_x_cz", cz), ("ero_x_cz_demog", cz + demo)]:
+        f = A.run_iv(q, "dR_2000_2016", controls=A.CONTROLS + [f"ero_x_{c}" for c in extra])
+        REV[key] = {"gamma": A.summarize(f, "shock_x_erosion_c"), "controls_interacted": extra}
+    # (b) measurement of the moderator
+    for m in ["erosion_9394", "erosion_4yr"]:
+        f = A.run_iv(p, "dR_2000_2016", mods=(f"{m}_z",))
+        REV[m] = {"gamma": A.summarize(f, f"shock_x_{m}_z"), "corr_with_erosion": modinfo["correlation_with_erosion"][m]}
+    keep = p["state"].map(st["tpr_1996"]) <= 100
+    f = A.run_iv(p[keep], "dR_2000_2016")
+    REV["base_le_100"] = {"gamma": A.summarize(f, "shock_x_erosion_c"),
+                          "states_dropped": sorted(st.index[st["tpr_1996"] > 100]), "nobs": f.nobs}
+    # (c) reliability of erosion given CPS sampling noise in the poverty denominator
+    noise = {}
+    for label, a_, b_ in [("2013_14_vs_2015_16", "tpr_1314", "tpr_2016"), ("1993_94_vs_1995_96", "tpr_9394", "tpr_1996")]:
+        sd_log = float(np.log(st[b_] / st[a_]).std(ddof=1))
+        rel = sd_log / np.sqrt(2)
+        nv = float(np.mean((rel * st["tpr_1996"]) ** 2 + (rel * st["tpr_2016"]) ** 2))
+        lam = 1 - nv / float(st["erosion"].var(ddof=1))
+        g = R["primary"]["gamma"]
+        noise[label] = {"sd_log_change": sd_log, "relative_noise_per_window": rel, "noise_var_erosion": nv,
+                        "reliability": lam,
+                        "gamma_corrected": g["coef"] / lam,
+                        "gamma_corrected_ci95": [c / lam for c in g[A.TWOWAY]["ci95"]],
+                        "upper_per_true_sd": g[A.TWOWAY]["ci95"][1] * sd / np.sqrt(lam)}
+    REV["reliability"] = noise
+    # (d) timing and post-treatment checks on the moderator
+    REV["share_of_erosion_by_1999_2000"] = float((st["tpr_1996"] - st["tpr_9900"]).mean() / st["erosion"].mean())
+    REV["corr_log_poverty_growth_state_mean_shock"] = float(np.corrcoef(st["log_poverty_growth"], st["state_mean_shock"])[0, 1])
+    REV["corr_erosion_state_mean_shock"] = float(np.corrcoef(st["erosion"], st["state_mean_shock"])[0, 1])
+    # (e) first stage: did erosion moderate the cash-assistance response to the shock? (BEA CA35, April 2011)
+    bea = D.load_bea_transfers()
+    t = p.join(bea, on="cty_fips", how="inner")
+    t = t[t["pop2000"].notna() & t["d_fa_pc"].notna() & t["d_ui_pc"].notna()].copy()
+    t["w_pop"] = t["pop2000"]
+    fs = {"nobs": int(len(t)), "states": int(t["state"].nunique()),
+          "cpi_2000": bea.attrs["cpi_2000"], "cpi_2008": bea.attrs["cpi_2008"],
+          "fa_pc2000_weighted_mean": float(np.average(t["fa_pc2000"], weights=t["w_pop"])),
+          "d_fa_pc_weighted_mean": float(np.average(t["d_fa_pc"], weights=t["w_pop"])),
+          "d_ui_pc_weighted_mean": float(np.average(t["d_ui_pc"], weights=t["w_pop"]))}
+    for k in ["d_fa_pc", "d_ui_pc", "d_snap_pc"]:
+        f = A.run_iv(t, k, weight_col="w_pop")
+        blk = A.interaction_block(f, "erosion_c")
+        blk["gamma_per_state_sd"] = blk["gamma"]["coef"] * sd
+        blk["gamma_per_sd_ci95"] = [c * sd for c in blk["gamma"][A.TWOWAY]["ci95"]]
+        fs[k] = blk
+    REV["first_stage_transfers"] = fs
+    R["revision1"] = REV
+
     # Binned (descriptive) and bridge
     R["binned_terciles"] = A.binned_effects(p, "dR_2000_2016")
     R["bridge"] = A.bridge(p, prim, modinfo, fec)
@@ -217,6 +277,21 @@ def main() -> None:
     rows.append(row("placebo_9296", "Placebo outcome 1992–1996", R["F1_placebo"]["dR_1992_1996"]["gamma"], sd, "placebo"))
     rows.append(row("placebo_9600", "Placebo outcome 1996–2000", R["F1_placebo"]["dR_1996_2000"]["gamma"], sd, "placebo"))
     rows.append(row("placebo_mod", "Placebo moderator: 1979–1996 decline", R["F2_placebo_moderator"]["gamma"], 1.0, "placebo"))
+    rows.append(row("rev_ero_x_cz", "Erosion × CZ controls", REV["ero_x_cz"]["gamma"], sd, "revision"))
+    rows.append(row("rev_ero_x_cz_demog", "Erosion × CZ and county controls", REV["ero_x_cz_demog"]["gamma"], sd, "revision"))
+    rows.append(row("rev_erosion_9394", "Erosion from 1993–94", REV["erosion_9394"]["gamma"], 1.0, "revision"))
+    rows.append(row("rev_erosion_4yr", "Erosion, four-year averages", REV["erosion_4yr"]["gamma"], 1.0, "revision"))
+    rows.append(row("rev_base_le_100", "Base ratio of 100 or less", REV["base_le_100"]["gamma"], sd, "revision"))
+    # upper bounds per SD across specifications of the 2000-2016 erosion interaction
+    same_moderator = ["primary", "ols", "unweighted", "comp_white", "comp_south", "comp_state_R1996",
+                      "comp_state_mean_shock", "comp_joint", "rev_ero_x_cz", "rev_ero_x_cz_demog",
+                      "rev_erosion_9394", "rev_erosion_4yr", "rev_base_le_100"]
+    ub = {k: next(r["ci95"][1] for r in rows if r["key"] == k) for k in same_moderator}
+    REV["upper_bounds_per_sd"] = {"by_spec": ub, "min": min(ub.values()), "max": max(ub.values()),
+                                  "argmax": max(ub, key=ub.get),
+                                  "max_over_beta_at_mean": max(ub.values()) / R["primary"]["beta_at_mean"]["coef"],
+                                  "reliability_adjusted_primary": REV["reliability"]["2013_14_vs_2015_16"]["upper_per_true_sd"],
+                                  "alternative_moderator_max": max(r["ci95"][1] for r in rows if r["group"] == "moderator")}
     R["robustness_rows"] = {r["key"]: r for r in rows}
     R["robustness_order"] = [r["key"] for r in rows]
 

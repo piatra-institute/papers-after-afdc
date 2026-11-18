@@ -87,3 +87,17 @@ Recorded after the outcome data were downloaded. None changes a specification, a
 3. In the County Business Patterns aggregation, Broomfield (08014, created 2001) is assigned to Boulder's commuting zone and statewide records (county code 999) are dropped.
 4. Inference detail not stated in the plan: intervals for state-clustered and two-way-clustered statistics use the t distribution with $G - 1 = 47$ degrees of freedom; CZ-clustered statistics use $G - 1$ with $G$ the number of commuting zones.
 5. Additions labelled in the results as descriptive and not pre-registered: (a) V1b, the estimation code applied to ADHM's own analysis file (the only place where its vote-share columns are read); (b) the correlations of the erosion measure with the 1995–96 and 2015–16 ratios; (c) the minimum detectable interaction at 80% power implied by the estimated standard error; (d) the shock effect estimated separately for terciles of states ordered by erosion, shown in Figure 1.
+
+## Revision round 1 (after review, 2026-11-18)
+
+Added after an independent referee report; none of this was specified in the plan above, and the plan text above is unchanged.
+
+Process record, corrected. The opening paragraph says the plan's hash "is recorded by `simulation/fetch_data.py` in `simulation/data/fetch-log.json`". The first version of that script overwrote the log on every run; the surviving entry (2026-11-18T19:03:25Z) is not the first download of the election returns. The script now appends. The plan text can be checked directly: take this file up to the line `## Deviations`, append `## Deviations`, a blank line and `None yet.` with a final newline, and compute SHA-256; the result is 08beb8370d1309bb6860c427520e7174255efe473b7863efeaa8474b0a3f7c6a, the value recorded at 18:59Z. The ordering is self-recorded and has no external timestamp. Before the plan was written, the CBPP ratios, Table L5 of the Welfare Rules Databook and the ADHM replication archive had been downloaded and opened; that archive contains county presidential vote shares for 1992 to 2016 (Leip), of which only the variable names were read, together with the shock and instrument columns. The MEDSL and Algara-Amlani returns that supply every outcome were downloaded after the plan.
+
+Post hoc analyses added (all labelled in the paper):
+1. ADHM's own file without the District of Columbia (replication gap).
+2. Erosion interacted with the three CZ controls, and with those plus county race, education, foreign-born and 1996 vote shares, as exogenous regressors.
+3. Moderator measurement: erosion from 1993-94; four-year averages at both ends; dropping states with a 1995-96 ratio above 100; a reliability approximation from the 2013-14 to 2015-16 change (and from 1993-94 to 1995-96); it assumes independent noise in the two windows, which the CPS rotation design partly violates.
+4. Timing and post-treatment checks: share of erosion by 1999-2000; correlations of the state mean shock with poverty growth and with erosion.
+5. A first-stage check of the transfer channel with BEA CA35 (April 2011 release): change 2000-2008 in family assistance, unemployment insurance and SNAP per capita, same 2SLS specification, weighted by 2000 population.
+6. Upper bounds of the erosion interaction across specifications.

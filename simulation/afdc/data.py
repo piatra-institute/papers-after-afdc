@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import io
 import json
+import re
 import zipfile
 from pathlib import Path
 
@@ -17,7 +18,7 @@ HERE = Path(__file__).resolve().parent.parent
 RAW = HERE / "data" / "raw"
 DATA = HERE / "data"
 
-# 1990-definition county codes used by the ADHM sample (pre-registered mapping).
+# 1990-definition county codes used by the ADHM sample (mapping fixed in the brief).
 FIPS_TO_1990 = {46102: 46113, 12086: 12025, 51515: 51019, 51560: 51005, 51780: 51083}
 EXCLUDED_FIPS = {8014}  # Broomfield, created 2001; excluded as in ADHM
 
@@ -55,6 +56,9 @@ RAW_FILES = {
     "cbp2008": RAW / "cbp08co.zip",
     "fec": RAW / "federalelections2016.xlsx",
     "cpi": RAW / "bls_cpiu_july_1996_2016.json",
+    "cpi_monthly": RAW / "bls_cpiu_monthly_2000_2008.json",
+    "bea_ca35": RAW / "bea_ca35_2011.zip",
+    "bea_ca13": RAW / "bea_ca1-3_2011.zip",
     "wrd": DATA / "wrd_table_l5.csv",
 }
 
@@ -152,6 +156,15 @@ def load_cbpp() -> pd.DataFrame:
     return d
 
 
+def load_cbpp_poverty() -> pd.DataFrame:
+    raw = pd.read_excel(RAW_FILES["cbpp"], "Poverty (2 yr)", header=None)
+    hdr = raw.iloc[1].tolist()
+    d = raw.iloc[2:].copy()
+    d.columns = ["state"] + hdr[1:]
+    d = d[d["state"].isin(STATE_FIPS.values())].set_index("state")
+    return d.apply(pd.to_numeric, errors="coerce")
+
+
 def load_cpi() -> dict[int, float]:
     obs = json.loads(RAW_FILES["cpi"].read_text())["observations"]
     return {o["year"]: float(o["value"]) for o in obs}
@@ -168,9 +181,17 @@ def state_moderators() -> pd.DataFrame:
     s["tpr_2008"] = t["07-08"]
     s["tpr_2016"] = t["15-16"]
     s["tpr_1979"] = t["78-79"]
+    s["tpr_9394"] = t["93-94"]
+    s["tpr_9900"] = t["99-00"]
+    s["tpr_1314"] = t["13-14"]
     s["erosion"] = s["tpr_1996"] - s["tpr_2016"]
     s["erosion_2008"] = s["tpr_1996"] - s["tpr_2008"]
     s["pre_reform_decline"] = s["tpr_1979"] - s["tpr_1996"]
+    # revision round 1 (post hoc): alternative bases and averaging windows
+    s["erosion_9394"] = s["tpr_9394"] - s["tpr_2016"]
+    s["erosion_4yr"] = (t["93-94"] + t["95-96"]) / 2 - (t["13-14"] + t["15-16"]) / 2
+    pov = load_cbpp_poverty()
+    s["log_poverty_growth"] = np.log(pov["15-16"] / pov["95-96"])
     s["benefit_1996"] = w["benefit_july1996"]
     s["benefit_2016_nominal"] = w["benefit_july2016"]
     s["benefit_2016_real96"] = w["benefit_july2016"] * defl
@@ -265,7 +286,54 @@ def build_panel() -> tuple[pd.DataFrame, dict]:
     diag["sample_counties"] = int(len(p))
     diag["states"] = int(p["state"].nunique())
     diag["czones"] = int(p["czone"].nunique())
-    # weighted state mean of the shock (pre-registered competing moderator)
+    # weighted state mean of the shock (competing moderator listed in the brief)
     sm = p.groupby("state").apply(lambda g: np.average(g["shock"], weights=g["weight"]), include_groups=False)
     p["state_mean_shock"] = p["state"].map(sm)
     return p.reset_index(drop=True), diag
+
+
+# --------------------------------------------------------------------------- BEA transfers (revision round 1)
+
+def _bea_lines(path: Path, lines: dict[str, str], years=("2000", "2008")) -> pd.DataFrame:
+    """County values from an April 2011 BEA regional zip (one CSV per state).
+    (L) means less than $50,000 and is set to the midpoint, $25,000; other codes are missing."""
+    frames = []
+    with zipfile.ZipFile(path) as z:
+        for n in z.namelist():
+            if not re.fullmatch(r"CA[0-9-]+_[A-Z]{2}\.csv", n):
+                continue
+            d = pd.read_csv(io.BytesIO(z.read(n)), dtype=str, encoding="latin-1")
+            d = d[d["Line code"].notna()]
+            d["code"] = d["Line code"].str.strip()
+            d = d[d["code"].isin(lines)]
+            d["fips"] = pd.to_numeric(d["FIPS"].str.strip(), errors="coerce")
+            frames.append(d)
+    d = pd.concat(frames)
+    d = d[d["fips"].notna() & (d["fips"] % 1000 != 0)]
+    out = {}
+    for code, name in lines.items():
+        q = d[d["code"] == code].set_index("fips")
+        for y in years:
+            v = q[y].str.strip().replace({"(L)": "25"})
+            out[f"{name}{y}"] = pd.to_numeric(v, errors="coerce")
+    res = pd.DataFrame(out)
+    res.index = to_1990(pd.Series(res.index.astype(int), index=res.index)).values
+    return res.groupby(level=0).sum(min_count=1)
+
+
+def load_bea_transfers() -> pd.DataFrame:
+    """Per-capita county transfers in 2000 dollars, 2000 and 2008, from the April 2011 BEA release."""
+    tr = _bea_lines(RAW_FILES["bea_ca35"], {"140": "fa", "170": "ui", "150": "snap"})
+    pop = _bea_lines(RAW_FILES["bea_ca13"], {"2": "pop"})
+    obs = json.loads(RAW_FILES["cpi_monthly"].read_text())["observations"]
+    cpi = {y: np.mean([float(o["value"]) for o in obs if o["year"] == y]) for y in (2000, 2008)}
+    defl = cpi[2000] / cpi[2008]
+    df = tr.join(pop, how="inner")
+    for k in ("fa", "ui", "snap"):
+        pc00 = 1000 * df[f"{k}2000"] / df["pop2000"]
+        pc08 = 1000 * df[f"{k}2008"] * defl / df["pop2008"]
+        df[f"{k}_pc2000"] = pc00
+        df[f"d_{k}_pc"] = pc08 - pc00
+    df.attrs["cpi_2000"] = cpi[2000]
+    df.attrs["cpi_2008"] = cpi[2008]
+    return df

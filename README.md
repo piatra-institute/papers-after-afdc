@@ -1,6 +1,6 @@
 # After AFDC
 
-A pre-registered test, on public data, of whether the post-1996 erosion of state cash assistance (AFDC/TANF) amplified the county presidential-vote response to the China trade shock, with a documentary history of the 1996 welfare law and a translation of the estimate into 2016 votes in Michigan, Wisconsin and Pennsylvania. The estimated interaction has the opposite sign to the hypothesis and an interval that includes zero.
+A test on public data, specified in advance in the project brief, of whether the post-1996 erosion of state cash assistance (AFDC/TANF) amplified the county presidential-vote response to the China trade shock, with a check of whether cash assistance responded to the shock at all, a documentary history of the 1996 welfare law and a translation of the estimate into 2016 votes in Michigan, Wisconsin and Pennsylvania. The interaction is not distinguishable from zero, and family-assistance payments did not measurably respond to the shock.
 
 [Read the paper](https://piatra.institute/papers/after-afdc.pdf) · [Manuscript](paper/PAPER.md) · [Analysis and reproduction](simulation/README.md) · [Analysis plan](brief.md)
 

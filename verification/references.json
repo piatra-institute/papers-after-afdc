@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "references_sha256": "e61096172a3d30ecf077bccca28031bca97879c6a0afd0e169444cd52ea944f4",
+  "references_sha256": "5adc257cb63a4d755bec58a950f2e7b7403219945d7025d6a5ec4d4569f036b3",
   "bibliography_inputs": {
-    "references.yaml": "e61096172a3d30ecf077bccca28031bca97879c6a0afd0e169444cd52ea944f4"
+    "references.yaml": "5adc257cb63a4d755bec58a950f2e7b7403219945d7025d6a5ec4d4569f036b3"
   },
   "entries": [
     {
@@ -59,7 +59,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:02.370008+00:00",
+      "fetched_at": "2026-11-18T20:34:52.123339+00:00",
       "record_sha256": "6a4a26ec13b3197ab4e4029e2825ea386d7a93e43c27410acaa2dd4ab960a20b",
       "suggestions": [],
       "message": "identity matches"
@@ -118,7 +118,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:02.938044+00:00",
+      "fetched_at": "2026-11-18T20:34:52.712146+00:00",
       "record_sha256": "8f599d4e801d4ee9292f2fac79660f300b60f1b0220bed5d7935ac57c01d583f",
       "suggestions": [],
       "message": "identity matches"
@@ -177,7 +177,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:03.578606+00:00",
+      "fetched_at": "2026-11-18T20:34:53.329561+00:00",
       "record_sha256": "16d1129a35b9b06cc3ac35e09fa8dbfb9bb5bb5ec50103da49be1013b51dc254",
       "suggestions": [],
       "message": "identity matches"
@@ -188,7 +188,7 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:04.066536+00:00",
+      "fetched_at": "2026-11-18T20:34:53.848778+00:00",
       "record_sha256": null,
       "suggestions": [
         {
@@ -271,7 +271,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:04.679765+00:00",
+      "fetched_at": "2026-11-18T20:34:54.478732+00:00",
       "record_sha256": "784d888cbc3a85a68d1d16390992a97740eea4184835a27b2cb4ba2e284de99c",
       "suggestions": [],
       "message": "identity matches"
@@ -330,7 +330,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:05.348379+00:00",
+      "fetched_at": "2026-11-18T20:34:55.043862+00:00",
       "record_sha256": "b51bea9dbc825003ebe2f1b77c67922b0a9d1a28d89493a7ac60f32427680a2f",
       "suggestions": [],
       "message": "identity matches"
@@ -390,7 +390,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:06.094461+00:00",
+      "fetched_at": "2026-11-18T20:34:55.828779+00:00",
       "record_sha256": "3006285ba97219abf833cf52c73afb5cb064edf1ac9d3ce67bc513638d3eb0d1",
       "suggestions": [],
       "message": "identity matches"
@@ -450,7 +450,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:06.652970+00:00",
+      "fetched_at": "2026-11-18T20:34:56.454327+00:00",
       "record_sha256": "50aaccc90c271eb6da9e4e228031821340b1f409740ef6230f0070d6dfc359c1",
       "suggestions": [],
       "message": "identity matches"
@@ -509,7 +509,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:07.442540+00:00",
+      "fetched_at": "2026-11-18T20:34:57.252373+00:00",
       "record_sha256": "535fce189f414924ae869e27907d1e70ac6b45cb67f7a5543ccd1895b70d81de",
       "suggestions": [],
       "message": "identity matches"
@@ -568,7 +568,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:08.145939+00:00",
+      "fetched_at": "2026-11-18T20:34:57.939393+00:00",
       "record_sha256": "0a54c664810dda753856e56d35add2bde2518c50dda4b7885bb31fd592da7249",
       "suggestions": [],
       "message": "identity matches"
@@ -628,7 +628,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:08.880399+00:00",
+      "fetched_at": "2026-11-18T20:34:58.624900+00:00",
       "record_sha256": "0b74413dcf3c3149666bf6f47b9647c4d34be5f854e392b45f311fc5ce2f4130",
       "suggestions": [],
       "message": "identity matches"
@@ -688,7 +688,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:09.587622+00:00",
+      "fetched_at": "2026-11-18T20:34:59.343883+00:00",
       "record_sha256": "6e1f3a606c385a78e05c661c68f5a80292d170b233b1edb06c3d069c481004f8",
       "suggestions": [],
       "message": "identity matches"
@@ -748,7 +748,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:10.328402+00:00",
+      "fetched_at": "2026-11-18T20:35:00.053460+00:00",
       "record_sha256": "95714f4d40a0fe432299e27766b3c042f1a2780dfeea0f23b4856738fc5e1bb3",
       "suggestions": [],
       "message": "different fields: page"
@@ -808,8 +808,188 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:10.972237+00:00",
+      "fetched_at": "2026-11-18T20:35:00.656127+00:00",
       "record_sha256": "fc2f21f4c2d27d557ffcfb9a4684979443f36ef649b04a6a6ac28cdd5cae29b3",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "hays2005",
+      "doi": "10.1017/S0020818305050150",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Government Spending and Public Support for Trade in the OECD: An Empirical Test of the Embedded Liberalism Thesis",
+          "registry": [
+            "Government Spending and Public Support for Trade in the OECD: An\n                        Empirical Test of the Embedded Liberalism Thesis"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "hays",
+          "registry": "hays",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2005
+          ],
+          "registry": [
+            2005,
+            2005,
+            2005,
+            2005
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "International Organization",
+          "registry": [
+            "International Organization"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 59,
+          "registry": "59",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "473-494",
+          "registry": "473-494",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T20:35:01.434316+00:00",
+      "record_sha256": "fcfde509e3d0f87b6755520a8909af030ac2ddfa96fa734c08cae496e3f59d4f",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "walter2010",
+      "doi": "10.1111/j.1468-2478.2010.00593.x",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Globalization and the Welfare State: Testing the Microfoundations of the Compensation Hypothesis",
+          "registry": [
+            "Globalization and the Welfare State: Testing the Microfoundations of the Compensation Hypothesis"
+          ],
+          "registry_subtitle": [
+            "Globalization and the Welfare State"
+          ],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "walter",
+          "registry": "walter",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2010
+          ],
+          "registry": [
+            2010,
+            2010,
+            2010
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "International Studies Quarterly",
+          "registry": [
+            "International Studies Quarterly"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 54,
+          "registry": "54",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "403-426",
+          "registry": "403-426",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T20:35:02.201812+00:00",
+      "record_sha256": "91096f41f7a8117b1bd929b093b8ad6441ea61270cefab523174c47b65e824d9",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "blanchard2024",
+      "doi": "10.1016/j.jinteco.2024.103891",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Did Trump's Trade War Impact the 2018 Election?",
+          "registry": [
+            "Did Trump’s trade war impact the 2018 election?"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "blanchard",
+          "registry": "blanchard",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2024
+          ],
+          "registry": [
+            2024,
+            2024,
+            2024
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of International Economics",
+          "registry": [
+            "Journal of International Economics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 148,
+          "registry": "148",
+          "match": true
+        },
+        "issue": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "page": {
+          "reference": "103891",
+          "registry": "103891",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T20:35:02.970215+00:00",
+      "record_sha256": "707af1fce90c9c4e66ff33ad23c9158d64ee6d515c5e100aa0a48a89c381c719",
       "suggestions": [],
       "message": "identity matches"
     },
@@ -868,7 +1048,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:11.652925+00:00",
+      "fetched_at": "2026-11-18T20:35:03.717246+00:00",
       "record_sha256": "8330d97b11da48a19bf4b63935872ae02f17c72758b315d1abd78b7fe66bdb88",
       "suggestions": [],
       "message": "identity matches"
@@ -927,7 +1107,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:12.308979+00:00",
+      "fetched_at": "2026-11-18T20:35:04.283582+00:00",
       "record_sha256": "ed620f2654e0e4c854f166480c52341f816676aabe2cbd7877fcd9040f378778",
       "suggestions": [],
       "message": "identity matches"
@@ -986,7 +1166,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:12.921062+00:00",
+      "fetched_at": "2026-11-18T20:35:04.900941+00:00",
       "record_sha256": "029fc750140cd9b6425e3a64dc3cb8dfe578726144125ae78c7170ca3d31ec49",
       "suggestions": [],
       "message": "identity matches"
@@ -1046,7 +1226,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:13.681122+00:00",
+      "fetched_at": "2026-11-18T20:35:05.459283+00:00",
       "record_sha256": "ade2804d7bf1832201bc94588ba5559fe5771fe826cb82e8fd2330d6d19d0b43",
       "suggestions": [],
       "message": "identity matches"
@@ -1106,7 +1286,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:14.238103+00:00",
+      "fetched_at": "2026-11-18T20:35:06.002974+00:00",
       "record_sha256": "644ed0e6622192e3763cc1f3321285d8776283957044d57e3d9eac5e74ee86a4",
       "suggestions": [],
       "message": "identity matches"
@@ -1166,7 +1346,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:14.809242+00:00",
+      "fetched_at": "2026-11-18T20:35:06.562492+00:00",
       "record_sha256": "9469b83a6e86f2beb4a5aa06cd21574e90272179cc473d7542387a9bbbf83c0e",
       "suggestions": [],
       "message": "identity matches"
@@ -1226,7 +1406,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:15.495084+00:00",
+      "fetched_at": "2026-11-18T20:35:07.332287+00:00",
       "record_sha256": "723fe6985fed75d8e6e5534e01e08b68eab24c83a59c4315da6b4afb286e28f2",
       "suggestions": [],
       "message": "identity matches"
@@ -1286,7 +1466,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:16.053156+00:00",
+      "fetched_at": "2026-11-18T20:35:07.883670+00:00",
       "record_sha256": "65491104c49d769fd7cc58b052c2ef6a0520f227afca45a64c1d35168cf6a0f3",
       "suggestions": [],
       "message": "identity matches"
@@ -1345,7 +1525,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:16.617056+00:00",
+      "fetched_at": "2026-11-18T20:35:08.507850+00:00",
       "record_sha256": "b5860b7e3a977f5f972f3e51fea37567765108242c636c4a16b1f626bb1c2d03",
       "suggestions": [],
       "message": "identity matches"
@@ -1405,7 +1585,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:17.156235+00:00",
+      "fetched_at": "2026-11-18T20:35:09.049619+00:00",
       "record_sha256": "864350ffc9d0c58916d60c75979e2b6a801e3698a636dd9e3bf0e2f9251faebf",
       "suggestions": [],
       "message": "identity matches"
@@ -1465,7 +1645,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:17.787332+00:00",
+      "fetched_at": "2026-11-18T20:35:09.668852+00:00",
       "record_sha256": "5abc63ee8e184c168abdfe6daeecd9f766f4ee74379aaa4ae971d5070ed18c0b",
       "suggestions": [],
       "message": "identity matches"
@@ -1476,7 +1656,7 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:18.419179+00:00",
+      "fetched_at": "2026-11-18T20:35:10.358906+00:00",
       "record_sha256": null,
       "suggestions": [
         {
@@ -1559,7 +1739,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:19.175473+00:00",
+      "fetched_at": "2026-11-18T20:35:11.085272+00:00",
       "record_sha256": "13abea808e9ef1d25d6ce37deb55db416161f5f090ffb2db70e265eae7edc4ed",
       "suggestions": [],
       "message": "identity matches"
@@ -1619,7 +1799,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:19.740691+00:00",
+      "fetched_at": "2026-11-18T20:35:11.642755+00:00",
       "record_sha256": "a881a554f202993f688eb91341325cf5b75ed07ed48adf833ad87849bf1b5dae",
       "suggestions": [],
       "message": "identity matches"
@@ -1679,7 +1859,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:20.709979+00:00",
+      "fetched_at": "2026-11-18T20:35:12.496548+00:00",
       "record_sha256": "52118c7e984bd9c0741f22b96076ebc79360d036ef75cec48f1f3aeb7d5c3505",
       "suggestions": [],
       "message": "identity matches"
@@ -1738,7 +1918,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:21.396751+00:00",
+      "fetched_at": "2026-11-18T20:35:13.132509+00:00",
       "record_sha256": "34247aa69e9bd5953c145dddf525e0687b286e5b277885d9e2d76729a53f6f56",
       "suggestions": [],
       "message": "different fields: issue"
@@ -1797,7 +1977,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:21.959776+00:00",
+      "fetched_at": "2026-11-18T20:35:13.752030+00:00",
       "record_sha256": "fd0520a865ca24b012d443686ad1d07f7d0d3a2037ab10b8b06050cf34498c6d",
       "suggestions": [],
       "message": "different fields: page"
@@ -1857,7 +2037,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:22.537851+00:00",
+      "fetched_at": "2026-11-18T20:35:14.381061+00:00",
       "record_sha256": "65056da23099b55331aa21a1cf56805fb4f280deacbd50bb91a3a35e9de4bd07",
       "suggestions": [],
       "message": "identity matches"
@@ -1916,7 +2096,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:23.520821+00:00",
+      "fetched_at": "2026-11-18T20:35:15.529626+00:00",
       "record_sha256": "d05086e992a6ae1949764396b100b2679595cc34ab1dfe1d1cb9928e74496294",
       "suggestions": [],
       "message": "identity matches"
@@ -1976,7 +2156,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:24.081744+00:00",
+      "fetched_at": "2026-11-18T20:35:16.099233+00:00",
       "record_sha256": "495ddf607429681a2efdf57eca29f708763cc38484bc4ef788e6fcb3f1f1aa60",
       "suggestions": [],
       "message": "identity matches"
@@ -2036,7 +2216,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:24.843272+00:00",
+      "fetched_at": "2026-11-18T20:35:16.836104+00:00",
       "record_sha256": "2d48403901aa7937274482554c5ae20b58103e350db9924f6aaffb591476a03d",
       "suggestions": [],
       "message": "identity matches"
@@ -2095,8 +2275,67 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:25.406153+00:00",
+      "fetched_at": "2026-11-18T20:35:17.397892+00:00",
       "record_sha256": "bb2e0c2c54566f6d8a55917369ae4d48ca66b8d78615ff9c28176aa504f207b8",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "ziliak2000",
+      "doi": "10.2307/146393",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Accounting for the Decline in AFDC Caseloads: Welfare Reform or the Economy?",
+          "registry": [
+            "Accounting for the Decline in AFDC Caseloads: Welfare Reform or the Economy?"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "ziliak",
+          "registry": "ziliak",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2000
+          ],
+          "registry": [
+            2000,
+            2000,
+            2000
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "The Journal of Human Resources",
+          "registry": [
+            "The Journal of Human Resources"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 35,
+          "registry": "35",
+          "match": true
+        },
+        "issue": {
+          "reference": 3,
+          "registry": "3",
+          "match": true
+        },
+        "page": {
+          "reference": "570",
+          "registry": "570",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T20:35:18.207689+00:00",
+      "record_sha256": "aa88157d144c7520baf359ed54b0c37ee81a69306cea97884ab1922893303d2c",
       "suggestions": [],
       "message": "identity matches"
     },
@@ -2106,7 +2345,7 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:25.894931+00:00",
+      "fetched_at": "2026-11-18T20:35:18.694562+00:00",
       "record_sha256": null,
       "suggestions": [
         {
@@ -2140,7 +2379,7 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:26.544860+00:00",
+      "fetched_at": "2026-11-18T20:35:19.392818+00:00",
       "record_sha256": null,
       "suggestions": [
         {
@@ -2174,7 +2413,7 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:27.085625+00:00",
+      "fetched_at": "2026-11-18T20:35:19.931747+00:00",
       "record_sha256": null,
       "suggestions": [
         {
@@ -2208,7 +2447,7 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:28.881515+00:00",
+      "fetched_at": "2026-11-18T20:35:21.146631+00:00",
       "record_sha256": null,
       "suggestions": [],
       "message": "no DOI; identity reviewed by the referee",
@@ -2220,7 +2459,7 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:29.374698+00:00",
+      "fetched_at": "2026-11-18T20:35:21.929977+00:00",
       "record_sha256": null,
       "suggestions": [
         {
@@ -2254,7 +2493,7 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:29.886179+00:00",
+      "fetched_at": "2026-11-18T20:35:22.397209+00:00",
       "record_sha256": null,
       "suggestions": [
         {
@@ -2288,31 +2527,9 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:30.378797+00:00",
+      "fetched_at": "2026-11-18T20:35:23.680911+00:00",
       "record_sha256": null,
-      "suggestions": [
-        {
-          "DOI": "10.1377/forefront.20250514.168676",
-          "title": [
-            "The House Republican Budget Reconciliation Legislation: Unpacking The Coverage Provisions"
-          ],
-          "registry": "Crossref"
-        },
-        {
-          "DOI": "10.1377/forefront.20250522.286850",
-          "title": [
-            "House Republicans Pass Budget Reconciliation Legislation: What's New In The Coverage Provisions?"
-          ],
-          "registry": "Crossref"
-        },
-        {
-          "DOI": "10.1377/forefront.20250522.933917",
-          "title": [
-            "The House Republican Budget Reconciliation Legislation: Unpacking The ICHRA And HSA Changes"
-          ],
-          "registry": "Crossref"
-        }
-      ],
+      "suggestions": [],
       "message": "no DOI; identity reviewed by the referee",
       "unverified_reason": "no_doi"
     },
@@ -2322,7 +2539,7 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:30.900419+00:00",
+      "fetched_at": "2026-11-18T20:35:24.185779+00:00",
       "record_sha256": null,
       "suggestions": [
         {
@@ -2356,9 +2573,31 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:32.290200+00:00",
+      "fetched_at": "2026-11-18T20:35:24.696566+00:00",
       "record_sha256": null,
-      "suggestions": [],
+      "suggestions": [
+        {
+          "DOI": "10.5040/9798400626395.0040",
+          "title": [
+            "Personal Responsibility and Work Opportunity Reconciliation Act"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.4135/9781604265774.n1015",
+          "title": [
+            "Personal Responsibility and Work Opportunity Reconciliation Act of\n                        1996"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.7560/705210-010",
+          "title": [
+            "Appendix Three. Personal Responsibility and Work Opportunity Reconciliation Act of August 22, 1996 (110 statutes-at-large 2105)"
+          ],
+          "registry": "Crossref"
+        }
+      ],
       "message": "no DOI; identity reviewed by the referee",
       "unverified_reason": "no_doi"
     },
@@ -2368,7 +2607,7 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:32.789211+00:00",
+      "fetched_at": "2026-11-18T20:35:25.176420+00:00",
       "record_sha256": null,
       "suggestions": [
         {
@@ -2402,7 +2641,7 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:33.302053+00:00",
+      "fetched_at": "2026-11-18T20:35:25.700812+00:00",
       "record_sha256": null,
       "suggestions": [
         {
@@ -2480,7 +2719,7 @@
         }
       },
       "registry": "DataCite",
-      "fetched_at": "2026-11-18T19:48:33.821636+00:00",
+      "fetched_at": "2026-11-18T20:35:26.328480+00:00",
       "record_sha256": "3b736aed6040c689c6ca14e6dd9489770f0468cec6082b529fa687951b704c84",
       "suggestions": [],
       "message": "identity matches"
@@ -2535,7 +2774,7 @@
         }
       },
       "registry": "DataCite",
-      "fetched_at": "2026-11-18T19:48:34.316932+00:00",
+      "fetched_at": "2026-11-18T20:35:26.795237+00:00",
       "record_sha256": "782b5fb9ab121a9eafb8119e8dee1ba12ea274a0b9b633199ee8ce31a4e3b154",
       "suggestions": [],
       "message": "identity matches"
@@ -2594,7 +2833,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:35.064382+00:00",
+      "fetched_at": "2026-11-18T20:35:27.471766+00:00",
       "record_sha256": "ec148bbefe53c126213335402738c0268bbcf954042c86b4b8f866e20f7d9cdd",
       "suggestions": [],
       "message": "identity matches"
@@ -2605,7 +2844,7 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:35.627194+00:00",
+      "fetched_at": "2026-11-18T20:35:27.993905+00:00",
       "record_sha256": null,
       "suggestions": [
         {
@@ -2639,27 +2878,39 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:36.180977+00:00",
+      "fetched_at": "2026-11-18T20:35:29.547068+00:00",
+      "record_sha256": null,
+      "suggestions": [],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "beaca35",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-18T20:35:30.115570+00:00",
       "record_sha256": null,
       "suggestions": [
         {
-          "DOI": "10.3886/icpsr03936",
+          "DOI": "10.1257/pol.3.4.1",
           "title": [
-            "County Business Patterns, 2000 [United States]: U.S. Summary, State, and County Data"
+            "Personal Retirement Accounts and Saving"
           ],
           "registry": "Crossref"
         },
         {
-          "DOI": "10.3886/icpsr03936.v1",
+          "DOI": "10.1016/j.econmod.2011.07.011",
           "title": [
-            "County Business Patterns, 2000 [United States]: U.S. Summary, State, and County Data"
+            "Modelling aggregate personal income tax revenue in multi-schedular and multi-regional structures"
           ],
           "registry": "Crossref"
         },
         {
-          "DOI": "10.3886/icpsr04407.v1",
+          "DOI": "10.1016/j.econmod.2010.12.006",
           "title": [
-            "County Business Patterns, 2002 [United States]: U.S. Summary, State, and County Data"
+            "Investigating the distribution of personal income obtained from the recent U.S. data"
           ],
           "registry": "Crossref"
         }
@@ -2673,31 +2924,9 @@
       "outcome": "unverified",
       "compared_fields": {},
       "registry": null,
-      "fetched_at": "2026-11-18T19:48:36.656701+00:00",
+      "fetched_at": "2026-11-18T20:35:31.288085+00:00",
       "record_sha256": null,
-      "suggestions": [
-        {
-          "DOI": "10.1515/9781846159169-014",
-          "title": [
-            "Consumer price index (all items) for urban families 1973–2007"
-          ],
-          "registry": "Crossref"
-        },
-        {
-          "DOI": "10.3886/icpsr08166",
-          "title": [
-            "Consumer Price Index, 1913-1992"
-          ],
-          "registry": "Crossref"
-        },
-        {
-          "DOI": "10.3886/icpsr08166.v3",
-          "title": [
-            "Consumer Price Index, 1913-1992"
-          ],
-          "registry": "Crossref"
-        }
-      ],
+      "suggestions": [],
       "message": "no DOI; identity reviewed by the referee",
       "unverified_reason": "no_doi"
     },
@@ -2755,7 +2984,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:37.225995+00:00",
+      "fetched_at": "2026-11-18T20:35:31.948114+00:00",
       "record_sha256": "a42becd8e8b1fadcc1fa1ab54718abfb58ddd732c4c2bd7f5786c2c85ab7322e",
       "suggestions": [],
       "message": "identity matches"
@@ -2814,7 +3043,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:37.851379+00:00",
+      "fetched_at": "2026-11-18T20:35:32.587603+00:00",
       "record_sha256": "7b131fd89bcbc604280ec1515c5872b20c7b26b0d7e5961a57b8b252383def44",
       "suggestions": [],
       "message": "identity matches"
@@ -2873,7 +3102,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:38.408476+00:00",
+      "fetched_at": "2026-11-18T20:35:33.120734+00:00",
       "record_sha256": "cbb777db48f03cfebb1daed2909fc443b023436ae8b7724054c403eacdf8f58a",
       "suggestions": [],
       "message": "identity matches"
@@ -2933,7 +3162,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:39.086393+00:00",
+      "fetched_at": "2026-11-18T20:35:33.834711+00:00",
       "record_sha256": "ea1e0c104e00f0819182c3923b6d876ce23dea37761f7ffd9ada53288188847c",
       "suggestions": [],
       "message": "different fields: container-title"
@@ -2993,10 +3222,70 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:40.024189+00:00",
+      "fetched_at": "2026-11-18T20:35:34.508379+00:00",
       "record_sha256": "176b348251c945142c836502133e5d452e11d199000785bf85c372de81ded3f6",
       "suggestions": [],
       "message": "different fields: container-title"
+    },
+    {
+      "id": "hainmueller2019",
+      "doi": "10.1017/pan.2018.46",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "How Much Should We Trust Estimates from Multiplicative Interaction Models? Simple Tools to Improve Empirical Practice",
+          "registry": [
+            "How Much Should We Trust Estimates from Multiplicative Interaction Models? Simple Tools to Improve Empirical Practice"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "hainmueller",
+          "registry": "hainmueller",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2019
+          ],
+          "registry": [
+            2018,
+            2018,
+            2019,
+            2018
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Political Analysis",
+          "registry": [
+            "Political Analysis"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 27,
+          "registry": "27",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "163-192",
+          "registry": "163-192",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-18T20:35:35.043025+00:00",
+      "record_sha256": "2611257b3149e5f3f00d9eed3ba9a9a2dcf6fe9da2248ae3949cf04008805544",
+      "suggestions": [],
+      "message": "identity matches"
     },
     {
       "id": "nizalova2016",
@@ -3053,7 +3342,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:40.593186+00:00",
+      "fetched_at": "2026-11-18T20:35:35.598585+00:00",
       "record_sha256": "ec56aca59d2da0887429f55b8f7f281d584e08998c8717c00e21df62be1b22f5",
       "suggestions": [],
       "message": "identity matches"
@@ -3113,7 +3402,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-18T19:48:41.160247+00:00",
+      "fetched_at": "2026-11-18T20:35:36.252504+00:00",
       "record_sha256": "13cc7ca7154fc28b0839ce5adf519534ee29fe57fddb6a0ed571b88c4bbc9106",
       "suggestions": [],
       "message": "identity matches"

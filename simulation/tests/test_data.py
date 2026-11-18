@@ -55,3 +55,12 @@ def test_moderator_definitions():
     cpi = D.load_cpi()
     assert cpi[1996] == 157.0 and cpi[2016] == 240.628
     assert (s.drop(index=["Alaska", "Hawaii"])["erosion"] > 0).all()
+
+
+@needs_raw
+def test_bea_family_assistance_line():
+    # April 2011 BEA CA35, line 140 (family assistance), Wayne County, Michigan, 2000, in $000
+    b = D.load_bea_transfers()
+    assert abs(b.loc[26163, "fa2000"] - 413728) < 1e-6
+    assert abs(b.attrs["cpi_2000"] - 172.2) < 1e-9
+    assert abs(b.attrs["cpi_2008"] - 215.3025) < 1e-9

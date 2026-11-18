@@ -4,17 +4,17 @@ Moderation test of the presidential-vote response to the China trade shock by st
 
 ## Steps
 
-1. `uv run python fetch_data.py` downloads every external input into `data/raw/` and checks each against a pinned SHA-256. It is the only networked step. It writes `data/fetch-log.json`, including the hash of `../brief.md` at fetch time.
-2. `uv run python run_all.py` builds the county panel, runs every pre-registered specification and writes `output/results.json` and the three figures in `../paper/figures/`. It reads only `data/raw/` and `data/wrd_table_l5.csv`.
+1. `uv run python fetch_data.py` downloads every external input into `data/raw/` and checks each against a pinned SHA-256. It is the only networked step. It appends an entry to `data/fetch-log.json` with the time, the hash of `../brief.md` and each file's status. The first version of the script overwrote the log; only its last entry (2026-11-18T19:03:25Z) survives, and the log is self-recorded, not an external timestamp.
+2. `uv run python run_all.py` builds the county panel, runs every specification of the brief and the analyses added after review and writes `output/results.json` and the three figures in `../paper/figures/`. It reads only `data/raw/` and `data/wrd_table_l5.csv`.
 3. `uv run pytest -q` checks the estimators on synthetic data (including agreement with `linearmodels`) and the frozen inputs (Welfare Rules Databook summary statistics, official totals, moderator definitions).
 
-The recorded run was made with `papers run after-afdc --id analysis --cwd simulation --artifact simulation/output/results.json --artifact paper/figures/fig1_moderation.png --artifact paper/figures/fig2_robustness.png --artifact paper/figures/fig3_bridge.png` and one `--input` for each file in `data/raw/` plus `data/wrd_table_l5.csv`; the receipt is `../verification/analysis.json`.
+The recorded run was made with `papers run after-afdc --id analysis --cwd simulation --artifact simulation/output/results.json --artifact paper/figures/fig1_moderation.png --artifact paper/figures/fig2_robustness.png --artifact paper/figures/fig3_bridge.png` and one `--input` for each of the 13 files in `data/raw/` plus `data/wrd_table_l5.csv`; the receipt is `../verification/analysis.json`.
 
 ## Layout
 
-- `afdc/data.py`: readers for each source, FIPS mapping to 1990 counties, moderators, County Business Patterns aggregation, panel assembly.
+- `afdc/data.py`: readers for each source, FIPS mapping to 1990 counties, moderators, County Business Patterns aggregation, BEA transfers (with `(L)` cells set to $25,000), panel assembly.
 - `afdc/estimators.py`: weighted OLS and 2SLS, one- and two-way cluster-robust variances (Cameron, Gelbach and Miller), first-stage and Sanderson–Windmeijer F statistics, restricted wild cluster bootstrap.
-- `afdc/analysis.py`: the pre-registered specifications, the descriptive terciles and the bridge to 2016 margins.
+- `afdc/analysis.py`: the specifications of the brief, the descriptive terciles, the post-review sensitivity checks and the bridge to 2016 margins.
 - `afdc/figures.py`: figures drawn at the 6.5-inch text width.
 - `data/wrd_table_l5.csv`: transcription of Table L5 of the 2016 Welfare Rules Databook (public domain). California and Massachusetts use the non-exempt standard; Wisconsin 2016 uses the Community Service Jobs payment.
 
@@ -30,7 +30,8 @@ The recorded run was made with `papers run after-afdc --id analysis --cwd simula
 | Maximum benefits, July 1996 and 2016 | Welfare Rules Databook 2016, OPRE Report 2017-82 | Public domain | Transcription only |
 | County Business Patterns 2000, 2008 | US Census Bureau | Public domain | No (re-fetched) |
 | 2016 official returns | Federal Election Commission, Federal Elections 2016 | Public domain | No (re-fetched) |
-| CPI-U, July 1996 and 2016 | Bureau of Labor Statistics API | Public domain | No (re-fetched) |
+| CPI-U, July 1996 and 2016; monthly 2000 and 2008 | Bureau of Labor Statistics API | Public domain | No (re-fetched) |
+| County transfer receipts (CA35) and population (CA1-3), April 2011 release | Bureau of Economic Analysis, via the Internet Archive (the current tables no longer report family assistance separately) | Public domain | No (re-fetched) |
 
 `output/results.json` reports CBPP-derived ratios only for the five states named in the paper and summary statistics for the rest, because the CBPP terms bar derivative databases; Figure 1 uses the full table in memory.
 
